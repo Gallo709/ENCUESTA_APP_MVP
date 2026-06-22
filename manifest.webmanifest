@@ -1,0 +1,13 @@
+{
+  "name": "Sistema Confidencial de Evaluación del Colaborador",
+  "short_name": "Encuesta",
+  "description": "Sistema interno para captura confidencial, análisis y auditoría preventiva de información del colaborador.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eef4fb",
+  "theme_color": "#0f5f7a",
+  "lang": "es-GT",
+  "icons": []
+}
