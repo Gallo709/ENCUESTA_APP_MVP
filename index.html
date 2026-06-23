@@ -35,9 +35,9 @@
         radial-gradient(circle at 18% 12%, rgba(56,189,248,.34), transparent 27%),
         radial-gradient(circle at 80% 16%, rgba(15,155,142,.30), transparent 30%),
         linear-gradient(135deg,#071a3d 0%,#082f49 45%,#0f172a 100%);
-      padding:14px;
+      padding:10px;
     }
-    .wrap{max-width:1120px;margin:0 auto}
+    .wrap{max-width:1560px;margin:0 auto}
     .app-shell{position:sticky;top:0;z-index:20;margin-bottom:16px;backdrop-filter:blur(12px)}
     .app-shell-inner{
       background:rgba(255,255,255,.93);
@@ -142,6 +142,16 @@
     th{background:#f1f5f9;color:#0f172a;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
     .tag{display:inline-flex;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:900}
     .tag.verde{background:#dcfce7;color:#166534}.tag.amarillo{background:#fef9c3;color:#854d0e}.tag.naranja{background:#ffedd5;color:#9a3412}.tag.rojo{background:#fee2e2;color:#991b1b}.tag.critico{background:#7f1d1d;color:#fff}
+    .risk-pill{
+      display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:6px 11px;
+      font-size:12px;font-weight:900;white-space:nowrap;border:1px solid transparent;
+    }
+    .risk-pill::before{content:'';width:9px;height:9px;border-radius:999px;background:currentColor}
+    .risk-pill.bajo{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+    .risk-pill.moderado{background:#fef9c3;color:#854d0e;border-color:#fde68a}
+    .risk-pill.alto{background:#ffedd5;color:#9a3412;border-color:#fed7aa}
+    .risk-pill.critico{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+
     .admin-login{max-width:520px;margin:0 auto}
     .warning-box{background:#fff1f2;border:1px solid #fecdd3;color:#9f1239;border-radius:16px;padding:14px;font-weight:700;line-height:1.45}
     .success-screen{text-align:center;padding:38px 22px}
@@ -158,6 +168,100 @@
     .matrix-box th,.matrix-box td{padding:10px;border:1px solid #e5e7eb;text-align:center}
     .matrix-box th{background:#f8fafc}
     .risk-low{background:#dcfce7}.risk-mod{background:#fef9c3}.risk-high{background:#ffedd5}.risk-crit{background:#fee2e2}.risk-severe{background:#fecaca}
+    .summary-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}
+    .summary-tab{
+      border:1px solid #bfd2e6;background:#fff;color:#0f172a;border-radius:999px;
+      padding:10px 15px;font-weight:900;cursor:pointer;box-shadow:0 8px 18px rgba(2,8,23,.06);
+    }
+    .summary-tab.active{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border-color:transparent}
+    .executive-hero{
+      border-radius:20px;padding:18px;margin-bottom:16px;
+      background:linear-gradient(135deg,#0b2239,#145f82,#0f9b8e);
+      color:#fff;box-shadow:0 14px 30px rgba(15,23,42,.16);
+    }
+    .executive-hero h4{margin:0 0 6px;color:#fff;font-size:21px}
+    .executive-hero p{margin:0;color:rgba(255,255,255,.88)}
+    .mini-kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}
+    .mini-kpi{
+      border:1px solid #dbe7f1;background:#fff;border-radius:18px;padding:14px;
+      box-shadow:0 12px 24px rgba(2,8,23,.05);
+    }
+    .mini-kpi .value{font-size:26px;line-height:1;font-weight:900;color:var(--primary)}
+    .mini-kpi .caption{font-size:12px;color:#64748b;font-weight:900;text-transform:uppercase;margin-top:7px;letter-spacing:.04em}
+    .insight-list{margin:12px 0 0;padding-left:18px;color:#334155;line-height:1.65}
+    .mode-note{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;border-radius:16px;padding:12px 14px;margin:12px 0;font-weight:700}
+
+    .admin-wide-card{padding:26px}
+    #adminPanel .card{max-width:100%}
+    #recordsTable{min-width:1180px}
+    .table-wrap{width:100%;max-width:100%;overflow:auto;scrollbar-width:thin}
+    .table-wrap table{font-size:12px}
+    .table-wrap th,.table-wrap td{padding:11px 13px}
+    @media(min-width:1200px){#recordsTable{min-width:100%}.table-wrap table{table-layout:auto}}
+    @media(min-width:1500px){body{padding-left:6px;padding-right:6px}.wrap{max-width:1660px}.card{padding:26px}.table-wrap table{font-size:13px}}
+    .methodology-card{background:#f8fbff;border:1px solid #dbeafe;border-radius:18px;padding:15px;margin-top:13px}
+    .methodology-card h5{margin:0 0 8px;color:#0f172a;font-size:15px}
+    .methodology-card ul{margin:0;padding-left:18px;color:#334155;line-height:1.55}
+    .score-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+    .score-box{border:1px solid #dbe7f1;border-radius:16px;background:#fff;padding:12px}
+    .score-box strong{display:block;color:#0f5f7a;margin-bottom:5px}
+    .score-box p{margin:0;color:#475569;font-size:13px}
+    .priority-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:16px 0}
+    .priority-card{
+      background:#fff;border:1px solid #dbe7f1;border-radius:18px;padding:15px;
+      box-shadow:0 12px 26px rgba(2,8,23,.06);position:relative;overflow:hidden;
+    }
+    .priority-card::before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:#0f5f7a}
+    .priority-card.fin::before{background:#dc2626}
+    .priority-card.lab::before{background:#f59e0b}
+    .priority-card.sal::before{background:#7c3aed}
+    .priority-card.cap::before{background:#0ea5e9}
+    .priority-card.med::before{background:#10b981}
+    .priority-card .num{font-size:28px;font-weight:900;color:#0f172a;line-height:1;margin-top:5px}
+    .priority-card .label{font-size:12px;text-transform:uppercase;letter-spacing:.04em;font-weight:900;color:#64748b;margin-top:5px}
+    .priority-card .hint-small{font-size:12px;color:#64748b;margin-top:6px;line-height:1.35}
+    .priority-table table{min-width:100%;font-size:12px}
+    .priority-table th,.priority-table td{padding:10px;border-bottom:1px solid #e5e7eb;vertical-align:top}
+    .priority-table th{background:#f1f5f9;color:#0f172a;text-transform:uppercase}
+    .attention-note{
+      background:linear-gradient(135deg,#eff6ff,#f8fafc);border:1px solid #bfdbfe;
+      color:#1e3a8a;border-radius:16px;padding:13px 15px;margin:14px 0;font-weight:800;line-height:1.45;
+    }
+    .summary-indicator{font-size:12px;color:#64748b;margin-top:4px}
+    .report-chip-row{display:flex;gap:6px;flex-wrap:wrap}
+    .mini-chip{
+      display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;
+      font-size:11px;font-weight:900;border:1px solid #dbe7f1;background:#f8fafc;color:#334155;
+    }
+    .mini-chip.fin{border-color:#fecaca;background:#fee2e2;color:#991b1b}
+    .mini-chip.lab{border-color:#fed7aa;background:#ffedd5;color:#9a3412}
+    .mini-chip.sal{border-color:#ddd6fe;background:#ede9fe;color:#5b21b6}
+    .mini-chip.bajo{border-color:#bbf7d0;background:#dcfce7;color:#166534}
+    .mini-chip.moderado{border-color:#fde68a;background:#fef9c3;color:#854d0e}
+    .mini-chip.alto{border-color:#fed7aa;background:#ffedd5;color:#9a3412}
+    .mini-chip.critico{border-color:#fecaca;background:#fee2e2;color:#991b1b}
+    .mini-chip.severo{border-color:#fecaca;background:#fee2e2;color:#7f1d1d}
+    .mini-chip.ok{border-color:#bbf7d0;background:#dcfce7;color:#166534}
+    .mini-chip.pendiente{border-color:#fed7aa;background:#ffedd5;color:#9a3412}
+    .mini-chip.falta{border-color:#fecaca;background:#fee2e2;color:#991b1b}
+
+    .compact-table th,.compact-table td{padding:10px 12px}
+    #analysisControlsBlock{margin-top:18px}
+    #analysisControlsBlock .admin-toolbar{margin:0;align-items:center}
+    #priorityBlock{margin-top:18px}
+    .single-source-note{
+      background:#f0fdfa;border:1px solid #99f6e4;color:#134e4a;border-radius:16px;
+      padding:12px 14px;margin:10px 0 16px;font-weight:800;line-height:1.45;
+    }
+
+    .compact-table td{line-height:1.32}
+
+    @media(max-width:1100px){.priority-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:700px){.priority-grid{grid-template-columns:1fr}}
+
+    @media(max-width:850px){.score-grid{grid-template-columns:1fr}}
+    @media(max-width:850px){.mini-kpi-grid{grid-template-columns:1fr}}
+
     .charts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
     .chart-card{position:relative;background:#fff;border:1px solid #dbe7f1;border-radius:22px;padding:18px 18px 12px;box-shadow:0 14px 32px rgba(15,23,42,.07);overflow:hidden}
     .chart-card::before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--primary),var(--primary-2),var(--gold))}
@@ -256,7 +360,7 @@
       </div>
 
       <div id="adminPanel" class="hidden">
-        <div class="card">
+        <div class="card admin-wide-card">
           <div class="module-header">
             <span class="module-number">AD</span>
             <div>
@@ -265,7 +369,14 @@
             </div>
           </div>
           <div class="admin-grid" id="kpiGrid"></div>
-          <div class="admin-toolbar">
+          <div class="dashboard-block" id="analysisControlsBlock">
+            <div class="dashboard-header">
+              <div>
+                <h3>Controles del análisis</h3>
+                <p>Use el buscador, filtros y exportaciones para trabajar sobre la vista seleccionada.</p>
+              </div>
+            </div>
+            <div class="admin-toolbar">
             <input id="adminSearch" placeholder="Buscar nombre, empresa o ubicación" />
             <select id="adminFilterLevel">
               <option value="">Todos los niveles financieros</option>
@@ -275,13 +386,33 @@
               <option>Crítico</option>
               <option>Sobreendeudamiento severo</option>
             </select>
-            <button type="button" class="btn btn-success" id="exportExcelBtn">Descargar Excel completo</button>
-            <button type="button" class="btn btn-primary" id="exportPdfBtn">Abrir PDF ejecutivo</button>
-            <button type="button" class="btn btn-gold" id="exportPackBtn">Paquete gerencial</button>
-            <button type="button" class="btn btn-secondary" id="exportCsvBtn">Descargar CSV base</button>
-            <button type="button" class="btn btn-danger" id="clearDemoBtn">Eliminar registros Firebase</button>
+            <button class="btn btn-success" id="exportExcelBtn">Descargar Excel completo</button>
+            <button class="btn btn-primary" id="exportPdfBtn">PDF de la vista actual</button>
+            <button class="btn btn-gold" id="exportPackBtn">Paquete gerencial</button>
+            <button class="btn btn-secondary" id="exportCsvBtn">Descargar CSV base</button>
+            <button class="btn btn-danger" id="clearDemoBtn">Eliminar registros Firebase</button>
             <button type="button" class="btn btn-secondary" id="adminLogoutBtn">Salir</button>
           </div>
+          </div>
+          <div class="dashboard-block" id="priorityBlock">
+            <div class="dashboard-header">
+              <div>
+                <h3>Centro de análisis por colaborador</h3>
+                <p>Seleccione una vista para revisar cada colaborador. Esta misma vista se usará para generar el PDF.</p>
+              </div>
+            </div>
+            <div class="summary-tabs" id="reportTabs">
+              <button type="button" class="summary-tab active" data-report-view="general">Vista general</button>
+              <button type="button" class="summary-tab" data-report-view="financiero">Financiero</button>
+              <button type="button" class="summary-tab" data-report-view="laboral">Laboral</button>
+              <button type="button" class="summary-tab" data-report-view="salud">Salud</button>
+            </div>
+            <div class="priority-grid" id="priorityGrid"></div>
+            <div class="attention-note" id="reportModeNote">Vista general: estado financiero, laboral y de salud por colaborador en una sola línea. Los colores del detalle indican: verde todo bien, amarillo moderado, naranja alto y rojo crítico.</div>
+            <div class="table-wrap priority-table"><table id="priorityTable"></table></div>
+          </div>
+          
+
           <div class="field" style="max-width:360px;margin-bottom:16px">
             <label class="field-label">Salario mínimo de referencia para cálculo</label>
             <input id="salaryRefInput" type="number" min="0" step="0.01" />
@@ -294,6 +425,11 @@
                 <h3>Resumen ejecutivo y metodología</h3>
                 <p>Esta vista consolida los resultados de la encuesta y explica cómo se calculan los porcentajes y la matriz de riesgo.</p>
               </div>
+            </div>
+            <div class="summary-tabs" id="executiveTabs">
+              <button type="button" class="summary-tab active" data-executive-view="financiero">Resumen financiero</button>
+              <button type="button" class="summary-tab" data-executive-view="laboral">Resumen laboral</button>
+              <button type="button" class="summary-tab" data-executive-view="salud">Resumen salud</button>
             </div>
             <div class="executive-grid">
               <div class="card-lite" id="executiveNarrative"></div>
@@ -318,21 +454,18 @@
             </div>
           </div>
 
-          <div class="dashboard-block">
-            <div class="dashboard-header">
-              <div>
-                <h3>Detalle consolidado de registros</h3>
-                <p>Base centralizada para revisión del administrador, con nivel financiero y carga económica mensual comprometida.</p>
-              </div>
-            </div>
-            <div class="table-wrap"><table id="recordsTable"></table></div>
-          </div>
+          
+
         </div>
       </div>
     </section>
     <div id="pdfRenderHost" class="pdf-host"></div>
 </div>
 
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 
 <script>
 const firebaseConfig = {
@@ -348,70 +481,27 @@ const firebaseConfig = {
   let auth = null;
   let db = null;
   let firebaseReady = false;
-  let firebaseLoadingPromise = null;
-  let authObserverStarted = false;
+
+  try {
+    if (typeof firebase === 'undefined') {
+      throw new Error('Firebase SDK no cargó. Revise conexión, CDN o caché del navegador.');
+    }
+
+    app = firebase.initializeApp(firebaseConfig);
+    auth = firebase.auth();
+    db = firebase.firestore();
+    firebaseReady = true;
+    console.log('Firebase inicializado correctamente');
+  } catch (error) {
+    console.error('Firebase no pudo iniciar:', error);
+  }
 
   const COLLECTION_NAME = "encuestasColaborador";
   const ADMIN_USERS_COLLECTION = "usuario";
 
-  function loadExternalScript(src){
-    return new Promise((resolve, reject) => {
-      const existing = document.querySelector(`script[src="${src}"]`);
-      if(existing){
-        existing.addEventListener('load', resolve, { once:true });
-        existing.addEventListener('error', reject, { once:true });
-        if(existing.dataset.loaded === 'true') resolve();
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = src;
-      script.async = false;
-      script.onload = () => {
-        script.dataset.loaded = 'true';
-        resolve();
-      };
-      script.onerror = () => reject(new Error('No se pudo cargar: ' + src));
-      document.head.appendChild(script);
-    });
-  }
-
-  async function initFirebase(){
-    if(firebaseReady && auth && db) return true;
-    if(firebaseLoadingPromise) return firebaseLoadingPromise;
-
-    firebaseLoadingPromise = (async () => {
-      await loadExternalScript('https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js');
-      await loadExternalScript('https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js');
-      await loadExternalScript('https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js');
-
-      if(typeof firebase === 'undefined'){
-        throw new Error('Firebase SDK no cargó correctamente.');
-      }
-
-      app = firebase.apps && firebase.apps.length
-        ? firebase.app()
-        : firebase.initializeApp(firebaseConfig);
-
-      auth = firebase.auth();
-      db = firebase.firestore();
-      firebaseReady = true;
-
-      setupAuthObserver();
-      console.log('Firebase inicializado correctamente');
-      return true;
-    })().catch(error => {
-      firebaseReady = false;
-      console.error('Firebase no pudo iniciar:', error);
-      throw error;
-    });
-
-    return firebaseLoadingPromise;
-  }
-
   function requireFirebaseReady(){
     if(!firebaseReady || !auth || !db){
-      throw new Error('Firebase no está inicializado. Espere unos segundos, revise conexión o limpie caché del navegador.');
+      throw new Error('Firebase no está inicializado. Publique en hosting HTTP/HTTPS y limpie caché.');
     }
   }
 
@@ -423,6 +513,9 @@ const firebaseConfig = {
   let recordsCache = [];
   let currentAdminUser = null;
   let adminProfile = null;
+  let executiveView = 'financiero';
+  let tableView = 'financiero';
+  let reportView = 'general';
 
   function bindClick(id, handler){
     const el = document.getElementById(id);
@@ -491,11 +584,11 @@ const firebaseConfig = {
       {id:'ausenciasSalud', label:'¿Ha tenido ausencias laborales por motivos de salud durante los últimos 6 meses?', type:'select', required:true, options:['No','1 vez','2 a 3 veces','Más de 3 veces']},
       {id:'tuvoAccidente', label:'¿Ha sufrido algún accidente o lesión durante los últimos 12 meses?', type:'select', required:true, options:['Sí','No']},
       {id:'accidenteAfectaDesempeno', label:'¿El accidente o lesión afecta actualmente su desempeño laboral?', type:'select', required:true, showIf:{field:'tuvoAccidente', equals:'Sí'}, options:['Sí','No','Parcialmente']},
-      {id:'actividadFisica', label:'¿Realiza actividad física o ejercicio de forma regular?', type:'select', required:true, options:['Sí','No']},
+      {id:'actividadFisica', label:'¿Realiza actividad física o ejercicio de forma regular?', type:'select', required:true, options:['1 vez a la semana','2 veces a la semana','3 veces a la semana','4 veces a la semana','5 veces a la semana','No realiza']},
       {id:'condicionFisicaPuesto', label:'¿Cómo considera su condición física para cumplir con las exigencias de su puesto?', type:'select', required:true, options:['Adecuada','Parcialmente adecuada','Limitada']},
       {id:'enfermedadDiagnosticada', label:'¿Padece actualmente alguna enfermedad diagnosticada?', type:'select', required:true, options:['Sí','No','Prefiero no responder']},
       {id:'detalleEnfermedad', label:'Indique qué enfermedad diagnosticada padece', type:'text', required:true, showIf:{field:'enfermedadDiagnosticada', equals:'Sí'}},
-      {id:'medicamentoPermanente', label:'¿Consume algún medicamento de uso permanente o de por vida?', type:'select', required:true, options:['Sí','No','Prefiero no responder']},
+      {id:'medicamentoPermanente', label:'¿Consume algún medicamento de uso permanente?', type:'select', required:true, options:['Sí','No','Prefiero no responder']},
       {id:'detalleMedicamento', label:'Indique qué medicamento consume de forma permanente', type:'text', required:true, showIf:{field:'medicamentoPermanente', equals:'Sí'}},
       {id:'habitoConsumo', label:'¿Tiene algún hábito de consumo que considere frecuente?', type:'select', required:true, options:['Sí','No','Prefiero no responder']},
       {id:'tipoHabitoConsumo', label:'Indique cuál es el hábito de consumo frecuente', type:'checkboxes', required:true, full:true, showIf:{field:'habitoConsumo', equals:'Sí'}, options:['Consumo de alcohol','Consumo de tabaco','Consumo frecuente de bebidas energizantes','Uso frecuente de medicamentos sin prescripción','Juego o apuestas','Otro']},
@@ -509,14 +602,16 @@ const firebaseConfig = {
       {id:'motivoSalidaUltimoEmpleo', label:'¿Cuál fue el motivo principal de salida de su último empleo?', type:'select', required:true, options:['Renuncia voluntaria','Finalización de contrato','Despido','Cierre de operación','Mejora laboral','Otro']},
       {id:'detalleMotivoSalida', label:'Explique brevemente el motivo de salida de su último empleo', type:'textarea', required:true, full:true, showIf:{field:'motivoSalidaUltimoEmpleo', equals:'Otro'}},
       {id:'experienciaArmas', label:'¿Tiene experiencia en el manejo de armas?', type:'select', required:true, options:['Sí','No']},
-      {id:'tipoArma', label:'¿Qué tipo de arma ha manejado?', type:'select', required:true, showIf:{field:'experienciaArmas', equals:'Sí'}, options:['Arma corta','Escopeta','Rifle','Otra']},
-      {id:'detalleTipoArma', label:'Especifique el tipo de arma', type:'text', required:true, showIf:{field:'tipoArma', equals:'Otra'}},
+      {id:'tipoArma', label:'¿Qué tipo de arma ha manejado?', type:'checkboxes', required:true, full:true, showIf:{field:'experienciaArmas', equals:'Sí'}, options:['9 milímetros','Revólver','Escopeta']},
       {id:'origenConocimientoArmas', label:'¿Dónde adquirió el conocimiento o entrenamiento en manejo de armas?', type:'select', required:true, showIf:{field:'experienciaArmas', equals:'Sí'}, options:['Empresa de seguridad privada','Academia de capacitación','Servicio militar','Institución pública','Experiencia laboral previa','Otro']},
       {id:'detalleOrigenArmas', label:'Especifique dónde adquirió el conocimiento', type:'text', required:true, showIf:{field:'origenConocimientoArmas', equals:'Otro'}},
       {id:'experienciaSeguridadPrivada', label:'¿Tiene experiencia en prestación de servicios de seguridad privada?', type:'select', required:true, options:['Sí','No']},
       {id:'aniosSeguridadPrivada', label:'¿Cuántos años de experiencia tiene en servicios de seguridad privada?', type:'number', required:true, min:0, showIf:{field:'experienciaSeguridadPrivada', equals:'Sí'}},
       {id:'empresasSeguridadPrivada', label:'¿En qué empresas ha prestado servicios de seguridad privada?', type:'textarea', required:true, full:true, showIf:{field:'experienciaSeguridadPrivada', equals:'Sí'}},
-      {id:'diasCapacitacionInicial', label:'¿Cuántos días de capacitación recibió por parte de su empresa al momento de ser contratado?', type:'number', required:true, min:0}
+      {id:'diasCapacitacionInicial', label:'¿Cuántos días de capacitación recibió por parte de su empresa al momento de ser contratado?', type:'select', required:true, options:['Ningún día','1 día','2 días','3 días','4 días','5 días','6 días','7 días','8 días','9 días','10 días','11 días','12 días','13 días','14 días','15 días']},
+      {id:'carnetIrtra', label:'¿Cuenta con carné de IRTRA?', type:'select', required:true, options:['Tiene','No tiene','No ha hecho la gestión']},
+      {id:'carnetIgss', label:'¿Cuenta con carné de IGSS?', type:'select', required:true, options:['Tiene','No tiene','No ha hecho la gestión']},
+      {id:'acreditacionDigessp', label:'¿Cuenta con acreditación de la DIGESSP?', type:'select', required:true, options:['Tiene','No tiene','No ha hecho la gestión']}
     ]},
     { title:'Entorno familiar básico', description:'Composición familiar general sin profundizar en aspectos personales sensibles.', group:'familia', fields:[
       {id:'conQuienVive', label:'¿Con quién vive actualmente?', type:'checkboxes', required:true, full:true, options:['Solo','Pareja','Hijos','Padres','Hermanos','Otros familiares','Otras personas']},
@@ -529,7 +624,6 @@ const firebaseConfig = {
       {id:'detalleTransporteOtro', label:'Especifique otro medio de transporte', type:'text', required:true, showIf:{field:'medioTransporte', equals:'Otro'}},
       {id:'cantidadBuses', label:'¿Cuántos buses debe tomar para llegar al trabajo?', type:'number', required:true, min:0, showIf:{field:'medioTransporte', equals:'Transporte público o bus'}},
       {id:'tiempoTraslado', label:'¿Cuánto tiempo tarda aproximadamente en llegar de su casa al trabajo?', type:'select', required:true, options:['Menos de 30 minutos','De 30 minutos a 1 hora','De 1 a 2 horas','Más de 2 horas']},
-      {id:'cantidadMediosTransporte', label:'¿Cuántos medios de transporte utiliza para llegar al trabajo?', type:'select', required:true, options:['1','2','3 o más']},
       {id:'dificultadPuntualidad', label:'¿Ha tenido dificultades frecuentes para llegar puntual al trabajo?', type:'select', required:true, options:['No','Ocasionalmente','Frecuentemente']},
       {id:'motivoAfectaPuntualidad', label:'¿Cuál es el motivo más común que puede afectar su llegada puntual?', type:'select', required:true, options:['Tráfico','Falta de transporte','Distancia','Clima','Problemas familiares','Otro','No aplica']},
       {id:'detalleMotivoPuntualidad', label:'Especifique el motivo que puede afectar su llegada puntual', type:'text', required:true, showIf:{field:'motivoAfectaPuntualidad', equals:'Otro'}},
@@ -748,7 +842,7 @@ const firebaseConfig = {
       return [];
     }
 
-    await initFirebase();
+    requireFirebaseReady();
 
     const snap = await db
       .collection(COLLECTION_NAME)
@@ -771,7 +865,7 @@ const firebaseConfig = {
       fechaRegistroServidor: firebase.firestore.FieldValue.serverTimestamp()
     };
 
-    await initFirebase();
+    requireFirebaseReady();
     const docRef = await db.collection(COLLECTION_NAME).add(recordToSave);
     return docRef.id;
   }
@@ -815,7 +909,7 @@ const firebaseConfig = {
   async function getAdminProfile(user){
     if(!user) throw new Error('No hay usuario autenticado.');
 
-    await initFirebase();
+    requireFirebaseReady();
 
     const perfilRef = db.collection(ADMIN_USERS_COLLECTION).doc(user.uid);
     const perfilSnap = await perfilRef.get();
@@ -867,7 +961,7 @@ const firebaseConfig = {
       btn.disabled = true;
       btn.textContent = 'Validando acceso...';
 
-      await initFirebase();
+      requireFirebaseReady();
       const credential = await auth.signInWithEmailAndPassword(email, pass);
       currentAdminUser = credential.user;
       adminProfile = await getAdminProfile(credential.user);
@@ -909,36 +1003,27 @@ const firebaseConfig = {
     updateAdminAuthView();
   });
 
-  function setupAuthObserver(){
-    if(!auth || authObserverStarted) return;
-    authObserverStarted = true;
+  if(auth){ auth.onAuthStateChanged(async (user)=>{
+    currentAdminUser = user;
+    adminProfile = null;
 
-    auth.onAuthStateChanged(async (user)=>{
-      currentAdminUser = user;
-      adminProfile = null;
-
-      if(user){
-        try{
-          adminProfile = await getAdminProfile(user);
-        }catch(error){
-          console.warn('Sesión sin permisos administrativos:', error);
-          currentAdminUser = null;
-          adminProfile = null;
-        }
+    if(user){
+      try{
+        adminProfile = await getAdminProfile(user);
+      }catch(error){
+        console.warn('Sesión sin permisos administrativos:', error);
+        currentAdminUser = null;
+        adminProfile = null;
       }
+    }
 
-      updateAdminAuthView();
+    updateAdminAuthView();
 
-      if(adminProfile && adminScreen.classList.contains('active')){
-        await renderAdmin();
-      }
-    });
-  }
-
-  // Carga Firebase en segundo plano para que los botones de navegación no queden bloqueados.
-  initFirebase().catch(error => {
-    console.warn('Firebase aún no está disponible. Los botones de formulario y navegación siguen funcionando.', error);
+    if(adminProfile && adminScreen.classList.contains('active')){
+      await renderAdmin();
+    }
   });
+  }
 
   async function renderAdmin(){
     if(!adminProfile || !currentAdminUser){
@@ -973,12 +1058,24 @@ const firebaseConfig = {
       ['Sobreendeudamiento severo',severo]
     ].map(([label,num])=>`<div class="kpi"><div class="num">${num}</div><div class="label">${label}</div></div>`).join('');
 
+    renderPriorityAlerts(getFilteredRowsForAnalysis());
     renderCharts(recordsCache);
-    renderTable();
   }
 
-  document.getElementById('adminSearch').addEventListener('input',renderTable);
-  document.getElementById('adminFilterLevel').addEventListener('change',renderTable);
+  document.getElementById('adminSearch').addEventListener('input',()=>renderPriorityAlerts(getFilteredRowsForAnalysis()));
+  document.getElementById('adminFilterLevel').addEventListener('change',()=>renderPriorityAlerts(getFilteredRowsForAnalysis()));
+
+  document.querySelectorAll('[data-executive-view]').forEach(btn=>{
+    btn.addEventListener('click',()=>setExecutiveView(btn.dataset.executiveView));
+  });
+
+  document.querySelectorAll('[data-table-view]').forEach(btn=>{
+    btn.addEventListener('click',()=>setTableView(btn.dataset.tableView));
+  });
+
+  document.querySelectorAll('[data-report-view]').forEach(btn=>{
+    btn.addEventListener('click',()=>setReportView(btn.dataset.reportView));
+  });
 
   function tagClass(level){
     if(level==='Bajo') return 'verde'; if(level==='Moderado') return 'amarillo'; if(level==='Alto') return 'naranja'; if(level==='Crítico') return 'rojo'; return 'critico';
@@ -992,10 +1089,44 @@ const firebaseConfig = {
       const matchLevel = !lvl || r.indicadores?.nivelPresionEconomica === lvl;
       return matchText && matchLevel;
     });
+
     const table = document.getElementById('recordsTable');
-    if(rows.length===0){
-      table.innerHTML='<thead><tr><th>Sin registros</th></tr></thead><tbody><tr><td>No hay encuestas registradas en esta vista.</td></tr></tbody>';return;
+    const note = document.getElementById('tableModeNote');
+    if(!table) return;
+
+    document.querySelectorAll('[data-table-view]').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.tableView === tableView);
+    });
+
+    if(note){
+      note.textContent = tableView === 'laboral'
+        ? 'Vista laboral: experiencia, manejo de armas, seguridad privada, capacitación recibida y semáforo de atención.'
+        : tableView === 'salud'
+          ? 'Vista de salud: estado general, condición física, medicamento permanente, detalle de medicamento y semáforo de atención.'
+          : 'Vista financiera: deuda mensual, alquiler, retenciones y nivel de presión económica.';
     }
+
+    if(rows.length===0){
+      table.innerHTML='<thead><tr><th>Sin registros</th></tr></thead><tbody><tr><td>No hay encuestas registradas en esta vista.</td></tr></tbody>';
+      return;
+    }
+
+    if(tableView === 'laboral'){
+      table.innerHTML = `<thead><tr><th>Fecha</th><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Experiencia laboral</th><th>Seguridad privada</th><th>Años seguridad</th><th>Manejo de armas</th><th>Tipo de arma</th><th>Días capacitación</th><th>Semáforo</th></tr></thead><tbody>` + rows.map(r=>{
+        const riesgo = semaforoLaboral(r);
+        return `<tr><td>${new Date(r.fechaRegistro).toLocaleString()}</td><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.experiencia?.experienciaLaboral||'')}</td><td>${escapeHtml(r.experiencia?.experienciaSeguridadPrivada||'')}</td><td>${escapeHtml(r.experiencia?.aniosSeguridadPrivada ?? '')}</td><td>${escapeHtml(r.experiencia?.experienciaArmas||'')}</td><td>${escapeHtml(armasTexto(r.experiencia?.tipoArma))}</td><td>${escapeHtml(r.experiencia?.diasCapacitacionInicial ?? '')}</td><td>${riskBadge(riesgo)}</td></tr>`;
+      }).join('') + '</tbody>';
+      return;
+    }
+
+    if(tableView === 'salud'){
+      table.innerHTML = `<thead><tr><th>Fecha</th><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Estado salud</th><th>Condición física</th><th>Condición para puesto</th><th>Actividad física</th><th>Medicamento permanente</th><th>Qué medicamento</th><th>Ausencias salud</th><th>Semáforo</th></tr></thead><tbody>` + rows.map(r=>{
+        const riesgo = semaforoSalud(r);
+        return `<tr><td>${new Date(r.fechaRegistro).toLocaleString()}</td><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.salud?.estadoSalud||'')}</td><td>${escapeHtml(r.salud?.tieneCondicionFisica||'')}</td><td>${escapeHtml(r.salud?.condicionFisicaPuesto||'')}</td><td>${escapeHtml(r.salud?.actividadFisica||'')}</td><td>${escapeHtml(r.salud?.medicamentoPermanente||'')}</td><td>${escapeHtml(r.salud?.detalleMedicamento||'')}</td><td>${escapeHtml(r.salud?.ausenciasSalud||'')}</td><td>${riskBadge(riesgo)}</td></tr>`;
+      }).join('') + '</tbody>';
+      return;
+    }
+
     table.innerHTML = `<thead><tr><th>Fecha</th><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Deuda mensual</th><th>Alquiler</th><th>Embargo / retención</th><th>% presión</th><th>Nivel</th></tr></thead><tbody>` + rows.map(r=>{
       const ind = r.indicadores || {};
       const level = ind.nivelPresionEconomica || 'Bajo';
@@ -1004,6 +1135,413 @@ const firebaseConfig = {
   }
   function money(n){ return Number(n||0).toLocaleString('es-GT',{minimumFractionDigits:2,maximumFractionDigits:2}); }
   function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+
+
+  function armasTexto(valor){
+    if(Array.isArray(valor)) return valor.join(', ');
+    return valor || '';
+  }
+
+  function numeroDesdeTexto(valor){
+    if(typeof valor === 'number') return valor;
+    const match = String(valor ?? '').match(/\d+/);
+    return match ? Number(match[0]) : 0;
+  }
+
+
+  function estadoCredencial(valor){
+    return String(valor || '').trim() || 'Sin dato';
+  }
+
+  function credencialPendiente(valor){
+    const v = estadoCredencial(valor);
+    return v === 'No tiene' || v === 'No ha hecho la gestión' || v === 'Sin dato';
+  }
+
+  function resumenCredencialesLaborales(r){
+    const exp = r.experiencia || {};
+    const pendientes = [];
+    if(credencialPendiente(exp.carnetIrtra)) pendientes.push('IRTRA');
+    if(credencialPendiente(exp.carnetIgss)) pendientes.push('IGSS');
+    if(credencialPendiente(exp.acreditacionDigessp)) pendientes.push('DIGESSP');
+    return pendientes.length ? pendientes.join(', ') : 'Completo';
+  }
+
+
+  function clasePorNivel(nivel){
+    if(nivel === 'Bajo') return 'bajo';
+    if(nivel === 'Moderado') return 'moderado';
+    if(nivel === 'Alto') return 'alto';
+    if(nivel === 'Crítico') return 'critico';
+    if(nivel === 'Sobreendeudamiento severo') return 'severo';
+    return 'moderado';
+  }
+
+  function claseCredencial(valor){
+    const v = estadoCredencial(valor);
+    if(v === 'Tiene') return 'ok';
+    if(v === 'No ha hecho la gestión') return 'pendiente';
+    if(v === 'No tiene' || v === 'Sin dato') return 'falta';
+    return 'pendiente';
+  }
+
+  function badgeCredencial(valor){
+    const v = estadoCredencial(valor);
+    return `<span class="mini-chip ${claseCredencial(v)}">${escapeHtml(v)}</span>`;
+  }
+
+  function claseCredencialesResumen(r){
+    const resumen = resumenCredencialesLaborales(r);
+    return resumen === 'Completo' ? 'ok' : 'pendiente';
+  }
+
+  function scoreLaboral(r){
+    let score = 0;
+    const exp = r.experiencia || {};
+    const diasCap = numeroDesdeTexto(exp.diasCapacitacionInicial);
+
+    if(String(exp.diasCapacitacionInicial || '').toLowerCase().includes('ningún')) score += 3;
+    else if(diasCap === 0) score += 3;
+    else if(diasCap <= 2) score += 2;
+    else if(diasCap <= 5) score += 1;
+
+    if(exp.experienciaSeguridadPrivada === 'No') score += 2;
+    if(exp.experienciaArmas === 'No') score += 1;
+    if(exp.experienciaLaboral === 'Menos de 1 año') score += 2;
+    if(exp.empleosUltimosCincoAnios === 'Más de 3 empleos') score += 1;
+
+    if(credencialPendiente(exp.acreditacionDigessp)) score += 2;
+    if(credencialPendiente(exp.carnetIgss)) score += 1;
+    if(exp.carnetIrtra === 'No ha hecho la gestión') score += 1;
+
+    return score;
+  }
+
+  function semaforoLaboral(r){
+    const score = scoreLaboral(r);
+    const pendientes = resumenCredencialesLaborales(r);
+
+    if(score >= 6) return {nivel:'Crítico', clase:'critico', detalle:`Atención prioritaria: requiere revisión de capacitación, experiencia operativa y credenciales laborales. Pendiente: ${pendientes}.`};
+    if(score >= 4) return {nivel:'Alto', clase:'alto', detalle:`Atención alta: reforzar capacitación, acompañamiento o validación operativa. Pendiente: ${pendientes}.`};
+    if(score >= 2) return {nivel:'Moderado', clase:'moderado', detalle:`Atención preventiva: seguimiento general de capacidades y credenciales. Pendiente: ${pendientes}.`};
+    return {nivel:'Bajo', clase:'bajo', detalle:'Perfil operativo estable según la información registrada. Credenciales laborales completas o sin alertas relevantes.'};
+  }
+
+  function scoreSalud(r){
+    let score = 0;
+    const s = r.salud || {};
+    if(s.estadoSalud === 'Delicado') score += 4;
+    else if(s.estadoSalud === 'Regular') score += 2;
+    if(s.tieneCondicionFisica === 'Sí') score += 2;
+    if(s.condicionFisicaPuesto === 'Limitada') score += 3;
+    else if(s.condicionFisicaPuesto === 'Parcialmente adecuada') score += 1;
+    if(s.medicamentoPermanente === 'Sí') score += 1;
+    if(s.enfermedadDiagnosticada === 'Sí') score += 2;
+    if(s.ausenciasSalud === 'Más de 3 veces') score += 2;
+    else if(s.ausenciasSalud === '2 a 3 veces') score += 1;
+    if(s.impactoHabito === 'Afecta frecuentemente') score += 2;
+    else if(s.impactoHabito === 'Afecta ocasionalmente') score += 1;
+    return score;
+  }
+
+  function semaforoSalud(r){
+    const score = scoreSalud(r);
+    if(score >= 7) return {nivel:'Crítico', clase:'critico', detalle:'Atención prioritaria: revisar condición de salud, puesto y seguimiento confidencial.'};
+    if(score >= 5) return {nivel:'Alto', clase:'alto', detalle:'Atención alta: recomendable seguimiento preventivo de salud ocupacional.'};
+    if(score >= 2) return {nivel:'Moderado', clase:'moderado', detalle:'Atención preventiva: observar condición y posibles apoyos.'};
+    return {nivel:'Bajo', clase:'bajo', detalle:'Condición favorable según la información registrada.'};
+  }
+
+  function riskBadge(risk){
+    return `<span class="risk-pill ${risk.clase}" title="${escapeHtml(risk.detalle)}">${escapeHtml(risk.nivel)}</span>`;
+  }
+
+  function riesgoTexto(risk){
+    return `${risk.nivel} - ${risk.detalle}`;
+  }
+
+
+  function nivelClase(level){
+    if(level === 'Crítico' || level === 'Sobreendeudamiento severo') return 'critico';
+    if(level === 'Alto') return 'alto';
+    if(level === 'Moderado') return 'moderado';
+    return 'bajo';
+  }
+
+  function actionForPriority(tipo, nivel){
+    if(tipo === 'Financiero') return 'Revisión confidencial de presión económica y posibles apoyos preventivos.';
+    if(tipo === 'Laboral') return nivel === 'Crítico' ? 'Capacitación prioritaria y acompañamiento operativo inmediato.' : 'Refuerzo de capacitación y validación de capacidades operativas.';
+    if(tipo === 'Salud') return nivel === 'Crítico' ? 'Revisión confidencial prioritaria de salud ocupacional.' : 'Seguimiento preventivo de bienestar y condición física.';
+    if(tipo === 'Capacitación') return 'Programar inducción o refuerzo de capacitación inicial.';
+    if(tipo === 'Medicamento') return 'Validar de forma confidencial compatibilidad con funciones y horarios.';
+    return 'Seguimiento preventivo.';
+  }
+
+  function buildPriorityAlerts(rows){
+    const alerts = [];
+
+    rows.forEach(r=>{
+      const nombre = r.datosPersonales?.nombreCompleto || 'Sin nombre';
+      const empresa = r.datosPersonales?.empresa || '';
+      const ubicacion = r.datosPersonales?.ubicacion || '';
+
+      const finLevel = r.indicadores?.nivelPresionEconomica || 'Bajo';
+      if(['Crítico','Sobreendeudamiento severo'].includes(finLevel)){
+        alerts.push({
+          tipo:'Financiero',
+          nivel: finLevel,
+          clase: nivelClase(finLevel),
+          colaborador:nombre,
+          empresa,
+          ubicacion,
+          motivo:`Presión económica ${r.indicadores?.porcentajePresionEconomica || 0}% con carga mensual Q ${money(r.indicadores?.cargaMensualComprometida || 0)}.`,
+          accion: actionForPriority('Financiero', finLevel)
+        });
+      }
+
+      const labRisk = semaforoLaboral(r);
+      if(['Alto','Crítico'].includes(labRisk.nivel)){
+        alerts.push({
+          tipo:'Laboral',
+          nivel: labRisk.nivel,
+          clase: labRisk.clase,
+          colaborador:nombre,
+          empresa,
+          ubicacion,
+          motivo: labRisk.detalle,
+          accion: actionForPriority('Laboral', labRisk.nivel)
+        });
+      }
+
+      const salRisk = semaforoSalud(r);
+      if(['Alto','Crítico'].includes(salRisk.nivel)){
+        alerts.push({
+          tipo:'Salud',
+          nivel: salRisk.nivel,
+          clase: salRisk.clase,
+          colaborador:nombre,
+          empresa,
+          ubicacion,
+          motivo: `${salRisk.detalle}${r.salud?.detalleMedicamento ? ' Medicamento: ' + r.salud.detalleMedicamento + '.' : ''}`,
+          accion: actionForPriority('Salud', salRisk.nivel)
+        });
+      }
+
+      const cap = String(r.experiencia?.diasCapacitacionInicial ?? '').toLowerCase();
+      if(cap === '0' || cap.includes('ningún') || cap.includes('ningun')){
+        alerts.push({
+          tipo:'Capacitación',
+          nivel:'Alto',
+          clase:'alto',
+          colaborador:nombre,
+          empresa,
+          ubicacion,
+          motivo:'El colaborador reporta ningún día de capacitación inicial.',
+          accion: actionForPriority('Capacitación','Alto')
+        });
+      }
+
+      if(r.salud?.medicamentoPermanente === 'Sí'){
+        alerts.push({
+          tipo:'Medicamento',
+          nivel:'Moderado',
+          clase:'moderado',
+          colaborador:nombre,
+          empresa,
+          ubicacion,
+          motivo:`Consume medicamento permanente${r.salud?.detalleMedicamento ? ': ' + r.salud.detalleMedicamento : ''}.`,
+          accion: actionForPriority('Medicamento','Moderado')
+        });
+      }
+    });
+
+    const weight = {critico:4, alto:3, moderado:2, bajo:1};
+    return alerts.sort((a,b)=>(weight[b.clase]||0)-(weight[a.clase]||0));
+  }
+
+  function reportLevelForRow(r){
+    const finLevel = r.indicadores?.nivelPresionEconomica || 'Bajo';
+    const labRisk = semaforoLaboral(r);
+    const salRisk = semaforoSalud(r);
+
+    const weights = {
+      'Bajo': 1,
+      'Moderado': 2,
+      'Alto': 3,
+      'Crítico': 4,
+      'Sobreendeudamiento severo': 5
+    };
+
+    const candidates = [
+      {area:'Financiero', nivel:finLevel, clase:nivelClase(finLevel)},
+      {area:'Laboral', nivel:labRisk.nivel, clase:labRisk.clase},
+      {area:'Salud', nivel:salRisk.nivel, clase:salRisk.clase}
+    ];
+
+    candidates.sort((a,b)=>(weights[b.nivel] || 0) - (weights[a.nivel] || 0));
+    return candidates[0] || {area:'General', nivel:'Bajo', clase:'bajo'};
+  }
+
+  function reportActionForRow(r){
+    const global = reportLevelForRow(r);
+    if(global.nivel === 'Sobreendeudamiento severo' || global.nivel === 'Crítico'){
+      return 'Revisión prioritaria confidencial según el área con mayor alerta.';
+    }
+    if(global.nivel === 'Alto'){
+      return 'Seguimiento preventivo y revisión del área correspondiente.';
+    }
+    if(global.nivel === 'Moderado'){
+      return 'Observación general y seguimiento periódico.';
+    }
+    return 'Seguimiento normal.';
+  }
+
+
+  function getFilteredRowsForAnalysis(){
+    const q = String(document.getElementById('adminSearch')?.value || '').toLowerCase();
+    const lvl = document.getElementById('adminFilterLevel')?.value || '';
+
+    return recordsCache.filter(r=>{
+      const text = `${r.datosPersonales?.nombreCompleto||''} ${r.datosPersonales?.empresa||''} ${r.datosPersonales?.ubicacion||''}`.toLowerCase();
+      const matchText = !q || text.includes(q);
+      const matchLevel = !lvl || r.indicadores?.nivelPresionEconomica === lvl;
+      return matchText && matchLevel;
+    });
+  }
+
+  function setReportView(view){
+    reportView = view;
+    document.querySelectorAll('[data-report-view]').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.reportView === view);
+    });
+    renderPriorityAlerts(getFilteredRowsForAnalysis());
+  }
+
+  function renderPriorityCards(rows){
+    const grid = document.getElementById('priorityGrid');
+    if(!grid) return;
+
+    const stats = statsFromRows(rows);
+    const generalCrit = rows.filter(r=>['Crítico','Sobreendeudamiento severo'].includes(reportLevelForRow(r).nivel)).length;
+
+    if(reportView === 'financiero'){
+      grid.innerHTML = [
+        ['fin','Crítico / severo', stats.critico, 'Mayor presión económica'],
+        ['fin','Con deuda activa', stats.conDeuda, 'Reportan deuda vigente'],
+        ['fin','Sin ahorro', stats.sinAhorro, 'Sin respaldo de emergencia'],
+        ['fin','Con embargo / retención', stats.conProceso, 'Requiere revisión confidencial']
+      ].map(([cls,label,num,hint])=>`<div class="priority-card ${cls}"><div class="num">${num}</div><div class="label">${label}</div><div class="hint-small">${hint}</div></div>`).join('');
+      return;
+    }
+
+    if(reportView === 'laboral'){
+      grid.innerHTML = [
+        ['lab','Atención alta/crítica', stats.laboralAlto, 'Capacitación, experiencia o credenciales'],
+        ['cap','Sin capacitación', stats.capSin, 'Inducción requerida'],
+        ['lab','IRTRA pendiente', stats.irtraPendiente, 'Carné IRTRA no completo'],
+        ['lab','IGSS pendiente', stats.igssPendiente, 'Carné IGSS no completo'],
+        ['lab','DIGESSP pendiente', stats.digesspPendiente, 'Acreditación no completa']
+      ].map(([cls,label,num,hint])=>`<div class="priority-card ${cls}"><div class="num">${num}</div><div class="label">${label}</div><div class="hint-small">${hint}</div></div>`).join('');
+      return;
+    }
+
+    if(reportView === 'salud'){
+      grid.innerHTML = [
+        ['sal','Atención alta/crítica', stats.saludAlto, 'Salud o condición física'],
+        ['sal','Salud buena/excelente', stats.saludBuena, 'Condición favorable'],
+        ['med','Medicamento permanente', stats.medicamento, 'Seguimiento confidencial'],
+        ['sal','Condición física', stats.condicionFisica, 'Debe considerarse']
+      ].map(([cls,label,num,hint])=>`<div class="priority-card ${cls}"><div class="num">${num}</div><div class="label">${label}</div><div class="hint-small">${hint}</div></div>`).join('');
+      return;
+    }
+
+    grid.innerHTML = [
+      ['fin','Financiero crítico/severo', stats.critico, 'Presión económica'],
+      ['lab','Laboral alto/crítico', stats.laboralAlto, 'Capacitación, experiencia o credenciales'],
+      ['lab','Credenciales pendientes', stats.credencialesPendientes, 'IRTRA, IGSS o DIGESSP'],
+      ['sal','Salud alto/crítico', stats.saludAlto, 'Salud y condición física'],
+      ['cap','Atención global crítica', generalCrit, 'Prioridad máxima']
+    ].map(([cls,label,num,hint])=>`<div class="priority-card ${cls}"><div class="num">${num}</div><div class="label">${label}</div><div class="hint-small">${hint}</div></div>`).join('');
+  }
+
+  function renderPriorityAlerts(rows){
+    const table = document.getElementById('priorityTable');
+    const note = document.getElementById('reportModeNote');
+    if(!table) return;
+
+    renderPriorityCards(rows);
+
+    document.querySelectorAll('[data-report-view]').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.reportView === reportView);
+    });
+
+    if(note){
+      note.textContent = reportView === 'financiero'
+        ? 'Vista financiera: muestra cómo está cada colaborador en deuda, carga mensual, porcentaje de presión y nivel financiero.'
+        : reportView === 'laboral'
+          ? 'Vista laboral: muestra experiencia, armas, capacitación, credenciales IRTRA, IGSS, DIGESSP y semáforo laboral por colaborador.'
+          : reportView === 'salud'
+            ? 'Vista salud: muestra estado de salud, condición física, medicamento, detalle del medicamento y semáforo de salud por colaborador.'
+            : 'Vista general: estado financiero, laboral y de salud por colaborador en una sola línea. Los colores del detalle indican: verde todo bien, amarillo moderado, naranja alto y rojo crítico.';
+    }
+
+    if(!rows.length){
+      table.innerHTML = '<thead><tr><th>Sin registros</th></tr></thead><tbody><tr><td>No hay colaboradores registrados.</td></tr></tbody>';
+      return;
+    }
+
+    if(reportView === 'financiero'){
+      table.innerHTML = `<thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Carga mensual</th><th>% presión</th><th>Nivel financiero</th><th>Acción sugerida</th></tr></thead><tbody>` +
+        rows.map(r=>{
+          const ind = r.indicadores || {};
+          const level = ind.nivelPresionEconomica || 'Bajo';
+          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>Q ${money(ind.cargaMensualComprometida)}</td><td>${ind.porcentajePresionEconomica||0}%</td><td><span class="risk-pill ${nivelClase(level)}">${escapeHtml(level)}</span></td><td>${escapeHtml(actionForPriority('Financiero', level))}</td></tr>`;
+        }).join('') + '</tbody>';
+      table.classList.add('compact-table');
+      return;
+    }
+
+    if(reportView === 'laboral'){
+      table.innerHTML = `<thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Experiencia</th><th>Armas</th><th>Capacitación</th><th>IRTRA</th><th>IGSS</th><th>DIGESSP</th><th>Semáforo laboral</th><th>Acción sugerida</th></tr></thead><tbody>` +
+        rows.map(r=>{
+          const risk = semaforoLaboral(r);
+          const exp = r.experiencia || {};
+          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(exp.experienciaLaboral||'')}</td><td>${escapeHtml(armasTexto(exp.tipoArma))}</td><td>${escapeHtml(exp.diasCapacitacionInicial ?? '')}</td><td>${badgeCredencial(exp.carnetIrtra)}</td><td>${badgeCredencial(exp.carnetIgss)}</td><td>${badgeCredencial(exp.acreditacionDigessp)}</td><td><span class="risk-pill ${risk.clase}">${escapeHtml(risk.nivel)}</span></td><td>${escapeHtml(risk.detalle)}</td></tr>`;
+        }).join('') + '</tbody>';
+      table.classList.add('compact-table');
+      return;
+    }
+
+    if(reportView === 'salud'){
+      table.innerHTML = `<thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Estado salud</th><th>Condición física</th><th>Medicamento</th><th>Qué medicamento</th><th>Semáforo salud</th><th>Acción sugerida</th></tr></thead><tbody>` +
+        rows.map(r=>{
+          const risk = semaforoSalud(r);
+          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.salud?.estadoSalud||'')}</td><td>${escapeHtml(r.salud?.tieneCondicionFisica||'')}</td><td>${escapeHtml(r.salud?.medicamentoPermanente||'')}</td><td>${escapeHtml(r.salud?.detalleMedicamento||'')}</td><td><span class="risk-pill ${risk.clase}">${escapeHtml(risk.nivel)}</span></td><td>${escapeHtml(risk.detalle)}</td></tr>`;
+        }).join('') + '</tbody>';
+      table.classList.add('compact-table');
+      return;
+    }
+
+    table.innerHTML = `<thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Riesgo global</th><th>Estado por área</th><th>Acción sugerida</th></tr></thead><tbody>` +
+      rows.map(r=>{
+        const global = reportLevelForRow(r);
+        const finLevel = r.indicadores?.nivelPresionEconomica || 'Bajo';
+        const labRisk = semaforoLaboral(r);
+        const salRisk = semaforoSalud(r);
+        const cred = resumenCredencialesLaborales(r);
+        return `<tr>
+          <td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td>
+          <td>${escapeHtml(r.datosPersonales?.empresa||'')}</td>
+          <td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td>
+          <td><span class="risk-pill ${global.clase}">${escapeHtml(global.nivel)}</span><div class="summary-indicator">Mayor alerta: ${escapeHtml(global.area)}</div></td>
+          <td><div class="report-chip-row"><span class="mini-chip ${clasePorNivel(finLevel)}">Financiero: ${escapeHtml(finLevel)}</span><span class="mini-chip ${clasePorNivel(labRisk.nivel)}">Laboral: ${escapeHtml(labRisk.nivel)}</span><span class="mini-chip ${clasePorNivel(salRisk.nivel)}">Salud: ${escapeHtml(salRisk.nivel)}</span><span class="mini-chip ${claseCredencialesResumen(r)}">Credenciales: ${escapeHtml(cred)}</span></div></td>
+          <td>${escapeHtml(reportActionForRow(r))}</td>
+        </tr>`;
+      }).join('') + '</tbody>';
+    table.classList.add('compact-table');
+  }
+
+
 
 
   function percent(part,total){ return total ? Number(((part/total)*100).toFixed(1)) : 0; }
@@ -1021,16 +1559,74 @@ const firebaseConfig = {
     const sinAhorro = rows.filter(r=>r.finanzas?.ahorroEmergencia==='No').length;
     const alquiler = rows.filter(r=>r.vivienda?.tipoVivienda==='Alquilada').length;
     const critico = rows.filter(r=>['Crítico','Sobreendeudamiento severo'].includes(r.indicadores?.nivelPresionEconomica)).length;
+
+    const expSeg = rows.filter(r=>r.experiencia?.experienciaSeguridadPrivada==='Sí').length;
+    const expArmas = rows.filter(r=>r.experiencia?.experienciaArmas==='Sí').length;
+    const capSin = rows.filter(r=>{
+      const v = String(r.experiencia?.diasCapacitacionInicial ?? '').toLowerCase();
+      return v === '0' || v.includes('ningún') || v.includes('ningun');
+    }).length;
+    const capTresOMas = rows.filter(r=>{
+      const v = r.experiencia?.diasCapacitacionInicial;
+      const n = typeof v === 'number' ? v : Number(String(v ?? '').match(/\d+/)?.[0] || 0);
+      return n >= 3;
+    }).length;
+    const rotacionAlta = rows.filter(r=>r.experiencia?.empleosUltimosCincoAnios==='Más de 3 empleos').length;
+
+    const irtraTiene = rows.filter(r=>r.experiencia?.carnetIrtra==='Tiene').length;
+    const igssTiene = rows.filter(r=>r.experiencia?.carnetIgss==='Tiene').length;
+    const digesspTiene = rows.filter(r=>r.experiencia?.acreditacionDigessp==='Tiene').length;
+    const irtraPendiente = rows.filter(r=>credencialPendiente(r.experiencia?.carnetIrtra)).length;
+    const igssPendiente = rows.filter(r=>credencialPendiente(r.experiencia?.carnetIgss)).length;
+    const digesspPendiente = rows.filter(r=>credencialPendiente(r.experiencia?.acreditacionDigessp)).length;
+    const credencialesPendientes = rows.filter(r=>{
+      const exp = r.experiencia || {};
+      return credencialPendiente(exp.carnetIrtra) || credencialPendiente(exp.carnetIgss) || credencialPendiente(exp.acreditacionDigessp);
+    }).length;
+
+    const laboralAlto = rows.filter(r=>['Alto','Crítico'].includes(semaforoLaboral(r).nivel)).length;
+
+    const saludBuena = rows.filter(r=>['Excelente','Bueno'].includes(r.salud?.estadoSalud)).length;
+    const saludRegularDelicada = rows.filter(r=>['Regular','Delicado'].includes(r.salud?.estadoSalud)).length;
+    const condicionFisica = rows.filter(r=>r.salud?.tieneCondicionFisica==='Sí').length;
+    const medicamento = rows.filter(r=>r.salud?.medicamentoPermanente==='Sí').length;
+    const enfermedad = rows.filter(r=>r.salud?.enfermedadDiagnosticada==='Sí').length;
+    const actividadFrecuente = rows.filter(r=>['3 veces a la semana','4 veces a la semana','5 veces a la semana'].includes(r.salud?.actividadFisica)).length;
+    const saludAlto = rows.filter(r=>['Alto','Crítico'].includes(semaforoSalud(r).nivel)).length;
+
     return {
       total, conDeuda, conProceso, sinAhorro, alquiler, critico,
       conDeudaPct:percent(conDeuda,total), conProcesoPct:percent(conProceso,total),
       sinAhorroPct:percent(sinAhorro,total), alquilerPct:percent(alquiler,total), criticoPct:percent(critico,total),
+
+      expSeg, expArmas, capSin, capTresOMas, rotacionAlta, laboralAlto,
+      irtraTiene, igssTiene, digesspTiene, irtraPendiente, igssPendiente, digesspPendiente, credencialesPendientes,
+      expSegPct:percent(expSeg,total), expArmasPct:percent(expArmas,total),
+      capSinPct:percent(capSin,total), capTresOMasPct:percent(capTresOMas,total), rotacionAltaPct:percent(rotacionAlta,total), laboralAltoPct:percent(laboralAlto,total),
+      irtraTienePct:percent(irtraTiene,total), igssTienePct:percent(igssTiene,total), digesspTienePct:percent(digesspTiene,total),
+      irtraPendientePct:percent(irtraPendiente,total), igssPendientePct:percent(igssPendiente,total), digesspPendientePct:percent(digesspPendiente,total), credencialesPendientesPct:percent(credencialesPendientes,total),
+
+      saludBuena, saludRegularDelicada, condicionFisica, medicamento, enfermedad, actividadFrecuente, saludAlto,
+      saludBuenaPct:percent(saludBuena,total), saludRegularDelicadaPct:percent(saludRegularDelicada,total),
+      condicionFisicaPct:percent(condicionFisica,total), medicamentoPct:percent(medicamento,total),
+      enfermedadPct:percent(enfermedad,total), actividadFrecuentePct:percent(actividadFrecuente,total), saludAltoPct:percent(saludAlto,total),
+
       vivienda:countBy(rows,r=>r.vivienda?.tipoVivienda),
       presion:countBy(rows,r=>r.indicadores?.nivelPresionEconomica),
       ahorro:countBy(rows,r=>r.finanzas?.ahorroEmergencia==='Sí'?'Con ahorro':(r.finanzas?.ahorroEmergencia==='No'?'Sin ahorro':'Sin dato')),
       salud:countBy(rows,r=>r.salud?.estadoSalud),
       transporte:countBy(rows,r=>r.traslado?.medioTransporte),
-      traslado:countBy(rows,r=>r.traslado?.tiempoTraslado)
+      traslado:countBy(rows,r=>r.traslado?.tiempoTraslado),
+      experienciaLaboral:countBy(rows,r=>r.experiencia?.experienciaLaboral),
+      seguridadPrivada:countBy(rows,r=>r.experiencia?.experienciaSeguridadPrivada),
+      armas:countBy(rows,r=>armasTexto(r.experiencia?.tipoArma)),
+      capacitacion:countBy(rows,r=>r.experiencia?.diasCapacitacionInicial),
+      carnetIrtra:countBy(rows,r=>r.experiencia?.carnetIrtra),
+      carnetIgss:countBy(rows,r=>r.experiencia?.carnetIgss),
+      acreditacionDigessp:countBy(rows,r=>r.experiencia?.acreditacionDigessp),
+      condicionPuesto:countBy(rows,r=>r.salud?.condicionFisicaPuesto),
+      actividadFisica:countBy(rows,r=>r.salud?.actividadFisica),
+      medicamentoUso:countBy(rows,r=>r.salud?.medicamentoPermanente)
     };
   }
 
@@ -1208,31 +1804,171 @@ const firebaseConfig = {
       ctx.fillText(meta, x+18, y+20);
     });
   }
+  function setExecutiveView(view){
+    executiveView = view;
+    document.querySelectorAll('[data-executive-view]').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.executiveView === view);
+    });
+    renderExecutiveNarrative(recordsCache, statsFromRows(recordsCache));
+  }
+
+  function setTableView(view){
+    tableView = view;
+    document.querySelectorAll('[data-table-view]').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.tableView === view);
+    });
+    renderTable();
+  }
+
+  function setExecutiveView(view){
+    executiveView = view;
+    document.querySelectorAll('[data-executive-view]').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.executiveView === view);
+    });
+    renderExecutiveNarrative(recordsCache, statsFromRows(recordsCache));
+  }
+
+  function setTableView(view){
+    tableView = view;
+    document.querySelectorAll('[data-table-view]').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.tableView === view);
+    });
+    renderTable();
+  }
+
+  function setExecutiveView(view){
+    executiveView = view;
+    document.querySelectorAll('[data-executive-view]').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.executiveView === view);
+    });
+    renderExecutiveNarrative(recordsCache, statsFromRows(recordsCache));
+  }
+
+  function setTableView(view){
+    tableView = view;
+    document.querySelectorAll('[data-table-view]').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.tableView === view);
+    });
+    renderTable();
+  }
+
   function renderExecutiveNarrative(rows,stats){
     const el = document.getElementById('executiveNarrative');
-    if(el){
-      el.innerHTML = `
-        <h4>Resumen ejecutivo</h4>
-        <p style="margin:0 0 10px;color:#334155;line-height:1.55">El sistema calcula los porcentajes dividiendo la cantidad de casos identificados entre el total de encuestas válidas y multiplicando el resultado por 100. La presión económica se estima sumando <strong>deuda mensual + alquiler + descuento por embargo o retención</strong> y comparando ese total contra el salario mínimo de referencia configurado.</p>
-        <ul class="info-list">
-          <li><strong>${stats.conDeudaPct}%</strong> del personal encuestado reporta deuda activa.</li>
-          <li><strong>${stats.alquilerPct}%</strong> reporta vivienda alquilada y genera carga mensual por alquiler.</li>
-          <li><strong>${stats.conProcesoPct}%</strong> registra demandas, embargos o retenciones económicas.</li>
-          <li><strong>${stats.sinAhorroPct}%</strong> no cuenta con ahorro de emergencia.</li>
-          <li><strong>${stats.criticoPct}%</strong> presenta presión económica crítica o sobreendeudamiento severo.</li>
-        </ul>`;
-    }
     const mx = document.getElementById('riskMatrixBox');
+
+    if(el){
+      if(executiveView === 'laboral'){
+        el.innerHTML = `
+          <div class="executive-hero"><h4>Resumen laboral y capacidades</h4><p>Identifica experiencia, capacitación, manejo de armas y trayectoria operativa del personal encuestado.</p></div>
+          <div class="mini-kpi-grid">
+            <div class="mini-kpi"><div class="value">${stats.expSegPct}%</div><div class="caption">Experiencia seguridad privada</div></div>
+            <div class="mini-kpi"><div class="value">${stats.expArmasPct}%</div><div class="caption">Experiencia en armas</div></div>
+            <div class="mini-kpi"><div class="value">${stats.laboralAltoPct}%</div><div class="caption">Atención laboral alta/crítica</div></div>
+          </div>
+          <ul class="insight-list">
+            <li><strong>${stats.capSin}</strong> colaboradores indican no haber recibido capacitación inicial.</li>
+            <li><strong>${stats.capTresOMas}</strong> colaboradores tienen 3 o más días de capacitación inicial.</li>
+            <li><strong>${stats.rotacionAlta}</strong> colaboradores reportan más de 3 empleos en los últimos 5 años.</li>
+            <li><strong>${stats.laboralAlto}</strong> colaboradores requieren atención laboral alta o crítica.</li>
+          </ul>
+          <div class="methodology-card">
+            <h5>Cómo se calcula el semáforo laboral</h5>
+            <ul>
+              <li>Ningún día de capacitación o 0 días suma 3 puntos; 1 a 2 días suma 2; 3 a 5 días suma 1.</li>
+              <li>No tener experiencia en seguridad privada suma 2 puntos.</li>
+              <li>No tener experiencia en manejo de armas suma 1 punto.</li>
+              <li>Menos de 1 año de experiencia laboral suma 2 puntos.</li>
+              <li>Más de 3 empleos en los últimos 5 años suma 1 punto.</li><li>DIGESSP pendiente suma 2 puntos; IGSS pendiente suma 1 punto; IRTRA sin gestión suma 1 punto.</li>
+            </ul>
+          </div>`;
+      }else if(executiveView === 'salud'){
+        el.innerHTML = `
+          <div class="executive-hero"><h4>Resumen de salud y condición física</h4><p>Visualiza estado de salud, actividad física, medicamentos y condiciones físicas relevantes para bienestar operativo.</p></div>
+          <div class="mini-kpi-grid">
+            <div class="mini-kpi"><div class="value">${stats.saludBuenaPct}%</div><div class="caption">Salud excelente o buena</div></div>
+            <div class="mini-kpi"><div class="value">${stats.medicamentoPct}%</div><div class="caption">Medicamento permanente</div></div>
+            <div class="mini-kpi"><div class="value">${stats.saludAltoPct}%</div><div class="caption">Atención salud alta/crítica</div></div>
+          </div>
+          <ul class="insight-list">
+            <li><strong>${stats.saludRegularDelicada}</strong> colaboradores reportan estado de salud regular o delicado.</li>
+            <li><strong>${stats.condicionFisica}</strong> colaboradores reportan una condición física que debe considerarse.</li>
+            <li><strong>${stats.medicamento}</strong> colaboradores consumen medicamento de uso permanente.</li>
+            <li><strong>${stats.saludAlto}</strong> colaboradores requieren atención de salud alta o crítica.</li>
+          </ul>
+          <div class="methodology-card">
+            <h5>Cómo se calcula el semáforo de salud</h5>
+            <ul>
+              <li>Estado de salud delicado suma 4 puntos; regular suma 2.</li>
+              <li>Tener condición física suma 2 puntos.</li>
+              <li>Condición física limitada para el puesto suma 3; parcialmente adecuada suma 1.</li>
+              <li>Medicamento permanente suma 1 punto y enfermedad diagnosticada suma 2.</li>
+              <li>Ausencias por salud y hábitos que afectan el desempeño también suman puntos preventivos.</li>
+            </ul>
+          </div>`;
+      }else{
+        el.innerHTML = `
+          <div class="executive-hero"><h4>Resumen financiero preventivo</h4><p>Consolida deuda, alquiler, descuentos judiciales y nivel de presión económica para auditoría preventiva.</p></div>
+          <div class="mini-kpi-grid">
+            <div class="mini-kpi"><div class="value">${stats.conDeudaPct}%</div><div class="caption">Con deuda activa</div></div>
+            <div class="mini-kpi"><div class="value">${stats.conProcesoPct}%</div><div class="caption">Con demanda, embargo o retención</div></div>
+            <div class="mini-kpi"><div class="value">${stats.criticoPct}%</div><div class="caption">Presión crítica o severa</div></div>
+          </div>
+          <p style="margin:0 0 10px;color:#334155;line-height:1.55">La presión económica se estima sumando <strong>deuda mensual + alquiler + descuento por embargo o retención</strong> y comparando ese total contra el salario mínimo de referencia configurado.</p>
+          <ul class="insight-list">
+            <li><strong>${stats.conDeudaPct}%</strong> del personal encuestado reporta deuda activa.</li>
+            <li><strong>${stats.alquilerPct}%</strong> reporta vivienda alquilada y genera carga mensual por alquiler.</li>
+            <li><strong>${stats.sinAhorroPct}%</strong> no cuenta con ahorro de emergencia.</li>
+            <li><strong>${stats.criticoPct}%</strong> presenta presión económica crítica o sobreendeudamiento severo.</li>
+          </ul>
+          <div class="methodology-card">
+            <h5>Cómo se calcula la presión económica</h5>
+            <ul>
+              <li>Se suma deuda mensual, alquiler y descuento por embargo o retención.</li>
+              <li>La carga mensual se compara contra el salario mínimo de referencia configurado.</li>
+              <li>0 a 20% se considera bajo; 21 a 40% moderado; 41 a 60% alto; 61 a 100% crítico; más de 100% sobreendeudamiento severo.</li>
+            </ul>
+          </div>`;
+      }
+    }
+
     if(mx){
-      mx.innerHTML = `
-        <h4>Matriz de riesgo</h4>
-        <table><thead><tr><th>Impacto / Probabilidad</th><th>Baja</th><th>Media</th><th>Alta</th></tr></thead><tbody>
-        <tr><th>Bajo impacto</th><td class="risk-low">Bajo</td><td class="risk-low">Bajo</td><td class="risk-mod">Moderado</td></tr>
-        <tr><th>Impacto medio</th><td class="risk-low">Bajo</td><td class="risk-mod">Moderado</td><td class="risk-high">Alto</td></tr>
-        <tr><th>Alto impacto</th><td class="risk-mod">Moderado</td><td class="risk-high">Alto</td><td class="risk-crit">Crítico</td></tr>
-        <tr><th>Impacto severo</th><td class="risk-high">Alto</td><td class="risk-crit">Crítico</td><td class="risk-severe">Severo</td></tr>
-        </tbody></table>
-        <p style="margin:10px 0 0;color:#475569;line-height:1.5">La matriz se interpreta de forma preventiva: Bajo sin acción especial, Moderado observación general, Alto seguimiento preventivo, Crítico revisión prioritaria y Severo seguimiento confidencial inmediato.</p>`;
+      if(executiveView === 'laboral'){
+        mx.innerHTML = `
+          <h4>Semáforo laboral</h4>
+          <table><thead><tr><th>Nivel</th><th>Puntaje</th><th>Acción sugerida</th></tr></thead><tbody>
+          <tr><td><span class="risk-pill bajo">Bajo</span></td><td>0 a 1 punto</td><td>Seguimiento normal</td></tr>
+          <tr><td><span class="risk-pill moderado">Moderado</span></td><td>2 a 3 puntos</td><td>Refuerzo preventivo</td></tr>
+          <tr><td><span class="risk-pill alto">Alto</span></td><td>4 a 5 puntos</td><td>Capacitación prioritaria</td></tr>
+          <tr><td><span class="risk-pill critico">Crítico</span></td><td>6 puntos o más</td><td>Revisión inmediata y acompañamiento</td></tr>
+          </tbody></table>
+          <div class="score-grid">
+            <div class="score-box"><strong>Objetivo</strong><p>Identificar brechas de capacitación, experiencia operativa y manejo de armas.</p></div>
+            <div class="score-box"><strong>Uso correcto</strong><p>Sirve para planificar capacitación y seguimiento, no para sanción automática.</p></div>
+          </div>`;
+      }else if(executiveView === 'salud'){
+        mx.innerHTML = `
+          <h4>Semáforo de salud</h4>
+          <table><thead><tr><th>Nivel</th><th>Puntaje</th><th>Acción sugerida</th></tr></thead><tbody>
+          <tr><td><span class="risk-pill bajo">Bajo</span></td><td>0 a 1 punto</td><td>Seguimiento normal</td></tr>
+          <tr><td><span class="risk-pill moderado">Moderado</span></td><td>2 a 4 puntos</td><td>Observación general</td></tr>
+          <tr><td><span class="risk-pill alto">Alto</span></td><td>5 a 6 puntos</td><td>Seguimiento preventivo</td></tr>
+          <tr><td><span class="risk-pill critico">Crítico</span></td><td>7 puntos o más</td><td>Revisión confidencial prioritaria</td></tr>
+          </tbody></table>
+          <div class="score-grid">
+            <div class="score-box"><strong>Objetivo</strong><p>Identificar condiciones que puedan requerir apoyo, prevención o revisión de puesto.</p></div>
+            <div class="score-box"><strong>Uso correcto</strong><p>La información debe manejarse de forma confidencial y preventiva.</p></div>
+          </div>`;
+      }else{
+        mx.innerHTML = `
+          <h4>Matriz de riesgo</h4>
+          <table><thead><tr><th>Impacto / Probabilidad</th><th>Baja</th><th>Media</th><th>Alta</th></tr></thead><tbody>
+          <tr><th>Bajo impacto</th><td class="risk-low">Bajo</td><td class="risk-low">Bajo</td><td class="risk-mod">Moderado</td></tr>
+          <tr><th>Impacto medio</th><td class="risk-low">Bajo</td><td class="risk-mod">Moderado</td><td class="risk-high">Alto</td></tr>
+          <tr><th>Alto impacto</th><td class="risk-mod">Moderado</td><td class="risk-high">Alto</td><td class="risk-crit">Crítico</td></tr>
+          <tr><th>Impacto severo</th><td class="risk-high">Alto</td><td class="risk-crit">Crítico</td><td class="risk-severe">Severo</td></tr>
+          </tbody></table>
+          <p style="margin:10px 0 0;color:#475569;line-height:1.5">La matriz se interpreta de forma preventiva: Bajo sin acción especial, Moderado observación general, Alto seguimiento preventivo, Crítico revisión prioritaria y Severo seguimiento confidencial inmediato.</p>`;
+      }
     }
   }
   function renderCharts(rows){
@@ -1317,8 +2053,58 @@ const firebaseConfig = {
   }
 
   function exportExcel(){
-    const rows = getExportRows(), stats = statsFromRows(rows), base = rows.map(flattenRecord);
-    const finanzas = rows.map(r=>({Colaborador:r.datosPersonales?.nombreCompleto||'',Empresa:r.datosPersonales?.empresa||'',Ubicación:r.datosPersonales?.ubicacion||'','Deuda mensual':r.indicadores?.pagoMensualDeuda||0,'Alquiler mensual':r.indicadores?.pagoMensualAlquiler||0,'Descuento judicial':r.indicadores?.descuentoJudicial||0,'Carga mensual':r.indicadores?.cargaMensualComprometida||0,'% presión':r.indicadores?.porcentajePresionEconomica||0,Nivel:r.indicadores?.nivelPresionEconomica||''}));
+    const rows = getExportRows();
+    const stats = statsFromRows(rows);
+    const base = rows.map(flattenRecord);
+
+    const finanzas = rows.map(r=>({
+      Colaborador:r.datosPersonales?.nombreCompleto||'',
+      Empresa:r.datosPersonales?.empresa||'',
+      Ubicación:r.datosPersonales?.ubicacion||'',
+      'Deuda mensual':r.indicadores?.pagoMensualDeuda||0,
+      'Alquiler mensual':r.indicadores?.pagoMensualAlquiler||0,
+      'Descuento judicial':r.indicadores?.descuentoJudicial||0,
+      'Carga mensual':r.indicadores?.cargaMensualComprometida||0,
+      '% presión':r.indicadores?.porcentajePresionEconomica||0,
+      Nivel:r.indicadores?.nivelPresionEconomica||''
+    }));
+
+    const laboral = rows.map(r=>({
+      Colaborador:r.datosPersonales?.nombreCompleto||'',
+      Empresa:r.datosPersonales?.empresa||'',
+      Ubicación:r.datosPersonales?.ubicacion||'',
+      'Experiencia laboral':r.experiencia?.experienciaLaboral||'',
+      'Antigüedad empresa':r.experiencia?.antiguedadEmpresa||'',
+      'Empleos últimos 5 años':r.experiencia?.empleosUltimosCincoAnios||'',
+      'Experiencia en armas':r.experiencia?.experienciaArmas||'',
+      'Tipo de arma':armasTexto(r.experiencia?.tipoArma),
+      'Experiencia seguridad privada':r.experiencia?.experienciaSeguridadPrivada||'',
+      'Años seguridad privada':r.experiencia?.aniosSeguridadPrivada ?? '',
+      'Empresas seguridad privada':r.experiencia?.empresasSeguridadPrivada||'',
+      'Días capacitación inicial':r.experiencia?.diasCapacitacionInicial ?? '',
+      'Carné IRTRA':r.experiencia?.carnetIrtra || '',
+      'Carné IGSS':r.experiencia?.carnetIgss || '',
+      'Acreditación DIGESSP':r.experiencia?.acreditacionDigessp || '',
+      'Semáforo laboral':semaforoLaboral(r).nivel,
+      'Detalle semáforo laboral':semaforoLaboral(r).detalle
+    }));
+
+    const salud = rows.map(r=>({
+      Colaborador:r.datosPersonales?.nombreCompleto||'',
+      Empresa:r.datosPersonales?.empresa||'',
+      Ubicación:r.datosPersonales?.ubicacion||'',
+      'Estado de salud':r.salud?.estadoSalud||'',
+      'Condición física':r.salud?.tieneCondicionFisica||'',
+      'Detalle condición física':r.salud?.detalleCondicionFisica||'',
+      'Condición física para puesto':r.salud?.condicionFisicaPuesto||'',
+      'Actividad física':r.salud?.actividadFisica||'',
+      'Medicamento permanente':r.salud?.medicamentoPermanente||'',
+      'Detalle medicamento':r.salud?.detalleMedicamento||'',
+      'Enfermedad diagnosticada':r.salud?.enfermedadDiagnosticada||'',
+      'Ausencias salud':r.salud?.ausenciasSalud||'',
+      'Semáforo salud':semaforoSalud(r).nivel,
+      'Detalle semáforo salud':semaforoSalud(r).detalle
+    }));
 
     function xmlEscape(v){
       return String(v ?? '').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&apos;','"':'&quot;'}[c]));
@@ -1350,26 +2136,19 @@ const firebaseConfig = {
       out += pairs.map(p=>rowXml([[p[0],'Cell'],[p[1],'Cell']], 20)).join('');
       return out;
     }
-    function riskStyle(v){
-      if(v === 'Bajo') return 'RiskLow';
-      if(v === 'Moderado') return 'RiskMod';
-      if(v === 'Alto') return 'RiskHigh';
-      if(v === 'Crítico') return 'RiskCrit';
-      if(v === 'Severo') return 'RiskSevere';
-      return 'Cell';
-    }
     function matrixRows(matrix){
-      return matrix.map((r,idx)=>rowXml(r.map((v,j)=>[v, idx===0 ? 'Header' : (j===0 ? 'Cell' : riskStyle(v))]), 22)).join('');
+      return matrix.map((r,idx)=>rowXml(r.map((v,j)=>[v, idx===0 ? 'Header' : 'Cell']), 22)).join('');
     }
     function columnsXml(count){
-      const widths = [145,190,85,130,110,130,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150];
+      const widths = [145,190,120,130,140,150,150,150,150,150,160,180,180,180,180,180,180,180,180,180,180,180,180,180,180,180,180,180,180,180];
       let out = '';
-      for(let i=0;i<Math.max(count,1);i++) out += `<Column ss:AutoFitWidth="0" ss:Width="${widths[i] || 130}"/>`;
+      for(let i=0;i<Math.max(count,1);i++) out += `<Column ss:AutoFitWidth="0" ss:Width="${widths[i] || 140}"/>`;
       return out;
     }
     function worksheet(name, rowsXml, colCount){
-      return `<Worksheet ss:Name="${xmlEscape(sheetName(name))}"><Table>${columnsXml(colCount)}${rowsXml}</Table><WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel"><Selected/><FreezePanes/><FrozenNoSplit/><SplitHorizontal>1</SplitHorizontal><TopRowBottomPane>1</TopRowBottomPane><ActivePane>2</ActivePane></WorksheetOptions></Worksheet>`;
+      return `<Worksheet ss:Name="${xmlEscape(sheetName(name))}"><Table>${columnsXml(colCount)}${rowsXml}</Table><WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel"><FreezePanes/><FrozenNoSplit/><SplitHorizontal>1</SplitHorizontal><TopRowBottomPane>1</TopRowBottomPane><ActivePane>2</ActivePane></WorksheetOptions></Worksheet>`;
     }
+
     const portada = [
       ['Reporte','Excel completo de auditoría y análisis gerencial'],
       ['Fecha',new Date().toLocaleString()],
@@ -1377,7 +2156,8 @@ const firebaseConfig = {
       ['Salario mínimo referencia',`Q ${money(getSalaryRef())}`],
       ['Carácter','Confidencial']
     ];
-    const resumen = [
+
+    const resumenFinanciero = [
       ['Indicador','Cantidad','Porcentaje'],
       ['Con deuda activa',stats.conDeuda,`${stats.conDeudaPct}%`],
       ['Con demanda, embargo o retención',stats.conProceso,`${stats.conProcesoPct}%`],
@@ -1385,56 +2165,73 @@ const firebaseConfig = {
       ['Vivienda alquilada',stats.alquiler,`${stats.alquilerPct}%`],
       ['Presión crítica o severa',stats.critico,`${stats.criticoPct}%`]
     ];
+
+    const resumenLaboral = [
+      ['Indicador','Cantidad','Porcentaje'],
+      ['Experiencia en seguridad privada',stats.expSeg,`${stats.expSegPct}%`],
+      ['Experiencia en manejo de armas',stats.expArmas,`${stats.expArmasPct}%`],
+      ['3 o más días de capacitación',stats.capTresOMas,`${stats.capTresOMasPct}%`],
+      ['Sin capacitación inicial',stats.capSin,`${stats.capSinPct}%`],
+      ['Más de 3 empleos en últimos 5 años',stats.rotacionAlta,`${stats.rotacionAltaPct}%`],
+      ['Atención laboral alta o crítica',stats.laboralAlto,`${stats.laboralAltoPct}%`]
+    ];
+
+    const resumenSalud = [
+      ['Indicador','Cantidad','Porcentaje'],
+      ['Salud excelente o buena',stats.saludBuena,`${stats.saludBuenaPct}%`],
+      ['Salud regular o delicada',stats.saludRegularDelicada,`${stats.saludRegularDelicadaPct}%`],
+      ['Condición física reportada',stats.condicionFisica,`${stats.condicionFisicaPct}%`],
+      ['Medicamento permanente',stats.medicamento,`${stats.medicamentoPct}%`],
+      ['Actividad física 3 a 5 veces por semana',stats.actividadFrecuente,`${stats.actividadFrecuentePct}%`],
+      ['Atención salud alta o crítica',stats.saludAlto,`${stats.saludAltoPct}%`]
+    ];
+
     const metodologia = [
       ['Elemento','Descripción'],
       ['Porcentajes','Cantidad de casos identificados / total de encuestas válidas × 100'],
       ['Presión económica','(deuda mensual + alquiler + descuento judicial) / salario mínimo de referencia × 100'],
-      ['Bajo','0% a 20%: carga controlada'],
-      ['Moderado','21% a 40%: compromisos manejables'],
-      ['Alto','41% a 60%: presión relevante'],
-      ['Crítico','61% a 100%: mayor parte del ingreso comprometida'],
-      ['Sobreendeudamiento severo','Más de 100%: la carga supera el salario de referencia']
+      ['Resumen financiero','Evalúa deuda, alquiler, descuento judicial, ahorro y nivel de presión económica.'],
+      ['Resumen laboral','Evalúa experiencia, capacitación, manejo de armas y capacidades operativas.'],
+      ['Resumen salud','Evalúa estado general, condición física, medicamento permanente y actividad física.']
     ];
-    const matriz = [
-      ['Impacto / Probabilidad','Baja','Media','Alta'],
-      ['Bajo impacto','Bajo','Bajo','Moderado'],
-      ['Impacto medio','Bajo','Moderado','Alto'],
-      ['Alto impacto','Moderado','Alto','Crítico'],
-      ['Impacto severo','Alto','Crítico','Severo']
-    ];
+
     let resumenSheet = rowXml([['Sistema Confidencial de Evaluación del Colaborador','Title',3]], 32) + blankRow();
     resumenSheet += sectionRow('Portada ejecutiva',4) + pairTableRows(portada) + blankRow();
-    resumenSheet += sectionRow('Resumen general',4) + matrixRows(resumen) + blankRow();
-    resumenSheet += sectionRow('Metodología de cálculo',4) + matrixRows(metodologia) + blankRow();
-    resumenSheet += sectionRow('Matriz de riesgo',4) + matrixRows(matriz);
+    resumenSheet += sectionRow('Resumen financiero',4) + matrixRows(resumenFinanciero) + blankRow();
+    resumenSheet += sectionRow('Resumen laboral y capacidades',4) + matrixRows(resumenLaboral) + blankRow();
+    resumenSheet += sectionRow('Resumen salud y condición física',4) + matrixRows(resumenSalud) + blankRow();
+    resumenSheet += sectionRow('Metodología',4) + matrixRows(metodologia);
 
     const baseCols = base.length ? Object.keys(base[0]).length : 2;
     const finCols = finanzas.length ? Object.keys(finanzas[0]).length : 2;
+    const labCols = laboral.length ? Object.keys(laboral[0]).length : 2;
+    const salCols = salud.length ? Object.keys(salud[0]).length : 2;
+
     let baseSheet = sectionRow('Base completa',baseCols) + objectTableRows(base);
     let finSheet = sectionRow('Análisis financiero',finCols) + objectTableRows(finanzas);
+    let labSheet = sectionRow('Resumen laboral y capacidades',labCols) + objectTableRows(laboral);
+    let salSheet = sectionRow('Resumen salud y condición física',salCols) + objectTableRows(salud);
 
     const xmlExcel = `<?xml version="1.0"?><?mso-application progid="Excel.Sheet"?>
 <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
 <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office"><Title>Sistema Confidencial de Evaluación del Colaborador</Title><Author>Sistema Encuesta Colaborador</Author><Created>${new Date().toISOString()}</Created></DocumentProperties>
 <Styles>
 <Style ss:ID="Default" ss:Name="Normal"><Font ss:FontName="Arial" ss:Size="10" ss:Color="#1f2937"/><Alignment ss:Vertical="Top"/></Style>
-<Style ss:ID="Title"><Font ss:FontName="Arial" ss:Bold="1" ss:Size="18" ss:Color="#FFFFFF"/><Interior ss:Color="#0b2239" ss:Pattern="Solid"/><Alignment ss:Vertical="Center"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#0b2239"/></Borders></Style>
+<Style ss:ID="Title"><Font ss:FontName="Arial" ss:Bold="1" ss:Size="18" ss:Color="#FFFFFF"/><Interior ss:Color="#0b2239" ss:Pattern="Solid"/><Alignment ss:Vertical="Center"/></Style>
 <Style ss:ID="Section"><Font ss:FontName="Arial" ss:Bold="1" ss:Size="16" ss:Color="#0f5f7a"/><Alignment ss:Vertical="Center"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2" ss:Color="#d6a21f"/></Borders></Style>
 <Style ss:ID="Header"><Font ss:FontName="Arial" ss:Bold="1" ss:Size="10" ss:Color="#FFFFFF"/><Interior ss:Color="#0f5f7a" ss:Pattern="Solid"/><Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/></Borders></Style>
 <Style ss:ID="Cell"><Font ss:FontName="Arial" ss:Size="10" ss:Color="#1f2937"/><Alignment ss:Vertical="Top" ss:WrapText="1"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/></Borders></Style>
-<Style ss:ID="RiskLow"><Font ss:FontName="Arial" ss:Size="10" ss:Color="#1f2937"/><Interior ss:Color="#dcfce7" ss:Pattern="Solid"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/></Borders></Style>
-<Style ss:ID="RiskMod"><Font ss:FontName="Arial" ss:Size="10" ss:Color="#1f2937"/><Interior ss:Color="#fef9c3" ss:Pattern="Solid"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/></Borders></Style>
-<Style ss:ID="RiskHigh"><Font ss:FontName="Arial" ss:Size="10" ss:Color="#1f2937"/><Interior ss:Color="#fed7aa" ss:Pattern="Solid"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/></Borders></Style>
-<Style ss:ID="RiskCrit"><Font ss:FontName="Arial" ss:Size="10" ss:Color="#1f2937"/><Interior ss:Color="#fecaca" ss:Pattern="Solid"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/></Borders></Style>
-<Style ss:ID="RiskSevere"><Font ss:FontName="Arial" ss:Size="10" ss:Color="#1f2937"/><Interior ss:Color="#fca5a5" ss:Pattern="Solid"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/><Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#b7c5d3"/></Borders></Style>
 </Styles>
 ${worksheet('Resumen ejecutivo',resumenSheet,4)}
 ${worksheet('Base completa',baseSheet,baseCols)}
-${worksheet('Análisis financiero',finSheet,finCols)}
+${worksheet('Financiero',finSheet,finCols)}
+${worksheet('Laboral',labSheet,labCols)}
+${worksheet('Salud',salSheet,salCols)}
 </Workbook>`;
+
     downloadBlob('Base_Completa_Auditoria_Encuesta_Colaborador.xls', xmlExcel, 'application/vnd.ms-excel;charset=utf-8;');
   }
-  function hallazgosTexto(stats){
+    function hallazgosTexto(stats){
     const list=[];
     if(stats.conDeuda) list.push(`Se identificó que ${stats.conDeudaPct}% del personal encuestado reporta deuda activa.`);
     if(stats.sinAhorro) list.push(`El ${stats.sinAhorroPct}% indicó no contar con ahorro de emergencia.`);
@@ -1445,21 +2242,156 @@ ${worksheet('Análisis financiero',finSheet,finCols)}
   }
   function chartImg(id){ const c=document.getElementById(id); try{return c?c.toDataURL('image/png'):''}catch(e){return ''} }
   function exportPdf(){
-    const rows=getExportRows(), stats=statsFromRows(rows);
-    const cb=(title,img)=>img?`<div class="chart"><h4>${title}</h4><img src="${img}"></div>`:`<div class="chart"><h4>${title}</h4><p>Gráfica disponible en dashboard.</p></div>`;
-    const report = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Reporte Ejecutivo Gerencial</title><style>@page{size:A4;margin:14mm}body{font-family:Arial;color:#1f2937}.printbar{position:sticky;top:0;background:#0b2239;color:white;padding:10px;text-align:center}.printbar button{background:#0f9b8e;color:white;border:0;border-radius:8px;padding:10px 16px;font-weight:bold}.cover{padding:28px;border-radius:22px;background:linear-gradient(135deg,#0b2239,#145f82,#0f9b8e);color:#fff;margin-bottom:22px}.cover h1{margin:0 0 10px}.section{border:1px solid #e5e7eb;border-radius:18px;padding:18px;margin-bottom:18px;break-inside:avoid}h2{color:#0b2239}h3{color:#145f82}p,li{font-size:13px;line-height:1.52;color:#334155}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.kpi{border:1px solid #dbeafe;background:#f8fbff;border-radius:14px;padding:12px}.kpi .n{font-size:24px;font-weight:900;color:#145f82}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border:1px solid #d1d5db;padding:8px}th{background:#eff6ff}.risk-low{background:#dcfce7}.risk-mod{background:#fef9c3}.risk-high{background:#fed7aa}.risk-crit{background:#fecaca}.risk-severe{background:#fca5a5}.charts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.chart{border:1px solid #e5e7eb;border-radius:14px;padding:10px}.chart img{width:100%}@media print{.printbar{display:none}}</style></head><body>
-      <div class="printbar"><button onclick="window.print()">Guardar / Imprimir PDF</button><span style="margin-left:10px">Selecciona “Guardar como PDF”.</span></div>
-      <section class="cover"><h1>Reporte Ejecutivo Gerencial</h1><p><strong>Sistema Confidencial de Evaluación Integral del Colaborador</strong></p><p>Documento ejecutivo para gerencia, auditoría preventiva y planificación operativa.</p><p><strong>Fecha:</strong> ${new Date().toLocaleString()}</p><p><strong>Salario mínimo referencia:</strong> Q ${money(getSalaryRef())}</p></section>
-      <section class="section"><h2>1. Resumen ejecutivo</h2><p>Este reporte consolida la información recopilada mediante la Encuesta Integral del Colaborador. Su finalidad es identificar tendencias, factores de presión y hallazgos relevantes en materia financiera, habitacional, salud, experiencia laboral y logística de traslado. Los resultados se interpretan de forma preventiva y confidencial.</p><div class="grid"><div class="kpi"><div class="n">${stats.total}</div><div>Encuestas válidas</div></div><div class="kpi"><div class="n">${stats.conDeudaPct}%</div><div>Con deuda activa</div></div><div class="kpi"><div class="n">${stats.conProcesoPct}%</div><div>Con demandas/embargos</div></div><div class="kpi"><div class="n">${stats.criticoPct}%</div><div>Crítico o severo</div></div></div></section>
-      <section class="section"><h2>2. Metodología de cálculo</h2><p><strong>Porcentajes:</strong> cantidad de casos / total de encuestas válidas × 100.</p><p><strong>Presión económica:</strong> ((deuda mensual + alquiler + descuento judicial) / salario mínimo de referencia) × 100.</p><table><tr><th>Escala</th><th>Clasificación</th><th>Interpretación</th></tr><tr><td>0% a 20%</td><td>Bajo</td><td>Carga controlada</td></tr><tr><td>21% a 40%</td><td>Moderado</td><td>Compromisos manejables</td></tr><tr><td>41% a 60%</td><td>Alto</td><td>Presión relevante</td></tr><tr><td>61% a 100%</td><td>Crítico</td><td>Mayor parte del ingreso comprometida</td></tr><tr><td>Más de 100%</td><td>Sobreendeudamiento severo</td><td>La carga supera el salario de referencia</td></tr></table></section>
-      <section class="section"><h2>3. Matriz de riesgo integral</h2><table><tr><th>Impacto / Probabilidad</th><th>Baja</th><th>Media</th><th>Alta</th></tr><tr><td>Bajo impacto</td><td class="risk-low">Bajo</td><td class="risk-low">Bajo</td><td class="risk-mod">Moderado</td></tr><tr><td>Impacto medio</td><td class="risk-low">Bajo</td><td class="risk-mod">Moderado</td><td class="risk-high">Alto</td></tr><tr><td>Alto impacto</td><td class="risk-mod">Moderado</td><td class="risk-high">Alto</td><td class="risk-crit">Crítico</td></tr><tr><td>Impacto severo</td><td class="risk-high">Alto</td><td class="risk-crit">Crítico</td><td class="risk-severe">Severo</td></tr></table><p>La matriz integra factores financieros, habitacionales, de salud, experiencia operativa, entorno familiar y condiciones de traslado.</p></section>
-      <section class="section"><h2>4. Gráficas ejecutivas</h2><div class="charts">${cb('Tipo de vivienda',chartImg('chartVivienda'))}${cb('Presión económica',chartImg('chartPresion'))}${cb('Ahorro de emergencia',chartImg('chartAhorro'))}${cb('Estado de salud',chartImg('chartSalud'))}${cb('Medio de transporte',chartImg('chartTransporte'))}${cb('Tiempo de traslado',chartImg('chartTraslado'))}</div></section>
-      <section class="section"><h2>5. Hallazgos principales</h2><ul>${hallazgosTexto(stats)}</ul></section>
-      <section class="section"><h2>6. Recomendaciones gerenciales</h2><ul><li>Fortalecer seguimiento preventivo de casos críticos o severos.</li><li>Mantener acceso restringido a la información individual.</li><li>Usar indicadores para planificación, bienestar y auditoría preventiva.</li><li>Actualizar periódicamente el salario mínimo de referencia.</li><li>Documentar consultas y exportaciones administrativas.</li></ul></section>
-      <script>setTimeout(()=>window.print(),700);<\/script></body></html>`;
-    const w=window.open('','_blank');
-    if(!w){ downloadBlob('Reporte_Ejecutivo_Gerencial_Encuesta_Colaborador.html', report, 'text/html;charset=utf-8;'); alert('El navegador bloqueó la ventana. Se descargó el reporte HTML; ábrelo y presiona Ctrl + P para guardarlo como PDF.'); return; }
-    w.document.open(); w.document.write(report); w.document.close();
+    const rows=getFilteredRowsForAnalysis(), stats=statsFromRows(rows);
+    const now = new Date().toLocaleString();
+    const viewTitle = reportView === 'financiero'
+      ? 'Reporte financiero por colaborador'
+      : reportView === 'laboral'
+        ? 'Reporte laboral por colaborador'
+        : reportView === 'salud'
+          ? 'Reporte de salud por colaborador'
+          : 'Reporte general por colaborador';
+
+    function pdfClassFromLevel(level){
+      if(level === 'Sobreendeudamiento severo' || level === 'Crítico') return 'crit';
+      if(level === 'Alto') return 'high';
+      if(level === 'Moderado') return 'mod';
+      return 'low';
+    }
+    function pdfBadge(level){
+      return `<span class="badge ${pdfClassFromLevel(level)}">${escapeHtml(level || 'Bajo')}</span>`;
+    }
+    function pdfCredentialBadge(valor){
+      const v = estadoCredencial(valor);
+      const cls = v === 'Tiene' ? 'low' : (v === 'No ha hecho la gestión' ? 'high' : 'crit');
+      return `<span class="badge ${cls}">${escapeHtml(v)}</span>`;
+    }
+
+    function buildPdfRows(){
+      if(reportView === 'financiero'){
+        const head = '<tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Carga mensual</th><th>% presión</th><th>Nivel financiero</th><th>Acción sugerida</th></tr>';
+        const body = rows.map(r=>{
+          const ind = r.indicadores || {};
+          const level = ind.nivelPresionEconomica || 'Bajo';
+          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>Q ${money(ind.cargaMensualComprometida)}</td><td>${ind.porcentajePresionEconomica||0}%</td><td>${pdfBadge(level)}</td><td>${escapeHtml(actionForPriority('Financiero', level))}</td></tr>`;
+        }).join('');
+        return {title:'Cómo está financieramente cada colaborador', head, body};
+      }
+
+      if(reportView === 'laboral'){
+        const head = '<tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Experiencia</th><th>Armas</th><th>Capacitación</th><th>IRTRA</th><th>IGSS</th><th>DIGESSP</th><th>Semáforo laboral</th><th>Acción sugerida</th></tr>';
+        const body = rows.map(r=>{
+          const risk = semaforoLaboral(r);
+          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.experiencia?.experienciaLaboral||'')}</td><td>${escapeHtml(armasTexto(r.experiencia?.tipoArma))}</td><td>${escapeHtml(r.experiencia?.diasCapacitacionInicial ?? '')}</td><td>${pdfCredentialBadge(r.experiencia?.carnetIrtra)}</td><td>${pdfCredentialBadge(r.experiencia?.carnetIgss)}</td><td>${pdfCredentialBadge(r.experiencia?.acreditacionDigessp)}</td><td>${pdfBadge(risk.nivel)}</td><td>${escapeHtml(risk.detalle)}</td></tr>`;
+        }).join('');
+        return {title:'Cómo está laboralmente cada colaborador', head, body};
+      }
+
+      if(reportView === 'salud'){
+        const head = '<tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Estado salud</th><th>Condición física</th><th>Medicamento</th><th>Qué medicamento</th><th>Semáforo salud</th><th>Acción sugerida</th></tr>';
+        const body = rows.map(r=>{
+          const risk = semaforoSalud(r);
+          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.salud?.estadoSalud||'')}</td><td>${escapeHtml(r.salud?.tieneCondicionFisica||'')}</td><td>${escapeHtml(r.salud?.medicamentoPermanente||'')}</td><td>${escapeHtml(r.salud?.detalleMedicamento||'')}</td><td>${pdfBadge(risk.nivel)}</td><td>${escapeHtml(risk.detalle)}</td></tr>`;
+        }).join('');
+        return {title:'Cómo está en salud cada colaborador', head, body};
+      }
+
+      const head = '<tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Riesgo global</th><th>Financiero</th><th>Laboral</th><th>Salud</th><th>Acción sugerida</th></tr>';
+      const body = rows.map(r=>{
+        const global = reportLevelForRow(r);
+        const finLevel = r.indicadores?.nivelPresionEconomica || 'Bajo';
+        const labRisk = semaforoLaboral(r);
+        const salRisk = semaforoSalud(r);
+        return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${pdfBadge(global.nivel)}</td><td>${pdfBadge(finLevel)}</td><td>${pdfBadge(labRisk.nivel)}</td><td>${pdfBadge(salRisk.nivel)}</td><td>${escapeHtml(reportActionForRow(r))}</td></tr>`;
+      }).join('');
+      return {title:'Estado general por colaborador', head, body};
+    }
+
+    const tableData = buildPdfRows();
+
+    const htmlDoc = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${escapeHtml(viewTitle)}</title>
+    <style>
+      *{box-sizing:border-box;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+      body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#eef4fb;color:#1f2937}
+      .page{max-width:1180px;margin:0 auto;padding:26px}
+      .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#071a3d 0%,#0f5f7a 58%,#0f9b8e 100%);color:#fff;border-radius:24px;padding:28px 30px;margin-bottom:18px;box-shadow:0 18px 40px rgba(2,8,23,.18)}
+      .hero:after{content:'';position:absolute;right:-70px;top:-80px;width:240px;height:240px;border-radius:999px;background:rgba(255,255,255,.12)}
+      h1{margin:0;font-size:30px;letter-spacing:-.02em}
+      h2{font-size:21px;margin:22px 0 10px;color:#0b2239;border-left:6px solid #0f9b8e;padding-left:10px}
+      h3{font-size:16px;margin:0 0 8px;color:#0f172a}
+      .sub{margin-top:8px;color:rgba(255,255,255,.88)}
+      .conf{display:inline-block;margin-top:12px;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;letter-spacing:.04em}
+      .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+      .kpi{background:#fff;border:1px solid #dbe7f1;border-radius:18px;padding:16px;box-shadow:0 10px 24px rgba(15,23,42,.06);position:relative;overflow:hidden}
+      .kpi:before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#0f5f7a,#0f9b8e)}
+      .kpi.fin:before{background:#dc2626}.kpi.lab:before{background:#f59e0b}.kpi.sal:before{background:#7c3aed}.kpi.med:before{background:#10b981}
+      .kpi .n{font-size:28px;font-weight:900;color:#0f5f7a;margin-top:4px}.kpi .l{font-size:12px;font-weight:900;text-transform:uppercase;color:#64748b;margin-top:4px}
+      .card{background:#fff;border:1px solid #dbe7f1;border-radius:18px;padding:16px;margin-bottom:16px;box-shadow:0 10px 24px rgba(15,23,42,.05)}
+      .method{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+      .method div{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:12px}
+      .method ul{margin:0;padding-left:18px;line-height:1.55;color:#334155;font-size:13px}
+      table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;margin-bottom:18px}
+      th,td{border:1px solid #dbe7f1;padding:9px;text-align:left;font-size:12px;vertical-align:top}
+      th{background:#eaf1f8;color:#0f172a;text-transform:uppercase;letter-spacing:.03em}
+      .badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;border:1px solid transparent;white-space:nowrap}
+      .badge.low{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+      .badge.mod{background:#fef9c3;color:#854d0e;border-color:#fde68a}
+      .badge.high{background:#ffedd5;color:#9a3412;border-color:#fed7aa}
+      .badge.crit{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+      .note{background:#eff6ff;border:1px solid #bfdbfe;border-radius:16px;padding:14px;color:#1e3a8a;margin:12px 0;line-height:1.45}
+      .footer{font-size:11px;color:#64748b;text-align:center;margin-top:22px}
+      @media print{
+        body{background:#fff}
+        .page{padding:8px;max-width:100%}
+        .hero{box-shadow:none;border-radius:16px}
+        .card,.kpi{box-shadow:none}
+        .no-print{display:none}
+        table{page-break-inside:auto}
+        tr{page-break-inside:avoid;page-break-after:auto}
+      }
+    </style></head><body>
+    <div class="page">
+      <div class="hero">
+        <h1>${escapeHtml(viewTitle)}</h1>
+        <div class="sub">Sistema Confidencial de Evaluación y Auditoría del Colaborador · Generado: ${now}</div>
+        <div class="conf">USO INTERNO · AUDITORÍA PREVENTIVA · BIENESTAR LABORAL</div>
+      </div>
+
+      <div class="grid">
+        <div class="kpi"><div class="n">${stats.total}</div><div class="l">Encuestas</div></div>
+        <div class="kpi fin"><div class="n">${stats.criticoPct}%</div><div class="l">Financiero crítico/severo</div></div>
+        <div class="kpi lab"><div class="n">${stats.laboralAltoPct}%</div><div class="l">Laboral alto/crítico</div></div>
+        <div class="kpi sal"><div class="n">${stats.saludAltoPct}%</div><div class="l">Salud alto/crítico</div></div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top:0">Metodología de cálculo</h2>
+        <div class="method">
+          <div><h3>Financiero</h3><ul><li>Deuda mensual + alquiler + descuento judicial.</li><li>Se compara contra salario mínimo de referencia.</li><li>Mayor porcentaje significa mayor presión económica.</li></ul></div>
+          <div><h3>Laboral</h3><ul><li>Capacitación baja suma más puntos.</li><li>Sin experiencia en seguridad privada suma puntos.</li><li>Menor experiencia laboral o alta rotación aumenta atención.</li><li>IRTRA, IGSS y DIGESSP pendientes se reflejan en el semáforo laboral.</li></ul></div>
+          <div><h3>Salud</h3><ul><li>Salud regular o delicada suma puntos.</li><li>Condición física y medicamento permanente se consideran preventivamente.</li><li>Ausencias y limitaciones para el puesto aumentan atención.</li></ul></div>
+        </div>
+      </div>
+
+      <div class="note"><strong>Interpretación:</strong> el semáforo orienta dónde poner más atención. No representa sanción automática ni discriminación; debe usarse para seguimiento preventivo, capacitación, bienestar y revisión confidencial responsable.</div>
+
+      <h2>${escapeHtml(tableData.title)}</h2>
+      <table><thead>${tableData.head}</thead><tbody>${tableData.body || '<tr><td>Sin registros</td></tr>'}</tbody></table>
+
+      <div class="footer">Documento generado automáticamente para revisión administrativa confidencial.</div>
+      <div class="no-print" style="margin-top:20px"><button onclick="window.print()" style="padding:12px 18px;border:0;border-radius:12px;background:#0f5f7a;color:#fff;font-weight:900;cursor:pointer">Imprimir / Guardar PDF</button></div>
+    </div>
+    <script>setTimeout(()=>window.print(),700);<\\/script>
+    </body></html>`;
+
+    const w = window.open('', '_blank');
+    if(!w){
+      alert('El navegador bloqueó la ventana del PDF. Permita ventanas emergentes para este sitio.');
+      return;
+    }
+    w.document.open();
+    w.document.write(htmlDoc);
+    w.document.close();
   }
 
   document.getElementById('clearDemoBtn').onclick = async ()=>{
@@ -1472,7 +2404,7 @@ ${worksheet('Análisis financiero',finSheet,finCols)}
 
     try{
       const rows = await getRecords();
-      await initFirebase();
+      requireFirebaseReady();
       await Promise.all(rows.map(r => db.collection(COLLECTION_NAME).doc(r.idFirestore).delete()));
       localStorage.removeItem(STORAGE_KEY);
       await renderAdmin();
@@ -1485,7 +2417,7 @@ ${worksheet('Análisis financiero',finSheet,finCols)}
 
   document.getElementById('exportCsvBtn').onclick = ()=>{
     const rows = getExportRows();
-    const headers = ['fecha','nombre','edad','empresa','ubicacion','tipoVivienda','alquiler','tieneDeudas','pagoDeuda','tieneProcesoLegal','descuentoJudicial','presionEconomica','nivelFinanciero'];
+    const headers = ['fecha','nombre','edad','empresa','ubicacion','tipoVivienda','alquiler','tieneDeudas','pagoDeuda','tieneProcesoLegal','descuentoJudicial','presionEconomica','nivelFinanciero','experienciaLaboral','experienciaSeguridadPrivada','experienciaArmas','tipoArma','diasCapacitacionInicial','semaforoLaboral','estadoSalud','condicionFisica','actividadFisica','medicamentoPermanente','detalleMedicamento','semaforoSalud'];
     const csv = [headers.join(',')].concat(rows.map(r=>[
       r.fechaRegistro,
       r.datosPersonales?.nombreCompleto,
@@ -1499,7 +2431,19 @@ ${worksheet('Análisis financiero',finSheet,finCols)}
       r.finanzas?.tieneProcesoLegalEconomico,
       r.indicadores?.descuentoJudicial,
       r.indicadores?.porcentajePresionEconomica,
-      r.indicadores?.nivelPresionEconomica
+      r.indicadores?.nivelPresionEconomica,
+      r.experiencia?.experienciaLaboral,
+      r.experiencia?.experienciaSeguridadPrivada,
+      r.experiencia?.experienciaArmas,
+      armasTexto(r.experiencia?.tipoArma),
+      r.experiencia?.diasCapacitacionInicial,
+      semaforoLaboral(r).nivel,
+      r.salud?.estadoSalud,
+      r.salud?.tieneCondicionFisica,
+      r.salud?.actividadFisica,
+      r.salud?.medicamentoPermanente,
+      r.salud?.detalleMedicamento,
+      semaforoSalud(r).nivel
     ].map(csvCell).join(','))).join('\n');
 
     const blob = new Blob([csv],{type:'text/csv;charset=utf-8;'});
@@ -1522,7 +2466,7 @@ ${worksheet('Análisis financiero',finSheet,finCols)}
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js?v=15')
+      navigator.serviceWorker.register('./sw.js?v=23')
         .then(() => console.log('Service Worker registrado correctamente'))
         .catch(error => console.warn('No se pudo registrar el Service Worker:', error));
     });
