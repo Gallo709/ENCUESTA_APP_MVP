@@ -4860,9 +4860,55 @@ tbody tr:hover{
   if(packBtn) packBtn.onclick = ()=>{ exportExcel(); setTimeout(exportPdf, 500); };
 
 
+
+  // Respaldo directo para botones del modal de edición.
+  // Mantiene todo dentro del index.html.
+  document.addEventListener('click', event => {
+    const closeBtn = event.target.closest('#editCloseBtn, #editCancelBtn');
+    if(closeBtn){
+      event.preventDefault();
+      closeEditModal();
+      return;
+    }
+
+    const saveBtn = event.target.closest('#editSaveBtn');
+    if(saveBtn && !saveBtn.disabled){
+      event.preventDefault();
+      saveEditRecord();
+    }
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const closeBtn = document.getElementById('editCloseBtn');
+    const cancelBtn = document.getElementById('editCancelBtn');
+    const saveBtn = document.getElementById('editSaveBtn');
+
+    if(closeBtn){
+      closeBtn.onclick = (event) => {
+        event.preventDefault();
+        closeEditModal();
+      };
+    }
+
+    if(cancelBtn){
+      cancelBtn.onclick = (event) => {
+        event.preventDefault();
+        closeEditModal();
+      };
+    }
+
+    if(saveBtn){
+      saveBtn.onclick = async (event) => {
+        event.preventDefault();
+        await saveEditRecord();
+      };
+    }
+  });
+
+
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js?v=48')
+      navigator.serviceWorker.register('./sw.js?v=51-index')
         .then(() => console.log('Service Worker registrado correctamente'))
         .catch(error => console.warn('No se pudo registrar el Service Worker:', error));
     });
