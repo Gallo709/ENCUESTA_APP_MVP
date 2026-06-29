@@ -88,6 +88,141 @@
     .consent-box input{width:auto;margin-top:4px}
     .screen{display:none}
     .screen.active{display:block}
+    
+    .progress-card{
+      padding:20px 22px;
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+      border:1px solid #dbe7f1;
+      box-shadow:0 16px 30px rgba(15,23,42,.08);
+    }
+    .progress-card::before{
+      content:'';display:block;height:5px;border-radius:999px;
+      background:linear-gradient(90deg,var(--primary),var(--primary-2),var(--gold));
+      margin:-20px -22px 18px;
+    }
+    .progress-head{
+      display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-bottom:12px;
+    }
+    .progress-main-title{font-size:18px;font-weight:900;color:var(--navy);margin:0}
+    .progress-main-sub{font-size:13px;color:#64748b;margin-top:3px}
+    .progress-badge{
+      display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:10px 14px;
+      background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;font-weight:900
+    }
+    .progress-bar{height:13px;border-radius:999px;background:#e5edf5;overflow:hidden;box-shadow:inset 0 1px 2px rgba(2,8,23,.06)}
+    .step-chips{
+      display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;margin-top:16px
+    }
+    .step-chip{
+      border:1px solid #dbe7f1;background:#fff;border-radius:18px;padding:12px 10px;
+      display:flex;gap:10px;align-items:flex-start;text-align:left;min-height:72px;
+      box-shadow:0 10px 20px rgba(15,23,42,.04);transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .step-chip:hover{transform:translateY(-2px);box-shadow:0 14px 26px rgba(15,23,42,.07)}
+    .step-chip.active{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border-color:transparent;box-shadow:0 16px 30px rgba(15,95,122,.25)}
+    .step-chip.done{background:#f0fdf4;border-color:#bbf7d0}
+    .step-chip-index{
+      width:30px;height:30px;border-radius:12px;background:#eff6ff;color:#0f5f7a;
+      display:grid;place-items:center;font-size:13px;font-weight:900;flex:0 0 auto
+    }
+    .step-chip.active .step-chip-index{background:rgba(255,255,255,.18);color:#fff}
+    .step-chip.done .step-chip-index{background:#dcfce7;color:#166534}
+    .step-chip-text{min-width:0}
+    .step-chip-title{font-size:12px;font-weight:900;line-height:1.25}
+    .step-chip-sub{font-size:11px;color:#64748b;line-height:1.25;margin-top:4px}
+    .step-chip.active .step-chip-sub{color:rgba(255,255,255,.82)}
+    .form-step{
+      position:relative;
+      background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+      border:1px solid #dbe7f1;border-radius:24px;padding:24px;
+      box-shadow:0 18px 38px rgba(15,23,42,.07);margin-bottom:18px;
+      overflow:hidden;
+    }
+    .form-step::before{
+      content:'';position:absolute;inset:0 0 auto 0;height:6px;
+      background:linear-gradient(90deg,var(--primary),var(--primary-2),var(--gold));
+    }
+    .module-theme-datosPersonales::before{background:linear-gradient(90deg,#0f5f7a,#14b8a6)}
+    .module-theme-vivienda::before{background:linear-gradient(90deg,#2563eb,#60a5fa)}
+    .module-theme-finanzas::before{background:linear-gradient(90deg,#ca8a04,#f59e0b)}
+    .module-theme-salud::before{background:linear-gradient(90deg,#dc2626,#fb7185)}
+    .module-theme-experiencia::before{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+    .module-theme-familia::before{background:linear-gradient(90deg,#db2777,#f472b6)}
+    .module-theme-traslado::before{background:linear-gradient(90deg,#0f766e,#14b8a6)}
+    .module-header{
+      display:flex;gap:18px;align-items:flex-start;border-bottom:none;padding-bottom:0;margin-bottom:18px
+    }
+    .module-number{
+      width:64px;height:64px;border-radius:20px;background:linear-gradient(135deg,var(--primary),var(--primary-2));
+      color:#fff;display:grid;place-items:center;font-weight:900;font-size:22px;box-shadow:0 16px 30px rgba(15,95,122,.22)
+    }
+    .module-header-copy{flex:1;min-width:0}
+    .module-header-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+    .module-header h2{font-size:28px;letter-spacing:-.02em;margin:0 0 6px;color:#0f172a}
+    .module-header p{margin:0;color:var(--muted);max-width:780px}
+    .module-pill{
+      display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;
+      background:#f8fafc;border:1px solid #dbe7f1;color:#475569;font-size:12px;font-weight:900
+    }
+    .module-insights{
+      margin-top:16px;display:grid;grid-template-columns:1.2fr .9fr;gap:14px
+    }
+    .insight-card, .tip-card{
+      border:1px solid #dbe7f1;border-radius:18px;padding:15px 16px;background:#fff;
+      box-shadow:0 10px 20px rgba(15,23,42,.04)
+    }
+    .insight-card h4,.tip-card h4{margin:0 0 8px;color:#0f172a;font-size:14px}
+    .insight-card p,.tip-card p{margin:0;color:#475569;line-height:1.55;font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+    .field{
+      display:flex;flex-direction:column;background:linear-gradient(180deg,#ffffff 0%,#fcfdff 100%);
+      border:1px solid #dbe7f1;border-radius:18px;padding:15px 15px 14px;
+      box-shadow:0 10px 18px rgba(15,23,42,.035);transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      position:relative;
+    }
+    .field:hover{transform:translateY(-2px);box-shadow:0 16px 28px rgba(15,23,42,.06);border-color:#bfd4e8}
+    .field::after{
+      content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:18px 0 0 18px;background:transparent;transition:background .2s ease
+    }
+    .field:hover::after{background:linear-gradient(180deg,var(--primary),var(--primary-2))}
+    label.field-label{font-weight:900;color:#0f172a;margin-bottom:9px;line-height:1.35;font-size:14px}
+    .field-required{color:#dc2626;margin-left:4px}
+    .field-note{font-size:11px;color:#64748b;margin-top:7px;line-height:1.35}
+    input,select,textarea{
+      width:100%;border:1px solid #cbd5e1;border-radius:13px;padding:12px 13px;background:#fff;
+      font:inherit;color:var(--text);outline:none;transition:border .15s,box-shadow .15s, background .15s;
+    }
+    input::placeholder, textarea::placeholder{color:#94a3b8}
+    input:focus,select:focus,textarea:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(15,95,122,.12);background:#fbfeff}
+    .checks{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px
+    }
+    .check-item{
+      display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid #dbe7f1;border-radius:14px;background:#fff;
+      font-weight:700;color:#334155
+    }
+    .check-item input{width:auto;margin-top:2px}
+    .nav-actions{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+      margin-top:22px;padding-top:18px;border-top:1px solid #e2e8f0
+    }
+    .step-summary{
+      display:flex;align-items:center;gap:10px;color:#64748b;font-size:13px;font-weight:800
+    }
+    .step-summary strong{color:#0f172a}
+    .btn{
+      box-shadow:0 10px 18px rgba(15,23,42,.08)
+    }
+    .dashboard-block{
+      background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+      border:1px solid #dbe7f1;
+      box-shadow:0 14px 28px rgba(15,23,42,.05)
+    }
+    @media (max-width:980px){
+      .step-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .module-insights{grid-template-columns:1fr}
+    }
+
     .progress-card{padding:18px 22px}
     .progress-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px;font-weight:900;color:var(--navy)}
     .progress-bar{height:11px;border-radius:999px;background:#e5edf5;overflow:hidden}
@@ -244,6 +379,111 @@
     .mini-chip.ok{border-color:#bbf7d0;background:#dcfce7;color:#166534}
     .mini-chip.pendiente{border-color:#fed7aa;background:#ffedd5;color:#9a3412}
     .mini-chip.falta{border-color:#fecaca;background:#fee2e2;color:#991b1b}
+    .edit-btn{
+      border:1px solid #cbd5e1;background:#fff;color:#0f172a;border-radius:999px;
+      padding:7px 11px;font-size:12px;font-weight:900;cursor:pointer;
+      box-shadow:0 6px 14px rgba(2,8,23,.06);
+    }
+    .edit-btn:hover{background:#eff6ff;border-color:#93c5fd;color:#1e3a8a}
+    .name-actions{display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+    .cred-row{display:flex;gap:6px;flex-wrap:wrap}
+    .cred-icon{
+      display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 9px;
+      font-size:11px;font-weight:900;border:1px solid transparent;white-space:nowrap;
+    }
+    .cred-icon.ok{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+    .cred-icon.fail{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+    .cred-symbol{font-size:13px;line-height:1}
+    .modal-backdrop{
+      position:fixed;inset:0;background:rgba(15,23,42,.62);z-index:9999;
+      display:flex;align-items:flex-start;justify-content:center;padding:24px;overflow:auto;
+    }
+    .modal-card{
+      width:min(1180px,100%);background:#f8fbff;border:1px solid #dbeafe;border-radius:24px;
+      box-shadow:0 24px 70px rgba(2,8,23,.35);overflow:hidden;
+    }
+    .modal-head{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:20px 24px;background:linear-gradient(135deg,#0b2239,#0f5f7a,#0f9b8e);color:#fff;
+    }
+    .modal-head h3{margin:0;font-size:22px;color:#fff}
+    .modal-head p{margin:4px 0 0;color:rgba(255,255,255,.86)}
+    .modal-body{padding:20px 24px;max-height:72vh;overflow:auto}
+    .modal-actions{
+      display:flex;gap:10px;justify-content:flex-end;padding:16px 24px;background:#fff;border-top:1px solid #dbe7f1;
+    }
+    .edit-section{
+      background:#fff;border:1px solid #dbe7f1;border-radius:18px;padding:16px;margin-bottom:16px;
+      box-shadow:0 10px 22px rgba(2,8,23,.04);
+    }
+    .edit-section h4{margin:0 0 6px;color:#0f172a}
+    .edit-section p{margin:0 0 12px;color:#64748b}
+    .edit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .edit-grid .field.full{grid-column:1 / -1}
+    .modal-close{
+      border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);
+      color:#fff;border-radius:999px;padding:9px 12px;font-weight:900;cursor:pointer;
+    }
+
+    .report-modern{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #dbe7f1;border-radius:22px;overflow:hidden;background:#fff}
+    .report-modern thead th{
+      background:linear-gradient(180deg,#f8fbff,#f1f5f9);
+      color:#0f172a;font-size:12px;text-transform:uppercase;letter-spacing:.05em;
+      padding:14px 14px;border-bottom:1px solid #dbe7f1
+    }
+    .report-modern tbody tr:nth-child(even){background:#fcfdff}
+    .report-modern tbody td{padding:16px 14px;border-bottom:1px solid #e6edf5;vertical-align:top}
+    .report-modern tbody tr:last-child td{border-bottom:none}
+    .person-block{display:flex;flex-direction:column;gap:8px;min-width:180px}
+    .person-name{font-size:15px;font-weight:900;color:#1e293b;line-height:1.25}
+    .person-meta{display:flex;flex-wrap:wrap;gap:6px}
+    .meta-badge{
+      display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;
+      background:#f8fafc;border:1px solid #dbe7f1;color:#475569;font-size:11px;font-weight:800
+    }
+    .profile-stack{display:flex;flex-direction:column;gap:8px;min-width:260px}
+    .stack-item{
+      display:flex;gap:8px;align-items:flex-start;padding:8px 10px;border:1px solid #e2e8f0;
+      border-radius:14px;background:#fbfdff
+    }
+    .stack-label{min-width:92px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#64748b}
+    .stack-value{font-size:13px;font-weight:700;color:#334155;line-height:1.4}
+    .cred-grid{display:grid;grid-template-columns:repeat(3,minmax(72px,1fr));gap:8px;min-width:240px}
+    .cred-card{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+      padding:10px 8px;border:1px solid #e2e8f0;border-radius:16px;background:#fff;text-align:center
+    }
+    .cred-card .label{font-size:11px;font-weight:900;color:#64748b;letter-spacing:.04em}
+    .cred-card.ok{background:#f0fdf4;border-color:#bbf7d0}
+    .cred-card.fail{background:#fff7ed;border-color:#fed7aa}
+    .cred-card.fail-x{background:#fef2f2;border-color:#fecaca}
+    .cred-card .symbol{
+      width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;
+      font-size:20px;font-weight:900
+    }
+    .cred-card.ok .symbol{background:#dcfce7;color:#166534}
+    .cred-card.fail .symbol,.cred-card.fail-x .symbol{background:#fee2e2;color:#991b1b}
+    .sem-center{text-align:center;vertical-align:middle!important;min-width:140px}
+    .action-compact{
+      min-width:250px;max-width:320px;padding:10px 12px;background:#f8fbff;border:1px solid #dbeafe;
+      border-radius:16px;color:#334155;line-height:1.45
+    }
+    .action-compact strong{display:block;color:#0f172a;font-size:13px;margin-bottom:5px}
+    .report-legend{
+      display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin:0 0 10px
+    }
+    .legend-pill{
+      display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;
+      border:1px solid #dbe7f1;background:#fff;font-size:12px;font-weight:800;color:#64748b
+    }
+    .legend-pill .mini{
+      width:22px;height:22px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:14px
+    }
+    .legend-pill .ok{background:#dcfce7;color:#166534}
+    .legend-pill .bad{background:#fee2e2;color:#991b1b}
+    @media(max-width:850px){.edit-grid{grid-template-columns:1fr}.modal-backdrop{padding:10px}.modal-body{max-height:74vh}}
+
 
     .compact-table th,.compact-table td{padding:10px 12px}
     #analysisControlsBlock{margin-top:18px}
@@ -270,7 +510,510 @@
     @media(max-width:850px){
       body{padding:10px}.app-shell-inner{align-items:flex-start}.top-actions{width:100%;justify-content:flex-start}.app-shell-inner{flex-wrap:wrap}.hero-inner{grid-template-columns:1fr;padding:22px}.grid,.admin-grid,.charts-grid,.executive-grid,.pdf-grid,.pdf-charts{grid-template-columns:1fr}.checks{grid-template-columns:1fr}.module-header{flex-direction:column}.step-chips{grid-template-columns:repeat(4,1fr)}.nav-actions{flex-direction:column}.btn{width:100%}
     }
-  </style>
+  
+/* Ajuste mínimo: resumen en una sola fila en pantallas grandes */
+@media(min-width:1200px){
+  .priority-grid{
+    grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  }
+}
+.priority-grid{
+  align-items:stretch;
+}
+.priority-card{
+  min-height:118px;
+}
+
+
+/* ===== Ajuste visual PRO sin reestructurar el sistema ===== */
+:root{
+  --pro-blue:#0f5f7a;
+  --pro-teal:#0f9b8e;
+  --pro-navy:#0b2239;
+  --pro-gold:#d6a21f;
+  --pro-soft:#f8fbff;
+}
+
+body{
+  background:
+    radial-gradient(circle at 12% 8%, rgba(34,211,238,.25), transparent 26%),
+    radial-gradient(circle at 86% 14%, rgba(20,184,166,.22), transparent 30%),
+    linear-gradient(135deg,#071a3d 0%,#082f49 44%,#0f172a 100%) !important;
+}
+
+.app-shell-inner{
+  border-radius:26px !important;
+  padding:18px 22px !important;
+  box-shadow:0 22px 55px rgba(2,8,23,.24) !important;
+  border:1px solid rgba(255,255,255,.82) !important;
+}
+
+.shell-icon{
+  width:54px !important;
+  height:54px !important;
+  border-radius:18px !important;
+  background:linear-gradient(135deg,#0f5f7a,#0f9b8e) !important;
+  box-shadow:0 14px 28px rgba(15,95,122,.28) !important;
+}
+
+.app-title{
+  font-size:23px !important;
+  letter-spacing:-.035em !important;
+}
+
+.app-subtitle{
+  font-size:13px !important;
+  color:#52637a !important;
+}
+
+.pill-btn{
+  padding:12px 18px !important;
+  font-size:14px !important;
+  box-shadow:0 10px 22px rgba(15,23,42,.07) !important;
+}
+
+.pill-btn.active{
+  background:linear-gradient(135deg,#0f5f7a,#0f9b8e) !important;
+  box-shadow:0 12px 24px rgba(15,95,122,.24) !important;
+}
+
+.card,
+.dashboard-block,
+.card-lite,
+.chart-card,
+.kpi,
+.priority-card,
+.form-step,
+.progress-card{
+  border:1px solid #dbe7f1 !important;
+  box-shadow:0 18px 42px rgba(15,23,42,.075) !important;
+}
+
+.card{
+  border-radius:28px !important;
+  background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(248,251,255,.96)) !important;
+}
+
+.module-header{
+  border-bottom:none !important;
+  background:linear-gradient(135deg,#f8fbff,#ffffff) !important;
+  border:1px solid #dbe7f1 !important;
+  border-radius:22px !important;
+  padding:18px !important;
+  margin-bottom:20px !important;
+}
+
+.module-number{
+  background:linear-gradient(135deg,#0b2239,#0f5f7a,#0f9b8e) !important;
+  box-shadow:0 14px 26px rgba(15,95,122,.22) !important;
+}
+
+.module-header h2{
+  font-size:27px !important;
+  letter-spacing:-.025em !important;
+}
+
+.admin-grid{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:16px !important;
+}
+
+.kpi{
+  position:relative !important;
+  overflow:hidden !important;
+  border-radius:24px !important;
+  padding:20px !important;
+  background:linear-gradient(180deg,#ffffff,#fbfdff) !important;
+}
+
+.kpi::before{
+  content:'' !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  top:0 !important;
+  height:5px !important;
+  background:linear-gradient(90deg,#0f5f7a,#0f9b8e,#d6a21f) !important;
+}
+
+.kpi .num{
+  font-size:38px !important;
+  color:#0f172a !important;
+  letter-spacing:-.04em !important;
+}
+
+.kpi .label{
+  font-size:13px !important;
+  color:#64748b !important;
+  letter-spacing:.045em !important;
+}
+
+#priorityGrid{
+  display:grid !important;
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  gap:14px !important;
+  margin:18px 0 !important;
+}
+
+.priority-card{
+  border-radius:24px !important;
+  padding:18px 18px 16px !important;
+  background:linear-gradient(180deg,#ffffff,#fbfdff) !important;
+  min-height:122px !important;
+}
+
+.priority-card .num{
+  font-size:36px !important;
+  letter-spacing:-.04em !important;
+}
+
+.priority-card .label{
+  font-size:13px !important;
+  color:#52637a !important;
+}
+
+.priority-card .hint-small{
+  color:#64748b !important;
+  font-size:12px !important;
+}
+
+.dashboard-header{
+  padding-bottom:12px !important;
+  border-bottom:1px solid #e6edf5 !important;
+}
+
+.dashboard-header h3{
+  font-size:24px !important;
+  letter-spacing:-.025em !important;
+}
+
+.dashboard-header p{
+  font-size:15px !important;
+}
+
+.summary-tabs{
+  gap:12px !important;
+}
+
+.summary-tab{
+  padding:12px 18px !important;
+  border-radius:999px !important;
+  font-size:14px !important;
+  box-shadow:0 10px 22px rgba(15,23,42,.055) !important;
+}
+
+.summary-tab.active{
+  background:linear-gradient(135deg,#0f5f7a,#0f9b8e) !important;
+  box-shadow:0 14px 28px rgba(15,95,122,.24) !important;
+}
+
+.attention-note,
+.mode-note,
+.single-source-note{
+  border-radius:18px !important;
+  padding:14px 16px !important;
+  background:linear-gradient(135deg,#eff6ff,#f8fbff) !important;
+  border:1px solid #bfdbfe !important;
+  color:#1e3a8a !important;
+}
+
+.table-wrap{
+  border-radius:24px !important;
+  border:1px solid #dbe7f1 !important;
+  box-shadow:0 12px 26px rgba(15,23,42,.045) !important;
+}
+
+table{
+  border-collapse:separate !important;
+  border-spacing:0 !important;
+}
+
+th{
+  background:linear-gradient(180deg,#f8fbff,#eef4fb) !important;
+  color:#0f172a !important;
+  font-size:12px !important;
+  letter-spacing:.055em !important;
+  padding:15px 14px !important;
+}
+
+td{
+  padding:15px 14px !important;
+  border-bottom:1px solid #e8eef6 !important;
+}
+
+tbody tr:nth-child(even){
+  background:#fcfdff !important;
+}
+
+tbody tr:hover{
+  background:#f8fbff !important;
+}
+
+.risk-pill,
+.mini-chip,
+.cred-icon,
+.tag{
+  box-shadow:0 6px 14px rgba(15,23,42,.04) !important;
+}
+
+.edit-btn{
+  padding:8px 13px !important;
+  background:#ffffff !important;
+  border:1px solid #bfd2e6 !important;
+  box-shadow:0 8px 18px rgba(15,23,42,.06) !important;
+}
+
+.edit-btn:hover{
+  background:#eff6ff !important;
+  color:#1d4ed8 !important;
+  border-color:#93c5fd !important;
+}
+
+.btn{
+  border-radius:16px !important;
+  padding:14px 18px !important;
+  box-shadow:0 12px 22px rgba(15,23,42,.09) !important;
+}
+
+.btn-primary,
+.btn-success{
+  background:linear-gradient(135deg,#0f5f7a,#0f9b8e) !important;
+}
+
+.btn-gold{
+  background:linear-gradient(135deg,#d6a21f,#fbbf24) !important;
+}
+
+.btn-danger{
+  background:linear-gradient(135deg,#b91c1c,#ef4444) !important;
+}
+
+.admin-toolbar{
+  gap:12px !important;
+  align-items:center !important;
+}
+
+.admin-toolbar input,
+.admin-toolbar select{
+  height:48px !important;
+  border-radius:16px !important;
+}
+
+.field{
+  border-radius:20px !important;
+  background:linear-gradient(180deg,#ffffff,#fbfdff) !important;
+}
+
+.field:hover{
+  transform:translateY(-1px) !important;
+}
+
+.charts-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:20px !important;
+}
+
+.chart-card{
+  border-radius:26px !important;
+  padding:20px !important;
+  background:linear-gradient(180deg,#ffffff,#fcfdff) !important;
+  overflow:hidden !important;
+}
+
+.chart-card::before{
+  height:5px !important;
+  background:linear-gradient(90deg,#145f82,#16a39a,#d6a21f) !important;
+}
+
+.chart-card h4{
+  font-size:18px !important;
+  font-weight:900 !important;
+  letter-spacing:-.01em !important;
+}
+
+.chart-card canvas{
+  height:310px !important;
+  border-radius:18px !important;
+}
+
+.executive-grid{
+  gap:20px !important;
+}
+
+.executive-hero{
+  border-radius:24px !important;
+  background:linear-gradient(135deg,#0b2239,#145f82,#0f9b8e) !important;
+}
+
+.mini-kpi{
+  border-radius:20px !important;
+}
+
+.modal-card{
+  border-radius:28px !important;
+}
+
+.modal-head{
+  background:linear-gradient(135deg,#0b2239,#0f5f7a,#0f9b8e) !important;
+}
+
+@media(max-width:1200px){
+  .admin-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  #priorityGrid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}
+
+@media(max-width:850px){
+  .admin-grid,
+  #priorityGrid,
+  .charts-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+
+/* ===== v44: gráficas propias por módulo ===== */
+.module-charts-panel{
+  margin-top:24px;
+  padding:20px;
+  border:1px solid #dbe7f1;
+  border-radius:26px;
+  background:linear-gradient(180deg,#ffffff,#fbfdff);
+  box-shadow:0 18px 42px rgba(15,23,42,.07);
+}
+.module-charts-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:16px;
+  margin-bottom:16px;
+}
+.module-charts-head h3{
+  margin:0;
+  font-size:22px;
+  letter-spacing:-.025em;
+  color:#0f172a;
+}
+.module-charts-head p{
+  margin:6px 0 0;
+  color:#64748b;
+  font-size:14px;
+}
+.module-charts-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.module-chart-card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid #dbe7f1;
+  border-radius:24px;
+  background:linear-gradient(180deg,#ffffff,#fcfdff);
+  padding:18px 18px 14px;
+  box-shadow:0 14px 30px rgba(15,23,42,.06);
+}
+.module-chart-card::before{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:5px;
+  background:linear-gradient(90deg,#145f82,#16a39a,#d6a21f);
+}
+.module-chart-card h4{
+  margin:0 0 10px;
+  font-size:17px;
+  font-weight:900;
+  color:#0f172a;
+}
+.module-chart-card canvas{
+  width:100%;
+  height:310px;
+  display:block;
+  border-radius:18px;
+  background:linear-gradient(180deg,#ffffff,#fbfdff);
+}
+@media(max-width:900px){
+  .module-charts-grid{grid-template-columns:1fr}
+}
+
+
+/* ===== v45: gráficas a tamaño completo ===== */
+.priority-table{
+  width:100% !important;
+  overflow-x:auto !important;
+}
+#priorityTable{
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+}
+#priorityTable > .report-modern{
+  width:100% !important;
+}
+.module-charts-panel{
+  width:100% !important;
+  max-width:none !important;
+  box-sizing:border-box !important;
+}
+.module-charts-grid{
+  width:100% !important;
+  grid-template-columns:repeat(2,minmax(520px,1fr)) !important;
+  align-items:stretch !important;
+}
+.module-chart-card{
+  width:100% !important;
+  min-height:430px !important;
+  box-sizing:border-box !important;
+}
+.module-chart-card canvas{
+  width:100% !important;
+  height:360px !important;
+}
+@media(max-width:1300px){
+  .module-charts-grid{
+    grid-template-columns:1fr !important;
+  }
+  .module-chart-card canvas{
+    height:380px !important;
+  }
+}
+@media(max-width:700px){
+  .module-chart-card{
+    min-height:360px !important;
+  }
+  .module-chart-card canvas{
+    height:310px !important;
+  }
+}
+
+
+/* ===== v46: gráficas limpias sin saturación ===== */
+.module-chart-card h4::after{
+  content:'';
+}
+.module-chart-card canvas{
+  max-height:390px !important;
+}
+
+
+/* ===== v48: beneficios IRTRA/IGSS + acreditación DIGESSP ===== */
+.acred-label small{
+  display:block;
+  margin-top:3px;
+  font-size:10px;
+  color:#64748b;
+  font-weight:800;
+  line-height:1.1;
+}
+.pdf-worker-card .acred-label small{
+  color:#64748b;
+}
+
+</style>
 </head>
 <body>
   <div class="wrap">
@@ -322,7 +1065,7 @@
 
       <div id="formArea" class="hidden">
         <div class="card progress-card">
-          <div class="progress-head"><span id="stepLabel">Módulo 1 de 7</span><span id="progressLabel">14%</span></div>
+          <div class="progress-head"><div id="stepLabel"></div><div id="progressLabel"></div></div>
           <div class="progress-bar"><div id="progressFill"></div></div>
           <div class="step-chips" id="stepChips"></div>
         </div>
@@ -409,7 +1152,7 @@
             </div>
             <div class="priority-grid" id="priorityGrid"></div>
             <div class="attention-note" id="reportModeNote">Vista general: estado financiero, laboral y de salud por colaborador en una sola línea. Los colores del detalle indican: verde todo bien, amarillo moderado, naranja alto y rojo crítico.</div>
-            <div class="table-wrap priority-table"><table id="priorityTable"></table></div>
+            <div class="table-wrap priority-table"><div id="priorityTable"></div></div>
           </div>
           
 
@@ -516,6 +1259,8 @@ const firebaseConfig = {
   let executiveView = 'financiero';
   let tableView = 'financiero';
   let reportView = 'general';
+  let editingRecordId = null;
+  let editingRecordOriginal = null;
 
   function bindClick(id, handler){
     const el = document.getElementById(id);
@@ -609,6 +1354,7 @@ const firebaseConfig = {
       {id:'aniosSeguridadPrivada', label:'¿Cuántos años de experiencia tiene en servicios de seguridad privada?', type:'number', required:true, min:0, showIf:{field:'experienciaSeguridadPrivada', equals:'Sí'}},
       {id:'empresasSeguridadPrivada', label:'¿En qué empresas ha prestado servicios de seguridad privada?', type:'textarea', required:true, full:true, showIf:{field:'experienciaSeguridadPrivada', equals:'Sí'}},
       {id:'diasCapacitacionInicial', label:'¿Cuántos días de capacitación recibió por parte de su empresa al momento de ser contratado?', type:'select', required:true, options:['Ningún día','1 día','2 días','3 días','4 días','5 días','6 días','7 días','8 días','9 días','10 días','11 días','12 días','13 días','14 días','15 días']},
+      {id:'retroalimentacionPracticaTiro2026', label:'¿Retroalimentación práctica de tiro 2026?', type:'select', required:true, options:['Sí','No']},
       {id:'carnetIrtra', label:'¿Cuenta con carné de IRTRA?', type:'select', required:true, options:['Tiene','No tiene','No ha hecho la gestión']},
       {id:'carnetIgss', label:'¿Cuenta con carné de IGSS?', type:'select', required:true, options:['Tiene','No tiene','No ha hecho la gestión']},
       {id:'acreditacionDigessp', label:'¿Cuenta con acreditación de la DIGESSP?', type:'select', required:true, options:['Tiene','No tiene','No ha hecho la gestión']}
@@ -678,17 +1424,50 @@ const firebaseConfig = {
 
   function renderForm(){
     const chips = document.getElementById('stepChips');
-    chips.innerHTML = modules.map((m,i)=>`<div class="step-chip ${i===currentStep?'active':''}">${i+1}</div>`).join('');
+    chips.innerHTML = modules.map((m,i)=>`
+      <div class="step-chip ${i===currentStep?'active':''} ${i<currentStep?'done':''}">
+        <div class="step-chip-index">${moduleIcon(m.group,i)}</div>
+        <div class="step-chip-text">
+          <div class="step-chip-title">${i+1}. ${moduleShort(m.group)}</div>
+          <div class="step-chip-sub">${m.title}</div>
+        </div>
+      </div>
+    `).join('');
+
     form.innerHTML = modules.map((m,i)=>`
-      <section class="form-step ${i===currentStep?'':'hidden'}" data-step="${i}">
-        <div class="module-header"><span class="module-number">${String(i+1).padStart(2,'0')}</span><div><h2>${m.title}</h2><p>${m.description}</p></div></div>
+      <section class="form-step ${moduleThemeClass(m.group)} ${i===currentStep?'':'hidden'}" data-step="${i}">
+        <div class="module-header">
+          <span class="module-number">${moduleIcon(m.group,i)}</span>
+          <div class="module-header-copy">
+            <div class="module-header-top">
+              <div>
+                <h2>${m.title}</h2>
+                <p>${m.description}</p>
+              </div>
+              <div class="module-pill">Módulo ${i+1} de ${modules.length}</div>
+            </div>
+            <div class="module-insights">
+              <div class="insight-card">
+                <h4>Qué se analiza en este módulo</h4>
+                <p>${moduleInsight(m)}</p>
+              </div>
+              <div class="tip-card">
+                <h4>Recomendación de registro</h4>
+                <p>${moduleTip(m)}</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="grid">${m.fields.map(renderField).join('')}</div>
       </section>
     `).join('') + `
       <div class="nav-actions">
-        <button type="button" class="btn btn-secondary" id="prevBtn">Anterior</button>
-        <button type="button" class="btn btn-primary" id="nextBtn">Siguiente</button>
-        <button type="submit" class="btn btn-success hidden" id="submitBtn">Enviar encuesta</button>
+        <div class="step-summary"><span>Avance actual:</span> <strong>${currentStep + 1} de ${modules.length} módulos</strong></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button type="button" class="btn btn-secondary" id="prevBtn">Anterior</button>
+          <button type="button" class="btn btn-primary" id="nextBtn">Siguiente</button>
+          <button type="submit" class="btn btn-success hidden" id="submitBtn">Enviar encuesta</button>
+        </div>
       </div>
       <p id="formMessage" class="message"></p>
     `;
@@ -701,29 +1480,70 @@ const firebaseConfig = {
     form.onsubmit = submitForm;
   }
 
-  function renderField(f){
+  
+  const moduleVisualMap = {
+    datosPersonales: { short:'Datos personales', icon:'DP', insight:'Identificación básica del colaborador, empresa, edad y ubicación operativa.', tip:'Procure registrar el nombre completo y la ubicación tal como se manejan internamente.' },
+    vivienda: { short:'Vivienda', icon:'VH', insight:'Condiciones de vivienda, estabilidad residencial y entorno donde habita.', tip:'Estos datos ayudan a comprender la estabilidad habitacional y la seguridad del entorno.' },
+    finanzas: { short:'Finanzas', icon:'Q', insight:'Obligaciones económicas, deudas, ahorro y presión financiera estimada.', tip:'Los montos deben registrarse en quetzales para que los cálculos automáticos sean correctos.' },
+    salud: { short:'Salud', icon:'SL', insight:'Estado general de salud, condición física, medicamentos y seguimiento preventivo.', tip:'El enfoque es preventivo y confidencial. Registre únicamente la información relevante.' },
+    experiencia: { short:'Laboral', icon:'LB', insight:'Experiencia laboral, armas manejadas, capacitación, beneficios IRTRA/IGSS y acreditación DIGESSP del colaborador.', tip:'Puede seleccionar varias armas si el colaborador tiene experiencia en más de una.' },
+    familia: { short:'Familia', icon:'FM', insight:'Contexto familiar y responsabilidades que permiten entender su situación personal.', tip:'Registre la información de forma objetiva, sin juicios y con enfoque preventivo.' },
+    traslado: { short:'Traslado', icon:'TR', insight:'Movilidad al trabajo, tiempos y factores del trayecto que puedan incidir en la operación.', tip:'Registre el medio de traslado real que utiliza el colaborador normalmente.' }
+  };
+
+  function moduleThemeClass(group){
+    return `module-theme-${group}`;
+  }
+
+  function moduleShort(group){
+    return (moduleVisualMap[group] || {}).short || group;
+  }
+
+  function moduleIcon(group, index){
+    return (moduleVisualMap[group] || {}).icon || String(index + 1);
+  }
+
+  function moduleInsight(module){
+    return (moduleVisualMap[module.group] || {}).insight || module.description || '';
+  }
+
+  function moduleTip(module){
+    return (moduleVisualMap[module.group] || {}).tip || 'Complete la información de forma clara para mejorar la calidad del análisis.';
+  }
+
+function renderField(f){
     const conditional = f.showIf ? ` conditional" data-show-if='${JSON.stringify(f.showIf)}'` : '"';
     const full = f.full ? ' full' : '';
     const req = f.required ? 'data-required="true"' : '';
+    const requiredMark = f.required ? '<span class="field-required">*</span>' : '';
     let body='';
+
     if(f.type==='select'){
       body = `<select id="${f.id}" name="${f.id}" ${req}><option value="">Seleccione una opción</option>${f.options.map(o=>`<option>${o}</option>`).join('')}</select>`;
     } else if(f.type==='textarea'){
       body = `<textarea id="${f.id}" name="${f.id}" ${req} placeholder="${f.placeholder||''}"></textarea>`;
     } else if(f.type==='checkboxes'){
-      body = `<div class="checks" id="${f.id}" data-checkbox-group="${f.id}" ${req}>${f.options.map(o=>`<label class="check-item"><input type="checkbox" name="${f.id}" value="${o}"> ${o}</label>`).join('')}</div>`;
+      body = `<div class="checks" id="${f.id}" data-checkbox-group="${f.id}" ${req}>${f.options.map(o=>`<label class="check-item"><input type="checkbox" name="${f.id}" value="${o}"> <span>${o}</span></label>`).join('')}</div>`;
     } else {
       body = `<input id="${f.id}" name="${f.id}" type="${f.type||'text'}" ${req} ${f.min!==undefined?`min="${f.min}"`:''} ${f.max!==undefined?`max="${f.max}"`:''} placeholder="${f.placeholder||''}">`;
     }
-    return `<div class="field${full}${conditional} data-field-wrapper="${f.id}"><label class="field-label" for="${f.id}">${f.label}</label>${body}</div>`;
+
+    const note = f.showIf ? '<div class="field-note">Se habilita según la respuesta anterior.</div>' : '';
+    return `<div class="field${full}${conditional} data-field-wrapper="${f.id}"><label class="field-label" for="${f.id}">${f.label}${requiredMark}</label>${body}${note}</div>`;
   }
 
   function updateProgress(){
-    const percent = Math.round(((currentStep+1)/modules.length)*100);
-    document.getElementById('stepLabel').textContent = `Módulo ${currentStep+1} de ${modules.length}`;
-    document.getElementById('progressLabel').textContent = `${percent}%`;
+    const percent = Math.round(((currentStep + 1) / modules.length) * 100);
+    const current = modules[currentStep];
+    document.getElementById('stepLabel').innerHTML = `<div><div class="progress-main-title">Módulo ${currentStep + 1}: ${current.title}</div><div class="progress-main-sub">${current.description}</div></div>`;
+    document.getElementById('progressLabel').innerHTML = `<span class="progress-badge">${percent}% completado</span>`;
     document.getElementById('progressFill').style.width = `${percent}%`;
-    [...document.querySelectorAll('.step-chip')].forEach((c,i)=>c.classList.toggle('active', i===currentStep));
+
+    [...document.querySelectorAll('.step-chip')].forEach((c,i)=>{
+      c.classList.toggle('active', i===currentStep);
+      c.classList.toggle('done', i<currentStep);
+    });
+
     const prev = document.getElementById('prevBtn');
     const next = document.getElementById('nextBtn');
     const submit = document.getElementById('submitBtn');
@@ -985,6 +1805,11 @@ const firebaseConfig = {
     }
   });
 
+
+  bindClick('editCloseBtn', closeEditModal);
+  bindClick('editCancelBtn', closeEditModal);
+  bindClick('editSaveBtn', saveEditRecord);
+
   bindClick('adminLogoutBtn', async ()=>{
     try{
       if(auth) await auth.signOut();
@@ -1120,9 +1945,9 @@ const firebaseConfig = {
     }
 
     if(tableView === 'salud'){
-      table.innerHTML = `<thead><tr><th>Fecha</th><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Estado salud</th><th>Condición física</th><th>Condición para puesto</th><th>Actividad física</th><th>Medicamento permanente</th><th>Qué medicamento</th><th>Ausencias salud</th><th>Semáforo</th></tr></thead><tbody>` + rows.map(r=>{
+      table.innerHTML = `<thead><tr><th>Fecha</th><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Estado salud</th><th>Actividad física</th><th>Medicamento permanente</th><th>Qué medicamento</th><th>Ausencias salud</th><th>Semáforo</th></tr></thead><tbody>` + rows.map(r=>{
         const riesgo = semaforoSalud(r);
-        return `<tr><td>${new Date(r.fechaRegistro).toLocaleString()}</td><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.salud?.estadoSalud||'')}</td><td>${escapeHtml(r.salud?.tieneCondicionFisica||'')}</td><td>${escapeHtml(r.salud?.condicionFisicaPuesto||'')}</td><td>${escapeHtml(r.salud?.actividadFisica||'')}</td><td>${escapeHtml(r.salud?.medicamentoPermanente||'')}</td><td>${escapeHtml(r.salud?.detalleMedicamento||'')}</td><td>${escapeHtml(r.salud?.ausenciasSalud||'')}</td><td>${riskBadge(riesgo)}</td></tr>`;
+        return `<tr><td>${new Date(r.fechaRegistro).toLocaleString()}</td><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.salud?.estadoSalud||'')}</td><td>${escapeHtml(r.salud?.actividadFisica||'')}</td><td>${escapeHtml(r.salud?.medicamentoPermanente||'')}</td><td>${escapeHtml(r.salud?.detalleMedicamento||'')}</td><td>${escapeHtml(r.salud?.ausenciasSalud||'')}</td><td>${riskBadge(riesgo)}</td></tr>`;
       }).join('') + '</tbody>';
       return;
     }
@@ -1195,6 +2020,78 @@ const firebaseConfig = {
     return resumen === 'Completo' ? 'ok' : 'pendiente';
   }
 
+
+  function credencialOk(valor){
+    return estadoCredencial(valor) === 'Tiene';
+  }
+
+  function credencialIcono(valor, titulo){
+    const ok = credencialOk(valor);
+    const symbol = ok ? '✓' : '✕';
+    const cls = ok ? 'ok' : 'fail';
+    return `<span class="cred-icon ${cls}" title="${escapeHtml(estadoCredencial(valor))}"><span>${escapeHtml(titulo)}</span><span class="cred-symbol">${symbol}</span></span>`;
+  }
+
+  function credencialesIconos(r){
+    const exp = r.experiencia || {};
+    return `<div class="cred-row">${credencialIcono(exp.carnetIrtra,'IRTRA · Beneficio')}${credencialIcono(exp.carnetIgss,'IGSS · Beneficio')}${credencialIcono(exp.acreditacionDigessp,'DIGESSP · Acreditación')}</div>`;
+  }
+
+  function editButton(id){
+    return id ? `<button type="button" class="edit-btn" data-edit-record="${escapeHtml(id)}">Editar</button>` : '';
+  }
+
+  function nameCell(r){
+    return `<div class="name-actions"><strong>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</strong>${editButton(r.idFirestore)}</div>`;
+  }
+
+
+  function credCard(valor, titulo){
+    const ok = credencialOk(valor);
+    return `<div class="cred-card ${ok ? 'ok' : 'fail'}"><div class="label">${escapeHtml(titulo)}</div><div class="symbol">${ok ? '✓' : '✕'}</div></div>`;
+  }
+
+  function credencialesResumenCards(r){
+    const exp = r.experiencia || {};
+    return `<div class="cred-grid">${credCard(exp.carnetIrtra,'IRTRA · Beneficio')}${credCard(exp.carnetIgss,'IGSS · Beneficio')}${credCard(exp.acreditacionDigessp,'DIGESSP · Acreditación')}</div>`;
+  }
+
+  function colaboradorBloque(r){
+    return `<div class="person-block">
+      <div class="person-name">${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</div>
+      <div class="person-meta">
+        <span class="meta-badge">${escapeHtml(r.datosPersonales?.empresa||'Sin empresa')}</span>
+        <span class="meta-badge">${escapeHtml(r.datosPersonales?.ubicacion||'Sin ubicación')}</span>
+      </div>
+      ${editButton(r.idFirestore)}
+    </div>`;
+  }
+
+  function perfilLaboralBloque(r){
+    const exp = r.experiencia || {};
+    return `<div class="profile-stack">
+      <div class="stack-item"><div class="stack-label">Experiencia</div><div class="stack-value">${escapeHtml(exp.experienciaLaboral||'Sin dato')}</div></div>
+      <div class="stack-item"><div class="stack-label">Armas</div><div class="stack-value">${escapeHtml(armasTexto(exp.tipoArma)||'Sin dato')}</div></div>
+      <div class="stack-item"><div class="stack-label">Capacitación</div><div class="stack-value">${escapeHtml(exp.diasCapacitacionInicial ?? 'Sin dato')}</div></div>
+      <div class="stack-item"><div class="stack-label">Práctica tiro 2026</div><div class="stack-value">${escapeHtml(exp.retroalimentacionPracticaTiro2026 || 'Sin dato')}</div></div>
+    </div>`;
+  }
+
+  function accionLaboralCorta(r){
+    const risk = semaforoLaboral(r);
+    const pendientes = resumenCredencialesLaborales(r);
+    if(risk.nivel === 'Bajo'){
+      return `<div class="action-compact"><strong>Seguimiento normal</strong>Perfil operativo estable. ${pendientes === 'Completo' ? 'Beneficios y acreditación completos.' : 'Pendiente: ' + escapeHtml(pendientes) + '.'}</div>`;
+    }
+    if(risk.nivel === 'Moderado'){
+      return `<div class="action-compact"><strong>Seguimiento preventivo</strong>Revisar capacitación, beneficios IRTRA/IGSS y acreditación DIGESSP. ${pendientes === 'Completo' ? '' : 'Pendiente: ' + escapeHtml(pendientes) + '.'}</div>`;
+    }
+    if(risk.nivel === 'Alto'){
+      return `<div class="action-compact"><strong>Atención alta</strong>Reforzar capacitación y validar beneficios IRTRA/IGSS y acreditación DIGESSP. ${pendientes === 'Completo' ? '' : 'Pendiente: ' + escapeHtml(pendientes) + '.'}</div>`;
+    }
+    return `<div class="action-compact"><strong>Atención prioritaria</strong>Requiere acompañamiento operativo y revisión de beneficios/acreditación. ${pendientes === 'Completo' ? '' : 'Pendiente: ' + escapeHtml(pendientes) + '.'}</div>`;
+  }
+
   function scoreLaboral(r){
     let score = 0;
     const exp = r.experiencia || {};
@@ -1221,10 +2118,10 @@ const firebaseConfig = {
     const score = scoreLaboral(r);
     const pendientes = resumenCredencialesLaborales(r);
 
-    if(score >= 6) return {nivel:'Crítico', clase:'critico', detalle:`Atención prioritaria: requiere revisión de capacitación, experiencia operativa y credenciales laborales. Pendiente: ${pendientes}.`};
-    if(score >= 4) return {nivel:'Alto', clase:'alto', detalle:`Atención alta: reforzar capacitación, acompañamiento o validación operativa. Pendiente: ${pendientes}.`};
-    if(score >= 2) return {nivel:'Moderado', clase:'moderado', detalle:`Atención preventiva: seguimiento general de capacidades y credenciales. Pendiente: ${pendientes}.`};
-    return {nivel:'Bajo', clase:'bajo', detalle:'Perfil operativo estable según la información registrada. Credenciales laborales completas o sin alertas relevantes.'};
+    if(score >= 6) return {nivel:'Crítico', clase:'critico', detalle:`Atención prioritaria: requiere revisión de capacitación, experiencia operativa, beneficios IRTRA/IGSS y acreditación DIGESSP. Pendiente: ${pendientes}.`};
+    if(score >= 4) return {nivel:'Alto', clase:'alto', detalle:`Atención alta: reforzar capacitación, acompañamiento operativo, beneficios IRTRA/IGSS y acreditación DIGESSP. Pendiente: ${pendientes}.`};
+    if(score >= 2) return {nivel:'Moderado', clase:'moderado', detalle:`Atención preventiva: seguimiento general de capacidades, beneficios IRTRA/IGSS y acreditación DIGESSP. Pendiente: ${pendientes}.`};
+    return {nivel:'Bajo', clase:'bajo', detalle:'Perfil operativo estable según la información registrada. Beneficios IRTRA/IGSS y acreditación DIGESSP completos o sin alertas relevantes.'};
   }
 
   function scoreSalud(r){
@@ -1436,7 +2333,7 @@ const firebaseConfig = {
 
     if(reportView === 'laboral'){
       grid.innerHTML = [
-        ['lab','Atención alta/crítica', stats.laboralAlto, 'Capacitación, experiencia o credenciales'],
+        ['lab','Atención alta/crítica', stats.laboralAlto, 'Capacitación, experiencia, beneficios o acreditación'],
         ['cap','Sin capacitación', stats.capSin, 'Inducción requerida'],
         ['lab','IRTRA pendiente', stats.irtraPendiente, 'Carné IRTRA no completo'],
         ['lab','IGSS pendiente', stats.igssPendiente, 'Carné IGSS no completo'],
@@ -1457,14 +2354,200 @@ const firebaseConfig = {
 
     grid.innerHTML = [
       ['fin','Financiero crítico/severo', stats.critico, 'Presión económica'],
-      ['lab','Laboral alto/crítico', stats.laboralAlto, 'Capacitación, experiencia o credenciales'],
-      ['lab','Credenciales pendientes', stats.credencialesPendientes, 'IRTRA, IGSS o DIGESSP'],
+      ['lab','Laboral alto/crítico', stats.laboralAlto, 'Capacitación, experiencia, beneficios o acreditación'],
+      ['lab','Beneficios / acreditación pendientes', stats.credencialesPendientes, 'IRTRA, IGSS o DIGESSP'],
       ['sal','Salud alto/crítico', stats.saludAlto, 'Salud y condición física'],
       ['cap','Atención global crítica', generalCrit, 'Prioridad máxima']
     ].map(([cls,label,num,hint])=>`<div class="priority-card ${cls}"><div class="num">${num}</div><div class="label">${label}</div><div class="hint-small">${hint}</div></div>`).join('');
   }
 
-  function renderPriorityAlerts(rows){
+  
+  function chartCountMap(rows, getter, fallback='Sin dato'){
+    const out = {};
+    rows.forEach(r=>{
+      const raw = getter(r);
+      const key = raw === undefined || raw === null || String(raw).trim() === '' ? fallback : String(raw);
+      out[key] = (out[key] || 0) + 1;
+    });
+    return out;
+  }
+
+  function chartBinaryMap(rows, predicate, yesLabel='Sí', noLabel='No'){
+    const out = {};
+    rows.forEach(r=>{
+      const key = predicate(r) ? yesLabel : noLabel;
+      out[key] = (out[key] || 0) + 1;
+    });
+    return out;
+  }
+
+  function chartLevelMap(rows, getter){
+    const raw = {};
+    rows.forEach(r=>{
+      const key = getter(r) || 'Bajo';
+      raw[key] = (raw[key] || 0) + 1;
+    });
+    const order = ['Bajo','Moderado','Alto','Crítico','Sobreendeudamiento severo'];
+    const out = {};
+    order.forEach(k=>{ if(raw[k]) out[k] = raw[k]; });
+    Object.keys(raw).forEach(k=>{ if(!(k in out)) out[k] = raw[k]; });
+    return out;
+  }
+
+  function chartSeverityWeight(level){
+    return ({
+      'Bajo':1,
+      'Moderado':2,
+      'Alto':3,
+      'Crítico':4,
+      'Sobreendeudamiento severo':5
+    })[level] || 1;
+  }
+
+  function chartDominantArea(row){
+    const fin = row.indicadores?.nivelPresionEconomica || 'Bajo';
+    const lab = semaforoLaboral(row).nivel;
+    const sal = semaforoSalud(row).nivel;
+    const sorted = [
+      ['Financiero', fin],
+      ['Laboral', lab],
+      ['Salud', sal]
+    ].sort((a,b)=>chartSeverityWeight(b[1])-chartSeverityWeight(a[1]));
+    return sorted[0][0];
+  }
+
+  function chartCapacitacionRango(valor){
+    const txt = String(valor || '').toLowerCase();
+    const num = numeroDesdeTexto(valor);
+    if(txt.includes('ning')) return 'Ningún día';
+    if(num <= 3) return '1 a 3 días';
+    if(num <= 7) return '4 a 7 días';
+    return '8 a 15 días';
+  }
+
+  function chartCargaRango(row){
+    const value = Number(row.indicadores?.cargaMensualComprometida || 0);
+    if(value <= 0) return 'Q0';
+    if(value <= 500) return 'Q1 - Q500';
+    if(value <= 1000) return 'Q501 - Q1000';
+    if(value <= 2000) return 'Q1001 - Q2000';
+    return 'Más de Q2000';
+  }
+
+  function chartCredentialsPendingMap(rows){
+    return {
+      'IRTRA pendiente': rows.filter(r=>estadoCredencial(r.experiencia?.carnetIrtra) !== 'Tiene').length,
+      'IGSS pendiente': rows.filter(r=>estadoCredencial(r.experiencia?.carnetIgss) !== 'Tiene').length,
+      'DIGESSP pendiente': rows.filter(r=>estadoCredencial(r.experiencia?.acreditacionDigessp) !== 'Tiene').length
+    };
+  }
+
+  
+  function chartTopN(dataMap, limit=8){
+    const entries = Object.entries(dataMap || {})
+      .filter(([,v])=>Number(v)>0)
+      .sort((a,b)=>Number(b[1])-Number(a[1]));
+    if(entries.length <= limit) return Object.fromEntries(entries);
+    const top = entries.slice(0, limit);
+    const others = entries.slice(limit).reduce((acc,[,v])=>acc + Number(v||0),0);
+    const out = Object.fromEntries(top);
+    if(others > 0) out['Otros'] = others;
+    return out;
+  }
+
+function moduleChartsConfig(rows){
+    if(reportView === 'financiero'){
+      return {
+        title:'Gráficas financieras del módulo',
+        desc:'Visualización de presión económica, deuda, ahorro y vivienda.',
+        charts:[
+          {id:'modChartFinPresion', title:'Nivel de presión económica', type:'bar', data:chartLevelMap(rows, r=>r.indicadores?.nivelPresionEconomica || 'Bajo')},
+          {id:'modChartFinDeuda', title:'Deuda activa', type:'pie', data:chartBinaryMap(rows, r=>Number(r.finanzas?.montoTotalDeuda || r.indicadores?.pagoMensualDeuda || 0)>0, 'Con deuda', 'Sin deuda')},
+          {id:'modChartFinCarga', title:'Carga mensual comprometida', type:'bar', data:chartCountMap(rows, r=>chartCargaRango(r))},
+          {id:'modChartFinAhorro', title:'Ahorro de emergencia', type:'pie', data:chartCountMap(rows, r=>r.finanzas?.ahorroEmergencia || 'Sin dato')},
+          {id:'modChartFinVivienda', title:'Tipo de vivienda', type:'pie', data:chartCountMap(rows, r=>r.vivienda?.tipoVivienda || 'Sin dato')},
+          {id:'modChartFinTransporte', title:'Medio de transporte', type:'pie', data:chartTopN(chartCountMap(rows, r=>r.traslado?.medioTransporte || 'Sin dato'), 8)},
+          {id:'modChartFinTiempoTraslado', title:'Tiempo de traslado', type:'bar', data:chartCountMap(rows, r=>r.traslado?.tiempoTraslado || 'Sin dato')}
+        ]
+      };
+    }
+
+    if(reportView === 'laboral'){
+      return {
+        title:'Gráficas laborales del módulo',
+        desc:'Visualización de experiencia, capacitación, armas, práctica de tiro, beneficios IRTRA/IGSS y acreditación DIGESSP.',
+        charts:[
+          {id:'modChartLabSemaforo', title:'Semáforo laboral', type:'bar', data:chartLevelMap(rows, r=>semaforoLaboral(r).nivel)},
+          {id:'modChartLabExperiencia', title:'Experiencia laboral', type:'bar', data:chartCountMap(rows, r=>r.experiencia?.experienciaLaboral || 'Sin dato')},
+          {id:'modChartLabCapacitacion', title:'Días de capacitación inicial', type:'bar', data:chartCountMap(rows, r=>chartCapacitacionRango(r.experiencia?.diasCapacitacionInicial))},
+          {id:'modChartLabArmas', title:'Manejo de armas', type:'bar', data:(()=>{
+            const out = {};
+            rows.forEach(r=>{
+              const armas = Array.isArray(r.experiencia?.tipoArma) ? r.experiencia.tipoArma : (r.experiencia?.tipoArma ? [r.experiencia.tipoArma] : []);
+              armas.forEach(a=>{ const k = String(a || 'Sin dato'); out[k]=(out[k]||0)+1; });
+            });
+            return out;
+          })()},
+          {id:'modChartLabTiro', title:'Retroalimentación práctica de tiro 2026', type:'pie', data:chartCountMap(rows, r=>r.experiencia?.retroalimentacionPracticaTiro2026 || 'Sin dato')},
+          {id:'modChartLabCred', title:'Beneficios / acreditación pendientes', type:'bar', data:chartCredentialsPendingMap(rows)}
+        ]
+      };
+    }
+
+    if(reportView === 'salud'){
+      return {
+        title:'Gráficas de salud del módulo',
+        desc:'Visualización de estado de salud, condición física, medicamentos y semáforo preventivo.',
+        charts:[
+          {id:'modChartSalEstado', title:'Estado general de salud', type:'bar', data:chartCountMap(rows, r=>r.salud?.estadoSalud || 'Sin dato')},
+          {id:'modChartSalSemaforo', title:'Semáforo de salud', type:'bar', data:chartLevelMap(rows, r=>semaforoSalud(r).nivel)},
+          {id:'modChartSalCondicion', title:'Condición física reportada', type:'pie', data:chartCountMap(rows, r=>r.salud?.tieneCondicionFisica || 'No')},
+          {id:'modChartSalMedicamento', title:'Medicamento permanente', type:'pie', data:chartCountMap(rows, r=>r.salud?.medicamentoPermanente || 'No')},
+          {id:'modChartSalActividad', title:'Actividad física semanal', type:'bar', data:chartCountMap(rows, r=>r.salud?.actividadFisica || 'Sin dato')}
+        ]
+      };
+    }
+
+    return {
+      title:'Gráficas generales del módulo',
+      desc:'Visualización global de riesgo, área con mayor alerta, beneficios y acreditación y distribución de colaboradores.',
+      charts:[
+        {id:'modChartGenRiesgo', title:'Riesgo global', type:'bar', data:chartLevelMap(rows, r=>reportLevelForRow(r).nivel)},
+        {id:'modChartGenArea', title:'Mayor alerta por área', type:'pie', data:chartCountMap(rows, r=>chartDominantArea(r))},
+        {id:'modChartGenCred', title:'Estado de beneficios y acreditación', type:'pie', data:chartBinaryMap(rows, r=>resumenCredencialesLaborales(r)==='Completo', 'Completas', 'Pendientes')},
+        {id:'modChartGenEmpresa', title:'Colaboradores por empresa', type:'bar', data:chartCountMap(rows, r=>r.datosPersonales?.empresa || 'Sin empresa')},
+        {id:'modChartGenUbicacion', title:'Top ubicaciones con más colaboradores', type:'bar', data:chartTopN(chartCountMap(rows, r=>r.datosPersonales?.ubicacion || 'Sin ubicación'), 8)}
+      ]
+    };
+  }
+
+  function moduleChartsHtml(rows){
+    const cfg = moduleChartsConfig(rows);
+    return `<section class="module-charts-panel">
+      <div class="module-charts-head">
+        <div>
+          <h3>${escapeHtml(cfg.title)}</h3>
+          <p>${escapeHtml(cfg.desc)}</p>
+        </div>
+      </div>
+      <div class="module-charts-grid">
+        ${cfg.charts.map(c=>`<div class="module-chart-card"><h4>${escapeHtml(c.title)}</h4><canvas id="${c.id}"></canvas></div>`).join('')}
+      </div>
+    </section>`;
+  }
+
+  function renderModuleCharts(rows){
+    const cfg = moduleChartsConfig(rows);
+    setTimeout(()=>{
+      cfg.charts.forEach(c=>{
+        if(c.type === 'pie') drawPieChart(c.id, c.data);
+        else drawBarChart(c.id, c.data);
+      });
+    },60);
+  }
+
+
+function renderPriorityAlerts(rows){
     const table = document.getElementById('priorityTable');
     const note = document.getElementById('reportModeNote');
     if(!table) return;
@@ -1477,12 +2560,12 @@ const firebaseConfig = {
 
     if(note){
       note.textContent = reportView === 'financiero'
-        ? 'Vista financiera: muestra cómo está cada colaborador en deuda, carga mensual, porcentaje de presión y nivel financiero.'
+        ? 'Vista financiera: muestra cómo está cada colaborador en monto de deuda, carga mensual, porcentaje de presión y nivel financiero.'
         : reportView === 'laboral'
-          ? 'Vista laboral: muestra experiencia, armas, capacitación, credenciales IRTRA, IGSS, DIGESSP y semáforo laboral por colaborador.'
+          ? 'Vista laboral: diseño resumido con perfil del colaborador, práctica de tiro 2026, beneficios y acreditación por íconos y acción sugerida más limpia.'
           : reportView === 'salud'
             ? 'Vista salud: muestra estado de salud, condición física, medicamento, detalle del medicamento y semáforo de salud por colaborador.'
-            : 'Vista general: estado financiero, laboral y de salud por colaborador en una sola línea. Los colores del detalle indican: verde todo bien, amarillo moderado, naranja alto y rojo crítico.';
+            : 'Vista general: estado financiero, laboral y de salud por colaborador en una sola línea. En credenciales: ✓ verde significa tiene; ✕ rojo significa no tiene o está en gestión.';
     }
 
     if(!rows.length){
@@ -1490,55 +2573,63 @@ const firebaseConfig = {
       return;
     }
 
+    let htmlOut = '';
+
     if(reportView === 'financiero'){
-      table.innerHTML = `<thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Carga mensual</th><th>% presión</th><th>Nivel financiero</th><th>Acción sugerida</th></tr></thead><tbody>` +
+      htmlOut = `<table class="report-modern"><thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Monto deuda</th><th>Carga mensual</th><th>% presión</th><th>Nivel financiero</th><th>Acción sugerida</th></tr></thead><tbody>` +
         rows.map(r=>{
           const ind = r.indicadores || {};
+          const fin = r.finanzas || {};
           const level = ind.nivelPresionEconomica || 'Bajo';
-          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>Q ${money(ind.cargaMensualComprometida)}</td><td>${ind.porcentajePresionEconomica||0}%</td><td><span class="risk-pill ${nivelClase(level)}">${escapeHtml(level)}</span></td><td>${escapeHtml(actionForPriority('Financiero', level))}</td></tr>`;
-        }).join('') + '</tbody>';
-      table.classList.add('compact-table');
-      return;
-    }
-
-    if(reportView === 'laboral'){
-      table.innerHTML = `<thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Experiencia</th><th>Armas</th><th>Capacitación</th><th>IRTRA</th><th>IGSS</th><th>DIGESSP</th><th>Semáforo laboral</th><th>Acción sugerida</th></tr></thead><tbody>` +
+          return `<tr><td>${nameCell(r)}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>Q ${money(fin.montoTotalDeuda)}</td><td>Q ${money(ind.cargaMensualComprometida)}</td><td>${ind.porcentajePresionEconomica||0}%</td><td><span class="risk-pill ${nivelClase(level)}">${escapeHtml(level)}</span></td><td>${escapeHtml(actionForPriority('Financiero', level))}</td></tr>`;
+        }).join('') + '</tbody></table>';
+    } else if(reportView === 'laboral'){
+      htmlOut = `
+        <div class="report-legend">
+          <span class="legend-pill"><span class="mini ok">✓</span> Tiene</span>
+          <span class="legend-pill"><span class="mini bad">✕</span> No tiene o está en gestión</span>
+        </div>
+        <table class="report-modern">
+          <thead><tr><th>Colaborador</th><th>Perfil laboral</th><th>Beneficios y acreditación</th><th>Semáforo laboral</th><th>Acción sugerida</th></tr></thead>
+          <tbody>` +
         rows.map(r=>{
           const risk = semaforoLaboral(r);
-          const exp = r.experiencia || {};
-          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(exp.experienciaLaboral||'')}</td><td>${escapeHtml(armasTexto(exp.tipoArma))}</td><td>${escapeHtml(exp.diasCapacitacionInicial ?? '')}</td><td>${badgeCredencial(exp.carnetIrtra)}</td><td>${badgeCredencial(exp.carnetIgss)}</td><td>${badgeCredencial(exp.acreditacionDigessp)}</td><td><span class="risk-pill ${risk.clase}">${escapeHtml(risk.nivel)}</span></td><td>${escapeHtml(risk.detalle)}</td></tr>`;
-        }).join('') + '</tbody>';
-      table.classList.add('compact-table');
-      return;
-    }
-
-    if(reportView === 'salud'){
-      table.innerHTML = `<thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Estado salud</th><th>Condición física</th><th>Medicamento</th><th>Qué medicamento</th><th>Semáforo salud</th><th>Acción sugerida</th></tr></thead><tbody>` +
+          return `<tr>
+            <td>${colaboradorBloque(r)}</td>
+            <td>${perfilLaboralBloque(r)}</td>
+            <td>${credencialesResumenCards(r)}</td>
+            <td class="sem-center"><span class="risk-pill ${risk.clase}">${escapeHtml(risk.nivel)}</span></td>
+            <td>${accionLaboralCorta(r)}</td>
+          </tr>`;
+        }).join('') + '</tbody></table>';
+    } else if(reportView === 'salud'){
+      htmlOut = `<table class="report-modern"><thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Estado salud</th><th>Actividad física</th><th>Medicamento</th><th>Qué medicamento</th><th>Semáforo salud</th><th>Acción sugerida</th></tr></thead><tbody>` +
         rows.map(r=>{
           const risk = semaforoSalud(r);
-          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.salud?.estadoSalud||'')}</td><td>${escapeHtml(r.salud?.tieneCondicionFisica||'')}</td><td>${escapeHtml(r.salud?.medicamentoPermanente||'')}</td><td>${escapeHtml(r.salud?.detalleMedicamento||'')}</td><td><span class="risk-pill ${risk.clase}">${escapeHtml(risk.nivel)}</span></td><td>${escapeHtml(risk.detalle)}</td></tr>`;
-        }).join('') + '</tbody>';
-      table.classList.add('compact-table');
-      return;
-    }
-
-    table.innerHTML = `<thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Riesgo global</th><th>Estado por área</th><th>Acción sugerida</th></tr></thead><tbody>` +
+          return `<tr><td>${nameCell(r)}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.salud?.estadoSalud||'')}</td><td>${escapeHtml(r.salud?.actividadFisica||'')}</td><td>${escapeHtml(r.salud?.medicamentoPermanente||'')}</td><td>${escapeHtml(r.salud?.detalleMedicamento||'')}</td><td><span class="risk-pill ${risk.clase}">${escapeHtml(risk.nivel)}</span></td><td>${escapeHtml(risk.detalle)}</td></tr>`;
+        }).join('') + '</tbody></table>';
+    } else {
+      htmlOut = `<table class="report-modern"><thead><tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Riesgo global</th><th>Estado por área</th><th>Beneficios y acreditación</th><th>Acción sugerida</th></tr></thead><tbody>` +
       rows.map(r=>{
         const global = reportLevelForRow(r);
         const finLevel = r.indicadores?.nivelPresionEconomica || 'Bajo';
         const labRisk = semaforoLaboral(r);
         const salRisk = semaforoSalud(r);
-        const cred = resumenCredencialesLaborales(r);
         return `<tr>
-          <td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td>
+          <td>${nameCell(r)}</td>
           <td>${escapeHtml(r.datosPersonales?.empresa||'')}</td>
           <td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td>
           <td><span class="risk-pill ${global.clase}">${escapeHtml(global.nivel)}</span><div class="summary-indicator">Mayor alerta: ${escapeHtml(global.area)}</div></td>
-          <td><div class="report-chip-row"><span class="mini-chip ${clasePorNivel(finLevel)}">Financiero: ${escapeHtml(finLevel)}</span><span class="mini-chip ${clasePorNivel(labRisk.nivel)}">Laboral: ${escapeHtml(labRisk.nivel)}</span><span class="mini-chip ${clasePorNivel(salRisk.nivel)}">Salud: ${escapeHtml(salRisk.nivel)}</span><span class="mini-chip ${claseCredencialesResumen(r)}">Credenciales: ${escapeHtml(cred)}</span></div></td>
+          <td><div class="report-chip-row"><span class="mini-chip ${clasePorNivel(finLevel)}">Financiero: ${escapeHtml(finLevel)}</span><span class="mini-chip ${clasePorNivel(labRisk.nivel)}">Laboral: ${escapeHtml(labRisk.nivel)}</span><span class="mini-chip ${clasePorNivel(salRisk.nivel)}">Salud: ${escapeHtml(salRisk.nivel)}</span></div></td>
+          <td>${credencialesIconos(r)}</td>
           <td>${escapeHtml(reportActionForRow(r))}</td>
         </tr>`;
-      }).join('') + '</tbody>';
+      }).join('') + '</tbody></table>';
+    }
+
+    table.innerHTML = htmlOut + moduleChartsHtml(rows);
     table.classList.add('compact-table');
+    renderModuleCharts(rows);
   }
 
 
@@ -1663,12 +2754,12 @@ const firebaseConfig = {
     const dpr = window.devicePixelRatio || 1;
     const rect = c.getBoundingClientRect();
     const cssW = Math.max(420, Math.round(rect.width || 420));
-    const cssH = 300;
+    const cssH = Math.max(320, Math.round(rect.height || 360));
     c.width = cssW * dpr; c.height = cssH * dpr;
     ctx.setTransform(dpr,0,0,dpr,0,0);
     const w = cssW, h = cssH;
     ctx.clearRect(0,0,w,h);
-    const entries = sortedEntries(dataMap);
+    const entries = sortedEntries(chartTopN(dataMap, 10));
     if(!entries.length){ ctx.fillStyle='#64748b'; ctx.font='14px Arial'; ctx.fillText('Sin datos para graficar',20,40); return; }
     const labels = entries.map(e=>e[0]), vals = entries.map(e=>e[1]);
     const max = Math.max(...vals,1);
@@ -1733,7 +2824,7 @@ const firebaseConfig = {
       // label
       ctx.save();
       ctx.translate(x + barW/2, h - 24);
-      ctx.rotate(-0.28);
+      ctx.rotate(-0.18);
       ctx.font = '13px Arial';
       ctx.fillStyle = '#475569';
       ctx.fillText(formatLabel(labels[i], 20), -34, 0);
@@ -1746,7 +2837,7 @@ const firebaseConfig = {
     const dpr = window.devicePixelRatio || 1;
     const rect = c.getBoundingClientRect();
     const cssW = Math.max(420, Math.round(rect.width || 420));
-    const cssH = 300;
+    const cssH = Math.max(320, Math.round(rect.height || 360));
     c.width = cssW * dpr; c.height = cssH * dpr;
     ctx.setTransform(dpr,0,0,dpr,0,0);
     const w = cssW, h = cssH;
@@ -1755,7 +2846,7 @@ const firebaseConfig = {
     const total = entries.reduce((a,b)=>a+b[1],0);
     if(!entries.length || !total){ ctx.fillStyle='#64748b'; ctx.font='14px Arial'; ctx.fillText('Sin datos para graficar',20,40); return; }
 
-    const cx = 110, cy = 155, r = 74, inner = 40;
+    const cx = Math.min(150, Math.max(120, w * 0.28)), cy = Math.round(h * 0.52), r = Math.min(92, Math.max(74, h * 0.27)), inner = Math.round(r * 0.54);
     let start = -Math.PI/2;
     entries.forEach(([label,val],i)=>{
       const angle = (val/total) * Math.PI * 2;
@@ -1790,7 +2881,7 @@ const firebaseConfig = {
     let ly = 62;
     entries.forEach(([label,val],i)=>{
       const pct = percent(val,total);
-      const x = 214, y = ly + i*32;
+      const x = Math.min(w - 220, cx + r + 36), y = ly + i*34;
       ctx.beginPath();
       ctx.arc(x, y, 8, 0, Math.PI*2);
       ctx.fillStyle = palette(i);
@@ -2008,6 +3099,250 @@ const firebaseConfig = {
     if(typeof v === 'object') return JSON.stringify(v);
     return v;
   }
+
+
+  function editFieldId(group, fieldId){
+    return `edit_${group}_${fieldId}`;
+  }
+
+  function renderEditField(module, f){
+    const group = module.group;
+    const conditional = f.showIf ? ` conditional" data-edit-show-if='${JSON.stringify({...f.showIf, group})}'` : '"';
+    const full = f.full ? ' full' : '';
+    const req = f.required ? 'data-required="true"' : '';
+    const id = editFieldId(group, f.id);
+    let body = '';
+
+    if(f.type === 'select'){
+      body = `<select id="${id}" data-edit-group="${group}" data-edit-field="${f.id}" ${req}><option value="">Seleccione una opción</option>${f.options.map(o=>`<option>${escapeHtml(o)}</option>`).join('')}</select>`;
+    } else if(f.type === 'textarea'){
+      body = `<textarea id="${id}" data-edit-group="${group}" data-edit-field="${f.id}" ${req} placeholder="${escapeHtml(f.placeholder||'')}"></textarea>`;
+    } else if(f.type === 'checkboxes'){
+      body = `<div class="checks" id="${id}" data-edit-checkbox-group="${group}.${f.id}" data-edit-group="${group}" data-edit-field="${f.id}" ${req}>${f.options.map(o=>`<label class="check-item"><input type="checkbox" name="${id}" value="${escapeHtml(o)}"> ${escapeHtml(o)}</label>`).join('')}</div>`;
+    } else {
+      body = `<input id="${id}" data-edit-group="${group}" data-edit-field="${f.id}" type="${f.type||'text'}" ${req} ${f.min!==undefined?`min="${f.min}"`:''} ${f.max!==undefined?`max="${f.max}"`:''} placeholder="${escapeHtml(f.placeholder||'')}">`;
+    }
+
+    return `<div class="field${full}${conditional} data-edit-field-wrapper="${group}.${f.id}"><label class="field-label" for="${id}">${escapeHtml(f.label)}</label>${body}</div>`;
+  }
+
+  function getEditElementValue(group, fieldId){
+    const checkboxGroup = document.querySelector(`[data-edit-checkbox-group="${group}.${fieldId}"]`);
+    if(checkboxGroup){
+      return [...checkboxGroup.querySelectorAll('input[type="checkbox"]:checked')].map(x=>x.value);
+    }
+    const el = document.getElementById(editFieldId(group, fieldId));
+    return el ? el.value : '';
+  }
+
+  function editConditionMatches(cond){
+    const val = getEditElementValue(cond.group, cond.field);
+    if(Array.isArray(val)) return val.includes(cond.equals);
+    return val === cond.equals;
+  }
+
+  function updateEditConditionalFields(){
+    document.querySelectorAll('[data-edit-show-if]').forEach(block=>{
+      const cond = JSON.parse(block.dataset.editShowIf);
+      const visible = editConditionMatches(cond);
+      block.classList.toggle('visible', visible);
+      block.querySelectorAll('input,select,textarea').forEach(el=>{
+        el.disabled = !visible;
+        if(!visible){
+          if(el.type === 'checkbox') el.checked = false;
+          else el.value = '';
+          el.classList.remove('input-error');
+        }
+      });
+    });
+  }
+
+  function setEditValue(module, field, value){
+    const group = module.group;
+    const id = editFieldId(group, field.id);
+
+    if(field.type === 'checkboxes'){
+      const arr = Array.isArray(value) ? value : (value ? [value] : []);
+      document.querySelectorAll(`input[name="${id}"]`).forEach(chk=>{
+        chk.checked = arr.includes(chk.value);
+      });
+      return;
+    }
+
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.value = value === undefined || value === null ? '' : String(value);
+  }
+
+  function openEditRecord(recordId){
+    const record = recordsCache.find(r=>r.idFirestore === recordId);
+    if(!record){
+      alert('No se encontró el registro para editar.');
+      return;
+    }
+
+    editingRecordId = recordId;
+    editingRecordOriginal = record;
+
+    const modal = document.getElementById('editModal');
+    const form = document.getElementById('editForm');
+    const info = document.getElementById('editRecordInfo');
+    const msg = document.getElementById('editMessage');
+
+    info.textContent = `Editando registro de ${record.datosPersonales?.nombreCompleto || 'colaborador'} · ${record.datosPersonales?.empresa || ''} · ${record.datosPersonales?.ubicacion || ''}`;
+    msg.textContent = '';
+    msg.className = 'message';
+
+    form.innerHTML = modules.map(module=>`
+      <section class="edit-section">
+        <h4>${escapeHtml(module.title)}</h4>
+        <p>${escapeHtml(module.description || '')}</p>
+        <div class="edit-grid">${module.fields.map(f=>renderEditField(module, f)).join('')}</div>
+      </section>
+    `).join('');
+
+    modules.forEach(module=>{
+      const data = record[module.group] || {};
+      module.fields.forEach(field=>setEditValue(module, field, data[field.id]));
+    });
+
+    form.oninput = updateEditConditionalFields;
+    form.onchange = updateEditConditionalFields;
+    updateEditConditionalFields();
+
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeEditModal(){
+    editingRecordId = null;
+    editingRecordOriginal = null;
+    const modal = document.getElementById('editModal');
+    if(modal) modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  function validateEditForm(){
+    updateEditConditionalFields();
+    const form = document.getElementById('editForm');
+    let ok = true;
+
+    form.querySelectorAll('.input-error').forEach(x=>x.classList.remove('input-error'));
+    form.querySelectorAll('.field-error').forEach(x=>x.classList.remove('field-error'));
+
+    form.querySelectorAll('[data-required="true"]').forEach(el=>{
+      const wrapper = el.closest('.field');
+      if(wrapper && wrapper.classList.contains('conditional') && !wrapper.classList.contains('visible')) return;
+      if(el.disabled) return;
+
+      if(el.dataset.editCheckboxGroup){
+        const any = el.querySelector('input[type="checkbox"]:checked');
+        if(!any){ el.classList.add('field-error'); ok = false; }
+      }else if(!String(el.value || '').trim()){
+        el.classList.add('input-error');
+        ok = false;
+      }
+    });
+
+    const msg = document.getElementById('editMessage');
+    if(!ok){
+      msg.textContent = 'Por favor complete los campos obligatorios antes de guardar.';
+      msg.className = 'message error';
+    }else{
+      msg.textContent = '';
+      msg.className = 'message';
+    }
+
+    return ok;
+  }
+
+  function collectEditModule(module){
+    const out = {};
+    module.fields.forEach(field=>{
+      const wrapper = document.querySelector(`[data-edit-field-wrapper="${module.group}.${field.id}"]`);
+      if(wrapper && wrapper.classList.contains('conditional') && !wrapper.classList.contains('visible')) return;
+
+      if(field.type === 'checkboxes'){
+        out[field.id] = [...document.querySelectorAll(`input[name="${editFieldId(module.group, field.id)}"]:checked`)].map(x=>x.value);
+      }else{
+        const el = document.getElementById(editFieldId(module.group, field.id));
+        if(!el || el.disabled) return;
+        out[field.id] = field.type === 'number' ? (Number(el.value) || 0) : String(el.value || '').trim();
+      }
+    });
+    return out;
+  }
+
+  function buildEditedPayload(){
+    const payload = {};
+    modules.forEach(m=> payload[m.group] = collectEditModule(m));
+
+    payload.indicadores = calculateIndicators(payload);
+    payload.estado = editingRecordOriginal?.estado || 'registrada';
+    payload.origen = editingRecordOriginal?.origen || 'formulario_publico_firebase';
+    payload.fechaRegistro = editingRecordOriginal?.fechaRegistro || new Date().toISOString();
+    payload.idLocal = editingRecordOriginal?.idLocal || ('ENC-' + Date.now());
+
+    if(editingRecordOriginal?.fechaRegistroServidor){
+      payload.fechaRegistroServidor = editingRecordOriginal.fechaRegistroServidor;
+    }
+
+    return payload;
+  }
+
+  async function updateRecord(recordId, payload){
+    requireFirebaseReady();
+    await db.collection(COLLECTION_NAME).doc(recordId).update(payload);
+  }
+
+  async function saveEditRecord(){
+    if(!editingRecordId || !editingRecordOriginal){
+      alert('No hay registro seleccionado.');
+      return;
+    }
+
+    if(!validateEditForm()) return;
+
+    const btn = document.getElementById('editSaveBtn');
+    const msg = document.getElementById('editMessage');
+    const originalText = btn ? btn.textContent : 'Guardar cambios';
+
+    try{
+      if(btn){
+        btn.disabled = true;
+        btn.textContent = 'Guardando...';
+      }
+
+      const payload = buildEditedPayload();
+      await updateRecord(editingRecordId, payload);
+
+      recordsCache = await getRecords();
+      renderPriorityAlerts(getFilteredRowsForAnalysis());
+      renderCharts(recordsCache);
+
+      msg.textContent = 'Registro actualizado correctamente.';
+      msg.className = 'message success';
+
+      setTimeout(closeEditModal, 650);
+    }catch(error){
+      console.error('Error al actualizar registro:', error);
+      msg.textContent = 'No se pudo actualizar el registro. Revise reglas de Firestore y permisos de administrador.';
+      msg.className = 'message error';
+    }finally{
+      if(btn){
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    }
+  }
+
+  document.addEventListener('click', event=>{
+    const btn = event.target.closest('[data-edit-record]');
+    if(!btn) return;
+    event.preventDefault();
+    openEditRecord(btn.dataset.editRecord);
+  });
+
 
   function fieldLabelFor(groupName, fieldId){
     const module = modules.find(m => m.group === groupName);
@@ -2242,7 +3577,8 @@ ${worksheet('Salud',salSheet,salCols)}
   }
   function chartImg(id){ const c=document.getElementById(id); try{return c?c.toDataURL('image/png'):''}catch(e){return ''} }
   function exportPdf(){
-    const rows=getFilteredRowsForAnalysis(), stats=statsFromRows(rows);
+    const rows = getFilteredRowsForAnalysis();
+    const stats = statsFromRows(rows);
     const now = new Date().toLocaleString();
     const viewTitle = reportView === 'financiero'
       ? 'Reporte financiero por colaborador'
@@ -2258,128 +3594,1188 @@ ${worksheet('Salud',salSheet,salCols)}
       if(level === 'Moderado') return 'mod';
       return 'low';
     }
+
+    function pdfSeverityWeight(level){
+      return ({
+        'Bajo': 1,
+        'Moderado': 2,
+        'Alto': 3,
+        'Crítico': 4,
+        'Sobreendeudamiento severo': 5
+      })[level] || 1;
+    }
+
     function pdfBadge(level){
       return `<span class="badge ${pdfClassFromLevel(level)}">${escapeHtml(level || 'Bajo')}</span>`;
     }
-    function pdfCredentialBadge(valor){
-      const v = estadoCredencial(valor);
-      const cls = v === 'Tiene' ? 'low' : (v === 'No ha hecho la gestión' ? 'high' : 'crit');
-      return `<span class="badge ${cls}">${escapeHtml(v)}</span>`;
+
+    function pdfCredMark(valor){
+      const ok = estadoCredencial(valor) === 'Tiene';
+      return `<span class="cred-mark ${ok ? 'ok' : 'fail'}">${ok ? '✓' : '✕'}</span>`;
     }
 
-    function buildPdfRows(){
+    function pdfCredLabeled(label, valor){
+      const ok = estadoCredencial(valor) === 'Tiene';
+      return `<span class="cred-labeled ${ok ? 'ok' : 'fail'}">
+        <span class="cred-name">${escapeHtml(label)}</span>
+        <span class="cred-status">${ok ? '✓' : '✕'}</span>
+      </span>`;
+    }
+
+    function summaryCard(number, label, hint, extraClass=''){
+      return `<div class="kpi-card ${extraClass}"><div class="kpi-number">${number}</div><div class="kpi-label">${escapeHtml(label)}</div><div class="kpi-hint">${escapeHtml(hint)}</div></div>`;
+    }
+
+    function cardsHtml(){
       if(reportView === 'financiero'){
-        const head = '<tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Carga mensual</th><th>% presión</th><th>Nivel financiero</th><th>Acción sugerida</th></tr>';
-        const body = rows.map(r=>{
-          const ind = r.indicadores || {};
-          const level = ind.nivelPresionEconomica || 'Bajo';
-          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>Q ${money(ind.cargaMensualComprometida)}</td><td>${ind.porcentajePresionEconomica||0}%</td><td>${pdfBadge(level)}</td><td>${escapeHtml(actionForPriority('Financiero', level))}</td></tr>`;
-        }).join('');
-        return {title:'Cómo está financieramente cada colaborador', head, body};
+        return [
+          summaryCard(stats.critico, 'Crítico / severo', 'Mayor presión económica', 'crit'),
+          summaryCard(stats.conDeuda, 'Con deuda activa', 'Reportan deuda vigente', 'high'),
+          summaryCard(stats.sinAhorro, 'Sin ahorro', 'Sin respaldo de emergencia', 'mod'),
+          summaryCard(stats.conProceso, 'Embargo / retención', 'Requiere revisión confidencial', 'crit')
+        ].join('');
       }
-
       if(reportView === 'laboral'){
-        const head = '<tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Experiencia</th><th>Armas</th><th>Capacitación</th><th>IRTRA</th><th>IGSS</th><th>DIGESSP</th><th>Semáforo laboral</th><th>Acción sugerida</th></tr>';
-        const body = rows.map(r=>{
-          const risk = semaforoLaboral(r);
-          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.experiencia?.experienciaLaboral||'')}</td><td>${escapeHtml(armasTexto(r.experiencia?.tipoArma))}</td><td>${escapeHtml(r.experiencia?.diasCapacitacionInicial ?? '')}</td><td>${pdfCredentialBadge(r.experiencia?.carnetIrtra)}</td><td>${pdfCredentialBadge(r.experiencia?.carnetIgss)}</td><td>${pdfCredentialBadge(r.experiencia?.acreditacionDigessp)}</td><td>${pdfBadge(risk.nivel)}</td><td>${escapeHtml(risk.detalle)}</td></tr>`;
-        }).join('');
-        return {title:'Cómo está laboralmente cada colaborador', head, body};
+        return [
+          summaryCard(stats.laboralAlto, 'Laboral alto / crítico', 'Capacitación, experiencia, beneficios o acreditación', 'high'),
+          summaryCard(stats.capSin, 'Sin capacitación', 'Inducción requerida', 'mod'),
+          summaryCard(stats.irtraPendiente, 'IRTRA pendiente', 'No tiene o está en gestión', 'high'),
+          summaryCard(stats.igssPendiente + stats.digesspPendiente, 'IGSS / DIGESSP pendientes', 'Revisión de beneficios/acreditación', 'crit')
+        ].join('');
       }
-
       if(reportView === 'salud'){
-        const head = '<tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Estado salud</th><th>Condición física</th><th>Medicamento</th><th>Qué medicamento</th><th>Semáforo salud</th><th>Acción sugerida</th></tr>';
-        const body = rows.map(r=>{
-          const risk = semaforoSalud(r);
-          return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${escapeHtml(r.salud?.estadoSalud||'')}</td><td>${escapeHtml(r.salud?.tieneCondicionFisica||'')}</td><td>${escapeHtml(r.salud?.medicamentoPermanente||'')}</td><td>${escapeHtml(r.salud?.detalleMedicamento||'')}</td><td>${pdfBadge(risk.nivel)}</td><td>${escapeHtml(risk.detalle)}</td></tr>`;
-        }).join('');
-        return {title:'Cómo está en salud cada colaborador', head, body};
+        return [
+          summaryCard(stats.saludAlto, 'Salud alta / crítica', 'Salud o condición física', 'crit'),
+          summaryCard(stats.saludBuena, 'Salud buena / excelente', 'Condición favorable', 'low'),
+          summaryCard(stats.medicamento, 'Medicamento permanente', 'Seguimiento confidencial', 'mod'),
+          summaryCard(stats.condicionFisica, 'Condición física', 'Debe considerarse', 'high')
+        ].join('');
       }
+      const globalCrit = rows.filter(r=>['Crítico','Sobreendeudamiento severo'].includes(reportLevelForRow(r).nivel)).length;
+      return [
+        summaryCard(stats.critico, 'Financiero crítico/severo', 'Presión económica', 'crit'),
+        summaryCard(stats.laboralAlto, 'Laboral alto/crítico', 'Capacitación o beneficios y acreditación', 'high'),
+        summaryCard(stats.saludAlto, 'Salud alto/crítico', 'Salud y condición física', 'high'),
+        summaryCard(globalCrit, 'Atención global crítica', 'Prioridad máxima', 'crit')
+      ].join('');
+    }
 
-      const head = '<tr><th>Colaborador</th><th>Empresa</th><th>Ubicación</th><th>Riesgo global</th><th>Financiero</th><th>Laboral</th><th>Salud</th><th>Acción sugerida</th></tr>';
-      const body = rows.map(r=>{
+    function methodologyHtml(){
+      if(reportView === 'laboral'){
+        return `
+          <div class="method-card">
+            <h3>Cómo se interpreta el semáforo laboral</h3>
+            <ul>
+              <li>La atención laboral considera experiencia, capacitación inicial y beneficios y acreditación registradas.</li>
+              <li><strong>✓ verde</strong> indica que sí tiene la acreditación.</li>
+              <li><strong>✕ rojo</strong> indica que no tiene o todavía está en gestión.</li>
+              <li>El objetivo es identificar necesidades de refuerzo, validación o acompañamiento operativo.</li>
+            </ul>
+          </div>`;
+      }
+      if(reportView === 'financiero'){
+        return `
+          <div class="method-card">
+            <h3>Cómo se interpreta el nivel financiero</h3>
+            <ul>
+              <li>La carga mensual comprometida se calcula sumando deuda mensual, alquiler y descuentos o retenciones.</li>
+              <li>Ese total se compara contra el salario de referencia para estimar el porcentaje de presión económica.</li>
+              <li>El resultado se clasifica en Bajo, Moderado, Alto, Crítico o Sobreendeudamiento severo.</li>
+            </ul>
+          </div>`;
+      }
+      if(reportView === 'salud'){
+        return `
+          <div class="method-card">
+            <h3>Cómo se interpreta el semáforo de salud</h3>
+            <ul>
+              <li>Se valora el estado de salud, la condición física, el puesto, medicamentos permanentes y enfermedades diagnosticadas.</li>
+              <li>La lectura es preventiva, orientada al bienestar y a la compatibilidad con funciones operativas.</li>
+              <li>El objetivo es facilitar seguimiento confidencial y no generar discriminación.</li>
+            </ul>
+          </div>`;
+      }
+      return `
+        <div class="method-card">
+          <h3>Cómo leer este reporte</h3>
+          <ul>
+            <li>La vista general integra el estado financiero, laboral y de salud de cada colaborador.</li>
+            <li>Los colores muestran el nivel de atención: verde bajo, amarillo moderado, naranja alto y rojo crítico.</li>
+            <li>Las beneficios y acreditación se muestran con ✓ verde cuando sí tiene y con ✕ rojo cuando no tiene o está en gestión.</li>
+          </ul>
+        </div>`;
+    }
+
+    function laboralPdfCards(){
+      return rows.map(r=>{
+        const exp = r.experiencia || {};
+        const risk = semaforoLaboral(r);
+        const pendientes = resumenCredencialesLaborales(r);
+        const actionTitle = risk.nivel === 'Bajo'
+          ? 'Seguimiento normal'
+          : risk.nivel === 'Moderado'
+            ? 'Seguimiento preventivo'
+            : risk.nivel === 'Alto'
+              ? 'Atención alta'
+              : 'Atención prioritaria';
+        const actionText = risk.nivel === 'Bajo'
+          ? `Perfil operativo estable.${pendientes === 'Completo' ? ' Beneficios y acreditación completos.' : ' Pendiente: ' + pendientes + '.'}`
+          : risk.nivel === 'Moderado'
+            ? `Revisar capacitación, beneficios IRTRA/IGSS y acreditación DIGESSP.${pendientes === 'Completo' ? '' : ' Pendiente: ' + pendientes + '.'}`
+            : risk.nivel === 'Alto'
+              ? `Reforzar capacitación y validar beneficios IRTRA/IGSS y acreditación DIGESSP.${pendientes === 'Completo' ? '' : ' Pendiente: ' + pendientes + '.'}`
+              : `Requiere acompañamiento operativo y revisión de beneficios/acreditación.${pendientes === 'Completo' ? '' : ' Pendiente: ' + pendientes + '.'}`;
+
+        return `<div class="pdf-worker-card">
+          <div class="worker-top">
+            <div>
+              <div class="worker-name">${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</div>
+              <div class="worker-meta">
+                <span class="meta-pill">${escapeHtml(r.datosPersonales?.empresa||'Sin empresa')}</span>
+                <span class="meta-pill">${escapeHtml(r.datosPersonales?.ubicacion||'Sin ubicación')}</span>
+              </div>
+            </div>
+            <div>${pdfBadge(risk.nivel)}</div>
+          </div>
+
+          <div class="worker-grid">
+            <div class="worker-box">
+              <div class="worker-box-title">Perfil laboral</div>
+              <div class="kv"><span>Experiencia</span><strong>${escapeHtml(exp.experienciaLaboral||'Sin dato')}</strong></div>
+              <div class="kv"><span>Armas</span><strong>${escapeHtml(armasTexto(exp.tipoArma)||'Sin dato')}</strong></div>
+              <div class="kv"><span>Capacitación</span><strong>${escapeHtml(exp.diasCapacitacionInicial ?? 'Sin dato')}</strong></div>
+              <div class="kv"><span>Práctica tiro 2026</span><strong>${escapeHtml(exp.retroalimentacionPracticaTiro2026 || 'Sin dato')}</strong></div>
+            </div>
+
+            <div class="worker-box">
+              <div class="worker-box-title">Beneficios y acreditación</div>
+              <div class="acred-grid">
+                <div class="acred-card ${estadoCredencial(exp.carnetIrtra) === 'Tiene' ? 'ok' : 'fail'}">
+                  <div class="acred-label">IRTRA<br><small>Beneficio</small></div>
+                  ${pdfCredMark(exp.carnetIrtra)}
+                </div>
+                <div class="acred-card ${estadoCredencial(exp.carnetIgss) === 'Tiene' ? 'ok' : 'fail'}">
+                  <div class="acred-label">IGSS<br><small>Beneficio</small></div>
+                  ${pdfCredMark(exp.carnetIgss)}
+                </div>
+                <div class="acred-card ${estadoCredencial(exp.acreditacionDigessp) === 'Tiene' ? 'ok' : 'fail'}">
+                  <div class="acred-label">DIGESSP<br><small>Acreditación</small></div>
+                  ${pdfCredMark(exp.acreditacionDigessp)}
+                </div>
+              </div>
+            </div>
+
+            <div class="worker-box action-box">
+              <div class="worker-box-title">Acción sugerida</div>
+              <div class="action-title">${escapeHtml(actionTitle)}</div>
+              <div class="action-text">${escapeHtml(actionText)}</div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+
+
+
+    function financieroPdfCards(){
+      return rows.map(r=>{
+        const ind = r.indicadores || {};
+        const fin = r.finanzas || {};
+        const viv = r.vivienda || {};
+        const tra = r.traslado || {};
+        const level = ind.nivelPresionEconomica || 'Bajo';
+        const actionTitle = level === 'Bajo'
+          ? 'Seguimiento normal'
+          : level === 'Moderado'
+            ? 'Observación preventiva'
+            : level === 'Alto'
+              ? 'Atención financiera alta'
+              : 'Revisión confidencial prioritaria';
+        const actionText = actionForPriority('Financiero', level);
+        return `<div class="pdf-worker-card">
+          <div class="worker-top">
+            <div>
+              <div class="worker-name">${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</div>
+              <div class="worker-meta">
+                <span class="meta-pill">${escapeHtml(r.datosPersonales?.empresa||'Sin empresa')}</span>
+                <span class="meta-pill">${escapeHtml(r.datosPersonales?.ubicacion||'Sin ubicación')}</span>
+              </div>
+            </div>
+            <div>${pdfBadge(level)}</div>
+          </div>
+
+          <div class="worker-grid">
+            <div class="worker-box">
+              <div class="worker-box-title">Presión económica</div>
+              <div class="kv"><span>Monto deuda</span><strong>Q ${money(fin.montoTotalDeuda)}</strong></div>
+              <div class="kv"><span>Carga mensual</span><strong>Q ${money(ind.cargaMensualComprometida)}</strong></div>
+              <div class="kv"><span>% presión</span><strong>${ind.porcentajePresionEconomica || 0}%</strong></div>
+              <div class="kv"><span>Nivel</span><strong>${escapeHtml(level)}</strong></div>
+            </div>
+
+            <div class="worker-box">
+              <div class="worker-box-title">Vivienda y movilidad</div>
+              <div class="kv"><span>Vivienda</span><strong>${escapeHtml(viv.tipoVivienda || 'Sin dato')}</strong></div>
+              <div class="kv"><span>Ahorro</span><strong>${escapeHtml(fin.ahorroEmergencia || 'Sin dato')}</strong></div>
+              <div class="kv"><span>Transporte</span><strong>${escapeHtml(tra.medioTransporte || 'Sin dato')}</strong></div>
+              <div class="kv"><span>Tiempo traslado</span><strong>${escapeHtml(tra.tiempoTraslado || 'Sin dato')}</strong></div>
+            </div>
+
+            <div class="worker-box action-box">
+              <div class="worker-box-title">Acción sugerida</div>
+              <div class="action-title">${escapeHtml(actionTitle)}</div>
+              <div class="action-text">${escapeHtml(actionText)}</div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function saludPdfCards(){
+      return rows.map(r=>{
+        const sal = r.salud || {};
+        const risk = semaforoSalud(r);
+        const actionTitle = risk.nivel === 'Bajo'
+          ? 'Condición favorable'
+          : risk.nivel === 'Moderado'
+            ? 'Seguimiento preventivo'
+            : risk.nivel === 'Alto'
+              ? 'Atención de salud alta'
+              : 'Revisión confidencial prioritaria';
+        return `<div class="pdf-worker-card">
+          <div class="worker-top">
+            <div>
+              <div class="worker-name">${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</div>
+              <div class="worker-meta">
+                <span class="meta-pill">${escapeHtml(r.datosPersonales?.empresa||'Sin empresa')}</span>
+                <span class="meta-pill">${escapeHtml(r.datosPersonales?.ubicacion||'Sin ubicación')}</span>
+              </div>
+            </div>
+            <div>${pdfBadge(risk.nivel)}</div>
+          </div>
+
+          <div class="worker-grid">
+            <div class="worker-box">
+              <div class="worker-box-title">Estado de salud</div>
+              <div class="kv"><span>Estado general</span><strong>${escapeHtml(sal.estadoSalud || 'Sin dato')}</strong></div>
+              <div class="kv"><span>Actividad física</span><strong>${escapeHtml(sal.actividadFisica || 'Sin dato')}</strong></div>
+              <div class="kv"><span>Semáforo</span><strong>${escapeHtml(risk.nivel)}</strong></div>
+            </div>
+
+            <div class="worker-box">
+              <div class="worker-box-title">Medicamento y seguimiento</div>
+              <div class="kv"><span>Medicamento permanente</span><strong>${escapeHtml(sal.medicamentoPermanente || 'No')}</strong></div>
+              <div class="kv"><span>Qué medicamento</span><strong>${escapeHtml(sal.queMedicamento || sal.detalleMedicamento || 'No aplica')}</strong></div>
+              <div class="kv"><span>Ausencias salud</span><strong>${escapeHtml(sal.ausenciasSalud || 'Sin dato')}</strong></div>
+            </div>
+
+            <div class="worker-box action-box">
+              <div class="worker-box-title">Acción sugerida</div>
+              <div class="action-title">${escapeHtml(actionTitle)}</div>
+              <div class="action-text">${escapeHtml(risk.detalle || 'Seguimiento según información registrada.')}</div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function generalPdfCards(){
+      return rows.map(r=>{
         const global = reportLevelForRow(r);
         const finLevel = r.indicadores?.nivelPresionEconomica || 'Bajo';
         const labRisk = semaforoLaboral(r);
         const salRisk = semaforoSalud(r);
-        return `<tr><td>${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</td><td>${escapeHtml(r.datosPersonales?.empresa||'')}</td><td>${escapeHtml(r.datosPersonales?.ubicacion||'')}</td><td>${pdfBadge(global.nivel)}</td><td>${pdfBadge(finLevel)}</td><td>${pdfBadge(labRisk.nivel)}</td><td>${pdfBadge(salRisk.nivel)}</td><td>${escapeHtml(reportActionForRow(r))}</td></tr>`;
+        const exp = r.experiencia || {};
+        return `<div class="pdf-worker-card">
+          <div class="worker-top">
+            <div>
+              <div class="worker-name">${escapeHtml(r.datosPersonales?.nombreCompleto||'')}</div>
+              <div class="worker-meta">
+                <span class="meta-pill">${escapeHtml(r.datosPersonales?.empresa||'Sin empresa')}</span>
+                <span class="meta-pill">${escapeHtml(r.datosPersonales?.ubicacion||'Sin ubicación')}</span>
+              </div>
+            </div>
+            <div>${pdfBadge(global.nivel)}</div>
+          </div>
+
+          <div class="worker-grid">
+            <div class="worker-box">
+              <div class="worker-box-title">Estado por área</div>
+              <div class="kv"><span>Financiero</span><strong>${finLevel}</strong></div>
+              <div class="kv"><span>Laboral</span><strong>${labRisk.nivel}</strong></div>
+              <div class="kv"><span>Salud</span><strong>${salRisk.nivel}</strong></div>
+              <div class="kv"><span>Mayor alerta</span><strong>${global.area}</strong></div>
+            </div>
+
+            <div class="worker-box">
+              <div class="worker-box-title">Beneficios y acreditación</div>
+              <div class="acred-grid">
+                <div class="acred-card ${estadoCredencial(exp.carnetIrtra) === 'Tiene' ? 'ok' : 'fail'}"><div class="acred-label">IRTRA<br><small>Beneficio</small></div>${pdfCredMark(exp.carnetIrtra)}</div>
+                <div class="acred-card ${estadoCredencial(exp.carnetIgss) === 'Tiene' ? 'ok' : 'fail'}"><div class="acred-label">IGSS<br><small>Beneficio</small></div>${pdfCredMark(exp.carnetIgss)}</div>
+                <div class="acred-card ${estadoCredencial(exp.acreditacionDigessp) === 'Tiene' ? 'ok' : 'fail'}"><div class="acred-label">DIGESSP<br><small>Acreditación</small></div>${pdfCredMark(exp.acreditacionDigessp)}</div>
+              </div>
+            </div>
+
+            <div class="worker-box action-box">
+              <div class="worker-box-title">Acción sugerida</div>
+              <div class="action-title">${escapeHtml(global.nivel === 'Bajo' ? 'Seguimiento normal' : global.nivel === 'Moderado' ? 'Observación general' : 'Revisión prioritaria')}</div>
+              <div class="action-text">${escapeHtml(reportActionForRow(r))}</div>
+            </div>
+          </div>
+        </div>`;
       }).join('');
-      return {title:'Estado general por colaborador', head, body};
+    }
+
+    function pdfCountMap(list, getter, fallback='Sin dato'){
+      const out = {};
+      list.forEach(item=>{
+        const raw = getter(item);
+        const key = raw === undefined || raw === null || String(raw).trim() === '' ? fallback : String(raw);
+        out[key] = (out[key] || 0) + 1;
+      });
+      return out;
+    }
+
+    function pdfSortedEntries(dataMap){
+      return Object.entries(dataMap || {}).filter(([,v])=>Number(v)>0).sort((a,b)=>Number(b[1])-Number(a[1]));
+    }
+
+    function pdfBarChart(title, dataMap){
+      const entries = pdfSortedEntries(dataMap);
+      const max = Math.max(1, ...entries.map(([,v])=>Number(v)||0));
+      const rowsHtml = entries.length ? entries.map(([label,value],idx)=>{
+        const width = Math.max(8, Math.round((Number(value)/max)*100));
+        return `<div class="pdf-bar-row">
+          <div class="pdf-bar-label">${escapeHtml(label)}</div>
+          <div class="pdf-bar-track"><div class="pdf-bar-fill c${idx%4}" style="width:${width}%"></div></div>
+          <div class="pdf-bar-value">${value}</div>
+        </div>`;
+      }).join('') : '<div class="chart-empty">Sin datos</div>';
+
+      return `<div class="pdf-chart-card">
+        <h3>${escapeHtml(title)}</h3>
+        <div class="pdf-bar-chart">${rowsHtml}</div>
+      </div>`;
+    }
+
+    function pdfDonutChart(title, dataMap){
+      const entries = pdfSortedEntries(dataMap);
+      const total = entries.reduce((acc,[,v])=>acc + Number(v||0),0);
+      const colors = ['#145f82','#16a39a','#d6a21f','#ef6b5a','#7c3aed','#2563eb'];
+      let acc = 0;
+      const stops = entries.map(([,value],idx)=>{
+        const start = total ? (acc/total)*100 : 0;
+        acc += Number(value||0);
+        const end = total ? (acc/total)*100 : 0;
+        return `${colors[idx%colors.length]} ${start}% ${end}%`;
+      }).join(', ');
+      const legend = entries.length ? entries.map(([label,value],idx)=>{
+        const pct = total ? Math.round((Number(value)/total)*1000)/10 : 0;
+        return `<div class="pdf-donut-legend"><span style="background:${colors[idx%colors.length]}"></span><strong>${escapeHtml(label)}</strong><em>${value} · ${pct}%</em></div>`;
+      }).join('') : '<div class="chart-empty">Sin datos</div>';
+
+      return `<div class="pdf-chart-card">
+        <h3>${escapeHtml(title)}</h3>
+        <div class="pdf-donut-layout">
+          <div class="pdf-donut" style="background:conic-gradient(${stops || '#e2e8f0 0% 100%'})"><div>${total}<small>Total</small></div></div>
+          <div class="pdf-donut-list">${legend}</div>
+        </div>
+      </div>`;
+    }
+
+    function pdfChartsHtml(){
+      if(reportView === 'financiero'){
+        return `<div class="panel chart-panel">
+          <div class="section-title"><h2>Gráficas financieras</h2><div class="section-sub">Presión, deuda, carga mensual, vivienda y transporte</div></div>
+          <div class="pdf-charts-grid">
+            ${pdfBarChart('Nivel de presión económica', pdfCountMap(rows, r=>r.indicadores?.nivelPresionEconomica || 'Bajo'))}
+            ${pdfDonutChart('Deuda activa', {'Con deuda': rows.filter(r=>Number(r.finanzas?.montoTotalDeuda || r.indicadores?.pagoMensualDeuda || 0)>0).length, 'Sin deuda': rows.filter(r=>Number(r.finanzas?.montoTotalDeuda || r.indicadores?.pagoMensualDeuda || 0)<=0).length})}
+            ${pdfBarChart('Carga mensual comprometida', pdfCountMap(rows, r=>{
+              const v = Number(r.indicadores?.cargaMensualComprometida || 0);
+              if(v<=0) return 'Q0'; if(v<=500) return 'Q1-Q500'; if(v<=1000) return 'Q501-Q1000'; if(v<=2000) return 'Q1001-Q2000'; return 'Más de Q2000';
+            }))}
+            ${pdfDonutChart('Tipo de vivienda', pdfCountMap(rows, r=>r.vivienda?.tipoVivienda || 'Sin dato'))}
+            ${pdfDonutChart('Medio de transporte', pdfCountMap(rows, r=>r.traslado?.medioTransporte || 'Sin dato'))}
+            ${pdfBarChart('Tiempo de traslado', pdfCountMap(rows, r=>r.traslado?.tiempoTraslado || 'Sin dato'))}
+          </div>
+        </div>`;
+      }
+      if(reportView === 'laboral'){
+        return `<div class="panel chart-panel">
+          <div class="section-title"><h2>Gráficas laborales</h2><div class="section-sub">Experiencia, capacitación, práctica de tiro y beneficios y acreditación</div></div>
+          <div class="pdf-charts-grid">
+            ${pdfBarChart('Semáforo laboral', pdfCountMap(rows, r=>semaforoLaboral(r).nivel))}
+            ${pdfBarChart('Experiencia laboral', pdfCountMap(rows, r=>r.experiencia?.experienciaLaboral || 'Sin dato'))}
+            ${pdfBarChart('Capacitación inicial', pdfCountMap(rows, r=>r.experiencia?.diasCapacitacionInicial || 'Sin dato'))}
+            ${pdfDonutChart('Retroalimentación práctica de tiro 2026', pdfCountMap(rows, r=>r.experiencia?.retroalimentacionPracticaTiro2026 || 'Sin dato'))}
+            ${pdfBarChart('Beneficios / acreditación pendientes', {
+              'IRTRA pendiente': rows.filter(r=>estadoCredencial(r.experiencia?.carnetIrtra) !== 'Tiene').length,
+              'IGSS pendiente': rows.filter(r=>estadoCredencial(r.experiencia?.carnetIgss) !== 'Tiene').length,
+              'DIGESSP pendiente': rows.filter(r=>estadoCredencial(r.experiencia?.acreditacionDigessp) !== 'Tiene').length
+            })}
+          </div>
+        </div>`;
+      }
+      if(reportView === 'salud'){
+        return `<div class="panel chart-panel">
+          <div class="section-title"><h2>Gráficas de salud</h2><div class="section-sub">Estado de salud, condición física y medicamentos</div></div>
+          <div class="pdf-charts-grid">
+            ${pdfBarChart('Estado general de salud', pdfCountMap(rows, r=>r.salud?.estadoSalud || 'Sin dato'))}
+            ${pdfBarChart('Semáforo salud', pdfCountMap(rows, r=>semaforoSalud(r).nivel))}
+            ${pdfDonutChart('Condición física reportada', pdfCountMap(rows, r=>r.salud?.tieneCondicionFisica || 'No'))}
+            ${pdfDonutChart('Medicamento permanente', pdfCountMap(rows, r=>r.salud?.medicamentoPermanente || 'No'))}
+          </div>
+        </div>`;
+      }
+      const globalMap = pdfCountMap(rows, r=>reportLevelForRow(r).nivel);
+      const areaMap = pdfCountMap(rows, r=>{
+        const fin = r.indicadores?.nivelPresionEconomica || 'Bajo';
+        const lab = semaforoLaboral(r).nivel;
+        const sal = semaforoSalud(r).nivel;
+        const items = [['Financiero',fin],['Laboral',lab],['Salud',sal]].sort((a,b)=>pdfSeverityWeight(b[1])-pdfSeverityWeight(a[1]));
+        return items[0][0];
+      });
+      const credMap = {
+        'Completas': rows.filter(r=>resumenCredencialesLaborales(r)==='Completo').length,
+        'Pendientes': rows.filter(r=>resumenCredencialesLaborales(r)!=='Completo').length
+      };
+      const empresaMap = pdfCountMap(rows, r=>r.datosPersonales?.empresa || 'Sin empresa');
+      return `<div class="panel chart-panel">
+        <div class="section-title">
+          <h2>Gráficas de la vista general</h2>
+          <div class="section-sub">Resumen visual incluido en la descarga PDF</div>
+        </div>
+        <div class="pdf-charts-grid">
+          ${pdfBarChart('Riesgo global', globalMap)}
+          ${pdfDonutChart('Mayor alerta por área', areaMap)}
+          ${pdfDonutChart('Estado de beneficios y acreditación', credMap)}
+          ${pdfBarChart('Colaboradores por empresa', empresaMap)}
+        </div>
+      </div>`;
+    }
+
+    function buildPdfRows(){
+      if(reportView === 'financiero'){
+        return {title:'Cómo está financieramente cada colaborador', subtitle:'Diseño ejecutivo por colaborador', cards:financieroPdfCards(), layout:'cards'};
+      }
+
+      if(reportView === 'laboral'){
+        return {title:'Cómo está laboralmente cada colaborador', subtitle:'Diseño ejecutivo por colaborador', cards:laboralPdfCards(), layout:'cards'};
+      }
+
+      if(reportView === 'salud'){
+        return {title:'Cómo está de salud cada colaborador', subtitle:'Diseño ejecutivo por colaborador', cards:saludPdfCards(), layout:'cards'};
+      }
+
+      return {title:'Estado general por colaborador', subtitle:'Diseño ejecutivo integral por colaborador', cards:generalPdfCards(), layout:'cards'};
     }
 
     const tableData = buildPdfRows();
 
     const htmlDoc = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${escapeHtml(viewTitle)}</title>
     <style>
+      @page{size:landscape;margin:12mm}
       *{box-sizing:border-box;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-      body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#eef4fb;color:#1f2937}
-      .page{max-width:1180px;margin:0 auto;padding:26px}
-      .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#071a3d 0%,#0f5f7a 58%,#0f9b8e 100%);color:#fff;border-radius:24px;padding:28px 30px;margin-bottom:18px;box-shadow:0 18px 40px rgba(2,8,23,.18)}
-      .hero:after{content:'';position:absolute;right:-70px;top:-80px;width:240px;height:240px;border-radius:999px;background:rgba(255,255,255,.12)}
-      h1{margin:0;font-size:30px;letter-spacing:-.02em}
-      h2{font-size:21px;margin:22px 0 10px;color:#0b2239;border-left:6px solid #0f9b8e;padding-left:10px}
-      h3{font-size:16px;margin:0 0 8px;color:#0f172a}
-      .sub{margin-top:8px;color:rgba(255,255,255,.88)}
-      .conf{display:inline-block;margin-top:12px;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;letter-spacing:.04em}
-      .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
-      .kpi{background:#fff;border:1px solid #dbe7f1;border-radius:18px;padding:16px;box-shadow:0 10px 24px rgba(15,23,42,.06);position:relative;overflow:hidden}
-      .kpi:before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#0f5f7a,#0f9b8e)}
-      .kpi.fin:before{background:#dc2626}.kpi.lab:before{background:#f59e0b}.kpi.sal:before{background:#7c3aed}.kpi.med:before{background:#10b981}
-      .kpi .n{font-size:28px;font-weight:900;color:#0f5f7a;margin-top:4px}.kpi .l{font-size:12px;font-weight:900;text-transform:uppercase;color:#64748b;margin-top:4px}
-      .card{background:#fff;border:1px solid #dbe7f1;border-radius:18px;padding:16px;margin-bottom:16px;box-shadow:0 10px 24px rgba(15,23,42,.05)}
-      .method{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-      .method div{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:12px}
-      .method ul{margin:0;padding-left:18px;line-height:1.55;color:#334155;font-size:13px}
-      table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;margin-bottom:18px}
-      th,td{border:1px solid #dbe7f1;padding:9px;text-align:left;font-size:12px;vertical-align:top}
-      th{background:#eaf1f8;color:#0f172a;text-transform:uppercase;letter-spacing:.03em}
-      .badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;border:1px solid transparent;white-space:nowrap}
-      .badge.low{background:#dcfce7;color:#166534;border-color:#bbf7d0}
-      .badge.mod{background:#fef9c3;color:#854d0e;border-color:#fde68a}
-      .badge.high{background:#ffedd5;color:#9a3412;border-color:#fed7aa}
-      .badge.crit{background:#fee2e2;color:#991b1b;border-color:#fecaca}
-      .note{background:#eff6ff;border:1px solid #bfdbfe;border-radius:16px;padding:14px;color:#1e3a8a;margin:12px 0;line-height:1.45}
-      .footer{font-size:11px;color:#64748b;text-align:center;margin-top:22px}
+      body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#edf4fb;color:#1f2937}
+      .page{max-width:1320px;margin:0 auto;padding:24px}
+      .hero{
+        position:relative;overflow:hidden;background:linear-gradient(135deg,#08213a,#0f5f7a,#138a7a);
+        color:#fff;border-radius:28px;padding:28px 30px 22px;margin-bottom:18px;
+        box-shadow:0 18px 40px rgba(2,8,23,.18)
+      }
+      .hero h1{margin:0;font-size:28px;line-height:1.15}
+      .hero p{margin:8px 0 0;color:rgba(255,255,255,.88);font-size:14px}
+      .hero small{display:inline-block;margin-top:10px;color:rgba(255,255,255,.8)}
+      .panel{
+        background:#fff;border:1px solid #dbe7f1;border-radius:24px;padding:22px 24px;
+        margin-bottom:16px;box-shadow:0 10px 28px rgba(15,23,42,.06)
+      }
+      .section-title{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}
+      .section-title h2{margin:0;font-size:17px;color:#0f172a}
+      .section-sub{font-size:13px;color:#64748b;font-weight:700}
+      .kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+      .kpi-card{border:1px solid #dbe7f1;border-radius:20px;padding:16px;background:linear-gradient(180deg,#fff,#f9fbfd)}
+      .kpi-card.low{border-top:5px solid #22c55e}
+      .kpi-card.mod{border-top:5px solid #eab308}
+      .kpi-card.high{border-top:5px solid #f97316}
+      .kpi-card.crit{border-top:5px solid #ef4444}
+      .kpi-number{font-size:34px;font-weight:900;color:#0f172a;line-height:1}
+      .kpi-label{margin-top:8px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#334155}
+      .kpi-hint{margin-top:6px;font-size:12px;color:#64748b;line-height:1.4}
+      .method-card{border:1px solid #dbe7f1;background:#f8fbff;border-radius:20px;padding:18px 20px}
+      .method-card h3{margin:0 0 10px;color:#0f172a;font-size:16px}
+      .method-card ul{margin:0;padding-left:18px}
+      .method-card li{margin:8px 0;line-height:1.45}
+      .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+      .legend-item,.badge{
+        display:inline-flex;align-items:center;justify-content:center;border-radius:999px;
+        font-size:12px;font-weight:900;border:1px solid transparent;padding:6px 10px
+      }
+      .badge.low,.legend-item.low{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+      .badge.mod,.legend-item.mod{background:#fef9c3;color:#854d0e;border-color:#fde68a}
+      .badge.high,.legend-item.high{background:#ffedd5;color:#9a3412;border-color:#fed7aa}
+      .badge.crit,.legend-item.crit{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+      .cred-legend{
+        display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;
+        border:1px solid #dbe7f1;background:#fff;font-size:12px;font-weight:800;color:#334155
+      }
+      .cred-mark{
+        width:28px;height:28px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+        font-weight:900;font-size:17px;border:1px solid transparent
+      }
+      .cred-mark.ok{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+      .cred-mark.fail{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+      .cred-cell{min-width:205px}
+      .cred-labeled{
+        display:inline-flex;align-items:center;gap:7px;margin:3px 5px 3px 0;
+        border-radius:999px;padding:6px 9px;font-size:11px;font-weight:900;border:1px solid transparent;
+        white-space:nowrap
+      }
+      .cred-labeled.ok{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+      .cred-labeled.fail{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+      .cred-labeled .cred-name{letter-spacing:.03em}
+      .cred-labeled .cred-status{
+        width:22px;height:22px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+        background:rgba(255,255,255,.82);font-size:16px;font-weight:900
+      }
+      .pdf-charts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+      .pdf-chart-card{border:1px solid #dbe7f1;border-radius:20px;padding:16px;background:linear-gradient(180deg,#fff,#fbfdff);break-inside:avoid}
+      .pdf-chart-card h3{margin:0 0 12px;color:#0f172a;font-size:15px}
+      .pdf-bar-row{display:grid;grid-template-columns:130px 1fr 36px;gap:10px;align-items:center;margin:10px 0}
+      .pdf-bar-label{font-size:12px;color:#334155;font-weight:800}
+      .pdf-bar-track{height:20px;background:#eaf1f8;border-radius:999px;overflow:hidden;border:1px solid #dbe7f1}
+      .pdf-bar-fill{height:100%;border-radius:999px;background:#145f82}
+      .pdf-bar-fill.c1{background:#16a39a}.pdf-bar-fill.c2{background:#d6a21f}.pdf-bar-fill.c3{background:#ef6b5a}
+      .pdf-bar-value{font-size:12px;color:#0f172a;font-weight:900;text-align:right}
+      .pdf-donut-layout{display:grid;grid-template-columns:130px 1fr;gap:16px;align-items:center}
+      .pdf-donut{width:118px;height:118px;border-radius:50%;display:grid;place-items:center;position:relative}
+      .pdf-donut::after{content:'';position:absolute;width:62px;height:62px;border-radius:50%;background:#fff;border:1px solid #e2e8f0}
+      .pdf-donut div{position:relative;z-index:1;text-align:center;font-size:22px;font-weight:900;color:#0f172a}
+      .pdf-donut small{display:block;font-size:10px;color:#64748b;font-weight:700}
+      .pdf-donut-legend{display:flex;align-items:center;gap:8px;margin:8px 0;font-size:12px;color:#334155}
+      .pdf-donut-legend span{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
+      .pdf-donut-legend strong{min-width:90px}
+      .pdf-donut-legend em{font-style:normal;color:#64748b;font-weight:700}
+      .chart-empty{font-size:12px;color:#64748b;font-weight:700;padding:18px}
+
+      table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #dbe7f1;border-radius:22px;overflow:hidden;background:#fff}
+      thead th{
+        background:#f1f5f9;color:#0f172a;font-size:12px;text-transform:uppercase;letter-spacing:.05em;
+        padding:14px 12px;text-align:left;border-bottom:1px solid #dbe7f1
+      }
+      tbody td{padding:13px 10px;border-bottom:1px solid #e6edf5;vertical-align:top;line-height:1.35}
+      tbody tr:nth-child(even){background:#fbfdff}
+      tbody tr:last-child td{border-bottom:none}
+      .center{text-align:center}
+      .center-group{text-align:center;white-space:nowrap}
+
+      .workers-wrap{display:grid;grid-template-columns:1fr;gap:14px}
+      .pdf-worker-card{
+        border:1px solid #dbe7f1;border-radius:22px;background:linear-gradient(180deg,#ffffff,#fbfdff);
+        padding:18px 18px 16px;box-shadow:0 8px 20px rgba(15,23,42,.05);
+        break-inside:avoid;page-break-inside:avoid
+      }
+      .worker-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+      .worker-name{font-size:20px;font-weight:900;color:#0f172a;line-height:1.2}
+      .worker-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+      .meta-pill{
+        display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;
+        background:#f8fafc;border:1px solid #dbe7f1;color:#475569;font-size:12px;font-weight:800
+      }
+      .worker-grid{display:grid;grid-template-columns:1.1fr .9fr 1.1fr;gap:12px}
+      .worker-box{
+        border:1px solid #e2e8f0;border-radius:18px;background:#fff;padding:14px
+      }
+      .worker-box-title{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#64748b;margin-bottom:10px}
+      .kv{
+        display:flex;justify-content:space-between;gap:12px;align-items:flex-start;
+        padding:8px 0;border-bottom:1px dashed #e2e8f0
+      }
+      .kv:last-child{border-bottom:none;padding-bottom:0}
+      .kv span{font-size:12px;color:#64748b;font-weight:800}
+      .kv strong{font-size:13px;color:#0f172a;text-align:right;line-height:1.4}
+      .acred-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+      .acred-card{
+        border:1px solid #e2e8f0;border-radius:18px;padding:12px 8px;background:#fff;
+        display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px
+      }
+      .acred-card.ok{background:#f0fdf4;border-color:#bbf7d0}
+      .acred-card.fail{background:#fef2f2;border-color:#fecaca}
+      .acred-label{font-size:11px;font-weight:900;letter-spacing:.04em;color:#64748b}
+      .action-box .action-title{font-size:15px;font-weight:900;color:#0f172a;margin-bottom:8px}
+      .action-box .action-text{font-size:13px;line-height:1.55;color:#334155}
+
+      .pdf-worker-card{border-top:5px solid #0f9b8e}
+      .pdf-worker-card:nth-child(3n+1){border-top-color:#145f82}
+      .pdf-worker-card:nth-child(3n+2){border-top-color:#0f9b8e}
+      .pdf-worker-card:nth-child(3n+3){border-top-color:#d6a21f}
+      .worker-box{background:linear-gradient(180deg,#ffffff,#fbfdff)}
+      .worker-box:nth-child(1){border-top:4px solid #145f82}
+      .worker-box:nth-child(2){border-top:4px solid #0f9b8e}
+      .worker-box:nth-child(3){border-top:4px solid #d6a21f}
+
+      .note{
+        margin-top:16px;padding:14px 16px;border-radius:18px;background:#eef6ff;border:1px solid #bfdbfe;
+        color:#1e3a8a;line-height:1.5;font-size:13px
+      }
+      .footer{margin-top:16px;text-align:center;font-size:12px;color:#64748b}
       @media print{
         body{background:#fff}
-        .page{padding:8px;max-width:100%}
-        .hero{box-shadow:none;border-radius:16px}
-        .card,.kpi{box-shadow:none}
-        .no-print{display:none}
-        table{page-break-inside:auto}
-        tr{page-break-inside:avoid;page-break-after:auto}
+        .page{max-width:none;padding:4px}
+        .no-print{display:none!important}
       }
-    </style></head><body>
+    
+/* Ajuste mínimo: resumen en una sola fila en pantallas grandes */
+@media(min-width:1200px){
+  .priority-grid{
+    grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  }
+}
+.priority-grid{
+  align-items:stretch;
+}
+.priority-card{
+  min-height:118px;
+}
+
+
+/* ===== Ajuste visual PRO sin reestructurar el sistema ===== */
+:root{
+  --pro-blue:#0f5f7a;
+  --pro-teal:#0f9b8e;
+  --pro-navy:#0b2239;
+  --pro-gold:#d6a21f;
+  --pro-soft:#f8fbff;
+}
+
+body{
+  background:
+    radial-gradient(circle at 12% 8%, rgba(34,211,238,.25), transparent 26%),
+    radial-gradient(circle at 86% 14%, rgba(20,184,166,.22), transparent 30%),
+    linear-gradient(135deg,#071a3d 0%,#082f49 44%,#0f172a 100%) !important;
+}
+
+.app-shell-inner{
+  border-radius:26px !important;
+  padding:18px 22px !important;
+  box-shadow:0 22px 55px rgba(2,8,23,.24) !important;
+  border:1px solid rgba(255,255,255,.82) !important;
+}
+
+.shell-icon{
+  width:54px !important;
+  height:54px !important;
+  border-radius:18px !important;
+  background:linear-gradient(135deg,#0f5f7a,#0f9b8e) !important;
+  box-shadow:0 14px 28px rgba(15,95,122,.28) !important;
+}
+
+.app-title{
+  font-size:23px !important;
+  letter-spacing:-.035em !important;
+}
+
+.app-subtitle{
+  font-size:13px !important;
+  color:#52637a !important;
+}
+
+.pill-btn{
+  padding:12px 18px !important;
+  font-size:14px !important;
+  box-shadow:0 10px 22px rgba(15,23,42,.07) !important;
+}
+
+.pill-btn.active{
+  background:linear-gradient(135deg,#0f5f7a,#0f9b8e) !important;
+  box-shadow:0 12px 24px rgba(15,95,122,.24) !important;
+}
+
+.card,
+.dashboard-block,
+.card-lite,
+.chart-card,
+.kpi,
+.priority-card,
+.form-step,
+.progress-card{
+  border:1px solid #dbe7f1 !important;
+  box-shadow:0 18px 42px rgba(15,23,42,.075) !important;
+}
+
+.card{
+  border-radius:28px !important;
+  background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(248,251,255,.96)) !important;
+}
+
+.module-header{
+  border-bottom:none !important;
+  background:linear-gradient(135deg,#f8fbff,#ffffff) !important;
+  border:1px solid #dbe7f1 !important;
+  border-radius:22px !important;
+  padding:18px !important;
+  margin-bottom:20px !important;
+}
+
+.module-number{
+  background:linear-gradient(135deg,#0b2239,#0f5f7a,#0f9b8e) !important;
+  box-shadow:0 14px 26px rgba(15,95,122,.22) !important;
+}
+
+.module-header h2{
+  font-size:27px !important;
+  letter-spacing:-.025em !important;
+}
+
+.admin-grid{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:16px !important;
+}
+
+.kpi{
+  position:relative !important;
+  overflow:hidden !important;
+  border-radius:24px !important;
+  padding:20px !important;
+  background:linear-gradient(180deg,#ffffff,#fbfdff) !important;
+}
+
+.kpi::before{
+  content:'' !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  top:0 !important;
+  height:5px !important;
+  background:linear-gradient(90deg,#0f5f7a,#0f9b8e,#d6a21f) !important;
+}
+
+.kpi .num{
+  font-size:38px !important;
+  color:#0f172a !important;
+  letter-spacing:-.04em !important;
+}
+
+.kpi .label{
+  font-size:13px !important;
+  color:#64748b !important;
+  letter-spacing:.045em !important;
+}
+
+#priorityGrid{
+  display:grid !important;
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  gap:14px !important;
+  margin:18px 0 !important;
+}
+
+.priority-card{
+  border-radius:24px !important;
+  padding:18px 18px 16px !important;
+  background:linear-gradient(180deg,#ffffff,#fbfdff) !important;
+  min-height:122px !important;
+}
+
+.priority-card .num{
+  font-size:36px !important;
+  letter-spacing:-.04em !important;
+}
+
+.priority-card .label{
+  font-size:13px !important;
+  color:#52637a !important;
+}
+
+.priority-card .hint-small{
+  color:#64748b !important;
+  font-size:12px !important;
+}
+
+.dashboard-header{
+  padding-bottom:12px !important;
+  border-bottom:1px solid #e6edf5 !important;
+}
+
+.dashboard-header h3{
+  font-size:24px !important;
+  letter-spacing:-.025em !important;
+}
+
+.dashboard-header p{
+  font-size:15px !important;
+}
+
+.summary-tabs{
+  gap:12px !important;
+}
+
+.summary-tab{
+  padding:12px 18px !important;
+  border-radius:999px !important;
+  font-size:14px !important;
+  box-shadow:0 10px 22px rgba(15,23,42,.055) !important;
+}
+
+.summary-tab.active{
+  background:linear-gradient(135deg,#0f5f7a,#0f9b8e) !important;
+  box-shadow:0 14px 28px rgba(15,95,122,.24) !important;
+}
+
+.attention-note,
+.mode-note,
+.single-source-note{
+  border-radius:18px !important;
+  padding:14px 16px !important;
+  background:linear-gradient(135deg,#eff6ff,#f8fbff) !important;
+  border:1px solid #bfdbfe !important;
+  color:#1e3a8a !important;
+}
+
+.table-wrap{
+  border-radius:24px !important;
+  border:1px solid #dbe7f1 !important;
+  box-shadow:0 12px 26px rgba(15,23,42,.045) !important;
+}
+
+table{
+  border-collapse:separate !important;
+  border-spacing:0 !important;
+}
+
+th{
+  background:linear-gradient(180deg,#f8fbff,#eef4fb) !important;
+  color:#0f172a !important;
+  font-size:12px !important;
+  letter-spacing:.055em !important;
+  padding:15px 14px !important;
+}
+
+td{
+  padding:15px 14px !important;
+  border-bottom:1px solid #e8eef6 !important;
+}
+
+tbody tr:nth-child(even){
+  background:#fcfdff !important;
+}
+
+tbody tr:hover{
+  background:#f8fbff !important;
+}
+
+.risk-pill,
+.mini-chip,
+.cred-icon,
+.tag{
+  box-shadow:0 6px 14px rgba(15,23,42,.04) !important;
+}
+
+.edit-btn{
+  padding:8px 13px !important;
+  background:#ffffff !important;
+  border:1px solid #bfd2e6 !important;
+  box-shadow:0 8px 18px rgba(15,23,42,.06) !important;
+}
+
+.edit-btn:hover{
+  background:#eff6ff !important;
+  color:#1d4ed8 !important;
+  border-color:#93c5fd !important;
+}
+
+.btn{
+  border-radius:16px !important;
+  padding:14px 18px !important;
+  box-shadow:0 12px 22px rgba(15,23,42,.09) !important;
+}
+
+.btn-primary,
+.btn-success{
+  background:linear-gradient(135deg,#0f5f7a,#0f9b8e) !important;
+}
+
+.btn-gold{
+  background:linear-gradient(135deg,#d6a21f,#fbbf24) !important;
+}
+
+.btn-danger{
+  background:linear-gradient(135deg,#b91c1c,#ef4444) !important;
+}
+
+.admin-toolbar{
+  gap:12px !important;
+  align-items:center !important;
+}
+
+.admin-toolbar input,
+.admin-toolbar select{
+  height:48px !important;
+  border-radius:16px !important;
+}
+
+.field{
+  border-radius:20px !important;
+  background:linear-gradient(180deg,#ffffff,#fbfdff) !important;
+}
+
+.field:hover{
+  transform:translateY(-1px) !important;
+}
+
+.charts-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:20px !important;
+}
+
+.chart-card{
+  border-radius:26px !important;
+  padding:20px !important;
+  background:linear-gradient(180deg,#ffffff,#fcfdff) !important;
+  overflow:hidden !important;
+}
+
+.chart-card::before{
+  height:5px !important;
+  background:linear-gradient(90deg,#145f82,#16a39a,#d6a21f) !important;
+}
+
+.chart-card h4{
+  font-size:18px !important;
+  font-weight:900 !important;
+  letter-spacing:-.01em !important;
+}
+
+.chart-card canvas{
+  height:310px !important;
+  border-radius:18px !important;
+}
+
+.executive-grid{
+  gap:20px !important;
+}
+
+.executive-hero{
+  border-radius:24px !important;
+  background:linear-gradient(135deg,#0b2239,#145f82,#0f9b8e) !important;
+}
+
+.mini-kpi{
+  border-radius:20px !important;
+}
+
+.modal-card{
+  border-radius:28px !important;
+}
+
+.modal-head{
+  background:linear-gradient(135deg,#0b2239,#0f5f7a,#0f9b8e) !important;
+}
+
+@media(max-width:1200px){
+  .admin-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  #priorityGrid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}
+
+@media(max-width:850px){
+  .admin-grid,
+  #priorityGrid,
+  .charts-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+
+/* ===== v44: gráficas propias por módulo ===== */
+.module-charts-panel{
+  margin-top:24px;
+  padding:20px;
+  border:1px solid #dbe7f1;
+  border-radius:26px;
+  background:linear-gradient(180deg,#ffffff,#fbfdff);
+  box-shadow:0 18px 42px rgba(15,23,42,.07);
+}
+.module-charts-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:16px;
+  margin-bottom:16px;
+}
+.module-charts-head h3{
+  margin:0;
+  font-size:22px;
+  letter-spacing:-.025em;
+  color:#0f172a;
+}
+.module-charts-head p{
+  margin:6px 0 0;
+  color:#64748b;
+  font-size:14px;
+}
+.module-charts-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.module-chart-card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid #dbe7f1;
+  border-radius:24px;
+  background:linear-gradient(180deg,#ffffff,#fcfdff);
+  padding:18px 18px 14px;
+  box-shadow:0 14px 30px rgba(15,23,42,.06);
+}
+.module-chart-card::before{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:5px;
+  background:linear-gradient(90deg,#145f82,#16a39a,#d6a21f);
+}
+.module-chart-card h4{
+  margin:0 0 10px;
+  font-size:17px;
+  font-weight:900;
+  color:#0f172a;
+}
+.module-chart-card canvas{
+  width:100%;
+  height:310px;
+  display:block;
+  border-radius:18px;
+  background:linear-gradient(180deg,#ffffff,#fbfdff);
+}
+@media(max-width:900px){
+  .module-charts-grid{grid-template-columns:1fr}
+}
+
+
+/* ===== v45: gráficas a tamaño completo ===== */
+.priority-table{
+  width:100% !important;
+  overflow-x:auto !important;
+}
+#priorityTable{
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+}
+#priorityTable > .report-modern{
+  width:100% !important;
+}
+.module-charts-panel{
+  width:100% !important;
+  max-width:none !important;
+  box-sizing:border-box !important;
+}
+.module-charts-grid{
+  width:100% !important;
+  grid-template-columns:repeat(2,minmax(520px,1fr)) !important;
+  align-items:stretch !important;
+}
+.module-chart-card{
+  width:100% !important;
+  min-height:430px !important;
+  box-sizing:border-box !important;
+}
+.module-chart-card canvas{
+  width:100% !important;
+  height:360px !important;
+}
+@media(max-width:1300px){
+  .module-charts-grid{
+    grid-template-columns:1fr !important;
+  }
+  .module-chart-card canvas{
+    height:380px !important;
+  }
+}
+@media(max-width:700px){
+  .module-chart-card{
+    min-height:360px !important;
+  }
+  .module-chart-card canvas{
+    height:310px !important;
+  }
+}
+
+
+/* ===== v46: gráficas limpias sin saturación ===== */
+.module-chart-card h4::after{
+  content:'';
+}
+.module-chart-card canvas{
+  max-height:390px !important;
+}
+
+
+/* ===== v48: beneficios IRTRA/IGSS + acreditación DIGESSP ===== */
+.acred-label small{
+  display:block;
+  margin-top:3px;
+  font-size:10px;
+  color:#64748b;
+  font-weight:800;
+  line-height:1.1;
+}
+.pdf-worker-card .acred-label small{
+  color:#64748b;
+}
+
+</style></head><body>
     <div class="page">
       <div class="hero">
         <h1>${escapeHtml(viewTitle)}</h1>
-        <div class="sub">Sistema Confidencial de Evaluación y Auditoría del Colaborador · Generado: ${now}</div>
-        <div class="conf">USO INTERNO · AUDITORÍA PREVENTIVA · BIENESTAR LABORAL</div>
+        <p>Sistema confidencial de evaluación y auditoría del colaborador · Documento de revisión administrativa.</p>
+        <small>Generado: ${escapeHtml(now)}</small>
       </div>
 
-      <div class="grid">
-        <div class="kpi"><div class="n">${stats.total}</div><div class="l">Encuestas</div></div>
-        <div class="kpi fin"><div class="n">${stats.criticoPct}%</div><div class="l">Financiero crítico/severo</div></div>
-        <div class="kpi lab"><div class="n">${stats.laboralAltoPct}%</div><div class="l">Laboral alto/crítico</div></div>
-        <div class="kpi sal"><div class="n">${stats.saludAltoPct}%</div><div class="l">Salud alto/crítico</div></div>
+      <div class="panel">
+        <div class="section-title">
+          <h2>Resumen ejecutivo</h2>
+          <div class="section-sub">${rows.length} registro(s) incluidos</div>
+        </div>
+        <div class="kpi-grid">${cardsHtml()}</div>
       </div>
 
-      <div class="card">
-        <h2 style="margin-top:0">Metodología de cálculo</h2>
-        <div class="method">
-          <div><h3>Financiero</h3><ul><li>Deuda mensual + alquiler + descuento judicial.</li><li>Se compara contra salario mínimo de referencia.</li><li>Mayor porcentaje significa mayor presión económica.</li></ul></div>
-          <div><h3>Laboral</h3><ul><li>Capacitación baja suma más puntos.</li><li>Sin experiencia en seguridad privada suma puntos.</li><li>Menor experiencia laboral o alta rotación aumenta atención.</li><li>IRTRA, IGSS y DIGESSP pendientes se reflejan en el semáforo laboral.</li></ul></div>
-          <div><h3>Salud</h3><ul><li>Salud regular o delicada suma puntos.</li><li>Condición física y medicamento permanente se consideran preventivamente.</li><li>Ausencias y limitaciones para el puesto aumentan atención.</li></ul></div>
+      <div class="panel">
+        <div class="section-title">
+          <h2>Metodología y lectura rápida</h2>
+          <div class="section-sub">${escapeHtml(tableData.subtitle || '')}</div>
+        </div>
+        ${methodologyHtml()}
+        <div class="legend">
+          <span class="legend-item low">Bajo</span>
+          <span class="legend-item mod">Moderado</span>
+          <span class="legend-item high">Alto</span>
+          <span class="legend-item crit">Crítico / severo</span>
+          <span class="cred-legend"><span class="cred-mark ok">✓</span> Tiene acreditación</span>
+          <span class="cred-legend"><span class="cred-mark fail">✕</span> No tiene o está en gestión</span>
         </div>
       </div>
 
-      <div class="note"><strong>Interpretación:</strong> el semáforo orienta dónde poner más atención. No representa sanción automática ni discriminación; debe usarse para seguimiento preventivo, capacitación, bienestar y revisión confidencial responsable.</div>
+      <div class="panel">
+        <div class="section-title">
+          <h2>${escapeHtml(tableData.title)}</h2>
+          <div class="section-sub">${escapeHtml(tableData.subtitle || '')}</div>
+        </div>
+        ${tableData.layout === 'cards'
+          ? `<div class="workers-wrap">${tableData.cards || ''}</div>`
+          : `<table><thead>${tableData.head}</thead><tbody>${tableData.body || '<tr><td>Sin registros</td></tr>'}</tbody></table>`
+        }
+      </div>
 
-      <h2>${escapeHtml(tableData.title)}</h2>
-      <table><thead>${tableData.head}</thead><tbody>${tableData.body || '<tr><td>Sin registros</td></tr>'}</tbody></table>
+      ${pdfChartsHtml()}
 
+      <div class="note"><strong>Interpretación:</strong> este reporte está diseñado para facilitar la revisión operativa y administrativa, identificar prioridades y orientar acciones preventivas, de capacitación o de bienestar del personal.</div>
       <div class="footer">Documento generado automáticamente para revisión administrativa confidencial.</div>
-      <div class="no-print" style="margin-top:20px"><button onclick="window.print()" style="padding:12px 18px;border:0;border-radius:12px;background:#0f5f7a;color:#fff;font-weight:900;cursor:pointer">Imprimir / Guardar PDF</button></div>
+      <div class="no-print" style="margin-top:18px;text-align:right"><button onclick="window.print()" style="border:none;border-radius:999px;background:#0f5f7a;color:#fff;padding:12px 18px;font-weight:900;cursor:pointer">Imprimir / Guardar PDF</button></div>
     </div>
     <script>setTimeout(()=>window.print(),700);<\\/script>
     </body></html>`;
@@ -2466,12 +4862,33 @@ ${worksheet('Salud',salSheet,salCols)}
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js?v=23')
+      navigator.serviceWorker.register('./sw.js?v=48')
         .then(() => console.log('Service Worker registrado correctamente'))
         .catch(error => console.warn('No se pudo registrar el Service Worker:', error));
     });
   }
 
 </script>
+  <div id="editModal" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <h3>Editar registro del colaborador</h3>
+          <p>Actualización administrativa. Los indicadores y semáforos se recalculan al guardar.</p>
+        </div>
+        <button type="button" class="modal-close" id="editCloseBtn">Cerrar</button>
+      </div>
+      <div class="modal-body">
+        <div id="editRecordInfo" class="attention-note"></div>
+        <form id="editForm"></form>
+        <p id="editMessage" class="message"></p>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="editCancelBtn">Cancelar</button>
+        <button type="button" class="btn btn-success" id="editSaveBtn">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
